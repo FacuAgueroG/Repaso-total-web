@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="es-AR"><!--con "es" alcanza no hace falta agregar el AR a no ser que la pag sea especificamente para argentina-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--En el titulo no mas de 50-60 caracteres 
+    El titulo este sale en la pestaña no dentro de la pagina-->
+    <title>Mi codigo HTML</title>
+    <!--En la descripcion no mas de 165 caracteres-->
+    <meta name="description" content="En esta pagina estoy aprendiendo html">
+
+    <!--Esto se explica en la clase 23 CSS-->
+    <link rel="stylesheet" href="assets/estilos.css">
+
+    <!--CLASE 43 --------------------------------->
+
+    <link rel="canonical" href="http://tudominio.com/la-url-canonica">
+    <link rel="icon" href="assets/Imagenes/GINGERDOGELECTRO.png"> <!--Agrego icono en el nombre de la pagina-->
+    <link rel="apple-touch-icon" href="assets/Imagenes/GINGERDOGELECTRO.png"><!--Si en apple o android intento guardar la pag en pantalla principal esta se guarda con el icono-->
+
+
+    <meta name="theme-color" content="#FF6600"> <!--Cambio color de la barra de arriba en buscadores moviles (Chrome)--> 
+    <!---------------------------------------->
+
+ 
+    <!--CLASE 44 --------------------------------->
+
+    <meta property="og:title" content="Aprendiendo HTML">
+    
+    <meta property="og:description" content="En esta pagina estoy aprendiendo html">
+
+    <meta property="og:image" content="http://192.168.1.41:5502/assets/Imagenes/GINGERDOGELECTRO.png">
+
+    <meta property="og:url" content="http://192.168.1.41:5502/" >
+
+    <!--Para el caso de twitter tengo que configurar paso a paso -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@NOMBRE_DE_LA_CUENTA"/>
+
+    <!--Recordar que todo este procedimiento se debe hacer para cada una de las URLs que ocupe mi pagina, todo con distintas imagenes y distintas descripciones-->
+
+    <!---------------------------------------->
+</head>
+
+<body>
+    <!--SOLO DEBE EXISTIR UN SOLO H1 POR DOCUMENTO-->
+    <h1 >Encabezado 1</h1> <!--El el titulo mas imporatante-->
+    <h2>Encabezado 2</h2>
+    <h3>Encabezado 3</h3>
+    <h4>Encabezado 4</h4>
+    <h5>Encabezado 5</h5>
+    <h6>Encabezado 6</h6>
+
+    <hr>
+
+     <!-- --------------------------------------------------------- -->
+
+    <!--<p>Sirve para crear parrafos dentro de la pagina</p>-->
+
+    <h2>Etiquetas basicas</h2>
+    <p>Primer comentario dentro de mi primer pagina web</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Odio explicabo assumenda dolores itaque eaque placeat? 
+    Voluptate dolores tempore voluptatibus neque quam cumque minus 
+    culpa nisi eum. Dolorem cupiditate itaque rerum?
+    </p>
+
+    
+    <p>Palabras en <b>Negrita</b></p> 
+    <p><i>Italica</i></p>
+    <p><u>Subrayado</u></p>
+    <p>e=mc<sup>2</sup></p> <!--Caracter elevado chiquito-->
+    <p>H<sub>2</sub>O</p>   <!--caracter como indice chiquito debajo-->
+    <p><mark>Hola we</mark></p> <!--Marca en amarillo con marcador-->
+    <p><small>Letras pequeñas</small></p> <!--Letras chiquitas nada mas-->
+ 
+    <hr>
+
+    <h2>Etiquetas de texto semanticas</h2>
+
+    <strong>Este texto es imporatante</strong> <!--Negrita pero IMPORTANTE-->
+    <em>Este texto tiene enfasis</em> <!--italica importante-->
+
+    <blockquote>Yo solo se, que no se nada</blockquote> <!--Cita de texto-->
+    <cite>Socrates</cite> <!--Italica para la persona citada-->
+
+    <!--Esto me sirve para agregar un tiempo para que la computadora pueda 
+    entenderlo, tiene un atributo y toda la bola-->
+    <p>El partido empieza las<time datetime="2017-04-29T19:00"> 19:00hrs</p>
+
+
+
+    <!-- --------------------------------------------------------- -->
+    <hr>
+    <h2> etiquetas de salto</h2>
+
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Officia iusto voluptatum veritatis, eius numquam delectus tempore quod?
+    Fuga id est, numquam voluptas corporis quia.<br> <!--Salto de linea-->
+    Alias consequuntur unde quae enim dolores!
+    </P>
+ 
+    <br>
+    <br>
+    <br>
+
+    <!-- --------------------------------------------------------- -->
+    <hr>
+    <h2>Formateos o preformateos</h2>
+
+    <p>
+    <pre> <!--Esta estructura sirve para que se guarde la identacion para
+            mostrarla dentro del navegador al ejecutar este codigo-->
+        Tareas por hacer HTML
+            -Estudiar todo el curso
+            -Anotar cada una de las cosas que necesite en el bloc de notas
+            -Ser facha OC
+        Tareas por hacer CSS
+            -Ser facha
+            -Estudiar CSS
+    </pre>
+    </p>
+    
+
+    <p><!--Si quiero escribir codigo utilizo este tipo de texto,
+         entonces al copiar y pegar texto con codigo respeta la identacion-->
+         <!--Funciona igual que <pre>-->
+        <!--Tener en cuenta que lo que escriba como codigo HTML CODE va a internar
+        leerlo como tal, por lo tanto no saldra renderizado-->             
+        <pre>
+            <code>
+                import React from "react";
+                import Title from "./Title";
+
+                function App
+                {
+                 return 
+
+                 <!--<Title/>; ESTO NO PODRIA SALIR RENDERIZADO ENTONCES-->
+                 &lt;Title/&gt;; <!--Tengo que aprender esto-->
+                }
+            </code> 
+        </pre>        
+    </p>
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>Etiquetas semanticas estructurales</h2>
+
+    <div>Div - Divisor sin semantica</div>
+    <header>header - cabecera de un sitio web o de una seccion</header>
+
+    <main>
+        main- define la seccion princial del documento, solo puede existir una
+        etiqueta main por documento
+    </main>
+
+    <footer>footer- pie de pagina de un sitio web o de una seccion</footer>
+
+    <nav>nav- representa una navegacion </nav>
+
+    
+    <!--Seccion contiene a article-->
+    <section>Section - representa una seccion, puede contener al article</section>
+
+    <article>article - representa una seccion autocontenido
+        (que por si sola se entiende)
+    </article>
+
+
+    <!--El aside puede ir directamente en un lugar donde quiera indicar
+    articulos relacionados con lo que estoy hablando, asi como tambien puedo
+    meter algo de publicidad, etc. -->
+    <aside>Aside - Representa contenido complementario o secundario</aside>
+
+
+
+    <adrees>adress - contacto con una pagina o un cliente</adrees>
+
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>Etiquetas de bloque vs etiquetas de linea</h2>
+
+    <!--Utilizo CSS para mostrar los ejemplos, NO ES RECOMENDABLE Y NO SE DEBERIA
+    HACER DESDE EL HTML LAS LINEAS DE HTML SON EL "STYLE"-->
+    <div style="background-color: yellow;">div - Es una etiqueta de bloque, crea saltos con sus 
+        etiquetas hermanas y ocupa todo el ancho de la pantalla. 
+    </div>
+
+    <span style="background-color: lightblue;">Span- es una etiqueta de linea que solo ocupa el espacio que esta utilizando</span>
+
+     <!--Estas etiquetas y sus caracteristicas no solo afectan a kas divs y span. esto tambien afecta a un h1 o h° y el numero que sea, ya que estos ocupan todo el espacio en pantalla que pueden, son BLOQUES. Asi como hay bloques tambien otros casos de linea. -->
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2 style="background-color: Red;">Etiquetas de bloque vs etiquetas de linea</h2>
+
+    <style>h2{color: orange;}</style> <!--Esto hace que a TODOS LOS H2 DEL DOCUMENTOS SE LE CAMBIE EL COLOR A NARANJA ESTO DEBERIA ESTAR FUERA DEL BODY-->
+
+    <!--Aun asi esto deberia estar dentro de un nuevo archivo de estilos, creo el archivo por separado este se llama "estilos.css" esta en el lugar donde programo html-->
+
+    <!--EL ENLASE A EL ESTILO DE ESTE HTML Y DE TODOS LO QUE HAGA CON CSS DEBE IR EN EL HEAD!-->
+
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>Scripts en HTML</h2>
+
+    <!--Asi como el link debe estar puesto en el principio, en el header los scripts se suelen poner muy cerca del cierre del body-->
+
+    <!--Obviamente la programacion estaria bueno que estuviera en otro archivo de caracter .js (javascript) -->
+     <script>
+     console.log("Hola we, estoy aprendiendo HTML")
+     </script>
+
+     <!--Cree mi script dentro de la carpeta de assets y asi es como lo linkeo-->
+
+     <script src="assets/codigo.js"></script>
+
+     <!--Los console logs no los puedo ver dentro del renderizado de la pagina todo esto queda por detras con un backend-->
+
+     <!--Para poder verlo voy a console y ahi sale todo lo que se dispara por la consola de mi codigo-->
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>Agregar imagenes</h2>
+
+    <!--Se permite jgp, png, gif y svg (svg es para VECTORES)-->
+    <img src= "assets/Imagenes/TP3D (2).png" alt="Imagen de la pieza a realizar para el TPD-S3">
+
+    <!--Si le doy un alto y un acho ya estoy trabjando con CSS, estos atributos se agregan con CSS, Si voy al archivo de CSS ahi le cambie el tamaño fijarse. -->
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>SVG</h2>
+
+     <!--agrego SVG-->
+
+     <img src="assets/Imagenes/bat-svgrepo-com.svg" alt="Murcielago en las alturas">
+
+         <!-- --------------------------------------------------------- -->
+
+     <hr>
+     <h2>Figuras</h2>
+
+     <figure>
+         <img src="assets/Imagenes/DarkSouls1.jpg" alt="Knight looking the twilight">
+         <figcaption>Esto es una nota al pie de la figura</figcaption>
+     </figure>
+
+         <!-- --------------------------------------------------------- -->
+
+     <hr>
+     <h2>Listas ordenadas</h2>
+
+     <h3>las estaciones del año</h3>
+
+     <!--Las listas traen un orden en especifico por defecto con numeros-->
+    <ol>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+
+    <!--Puedo cambiar el comienzo de la numeracion de la lista-->
+    <ol start="3">
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+
+    <!--¿Si quiero una lista que tenga un sentido inverso?-->
+    <!--Cuando se agrega un modificador de le etiqueta, a esta la agrego como "true", en caso contrario, al no aparecer, no estar escritas... estas estan en "false"-->
+    <ol reversed> 
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+
+    <!--Ordeno con numeros romanos-->
+    <ol type="I">
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+
+
+    <!-- --------------------------------------------------------- -->
+
+    <hr>
+    <h2>Listas desordenadas</h2> 
+        
+    <h3>Cosas por hacer</h3>
+
+
+    <!--Esta lista utiliza puntitos en vez de una numeracion. con esto se refiere a que, lo que tengo que hacer son tareas sin ningun orden en particular-->
+    <ul type="bullet">
+        <li>Estudiar para downpour</li>
+        <li>Hacer su preproduccion</li>
+        <li>Hacer un esqueleto</li>
+        <li>Limpiarlo</li>
+        <li>Enviarlo a MPVP</li>
+    </ul>
+
+    <ul type="circle">
+        <li>Estudiar para downpour</li>
+        <li>Hacer un esqueleto</li>
+        <li>Hacer su preproduccion</li>
+        <li>Limpiarlo</li>
+        <li>Enviarlo a MPVP</li>
+    </ul>
+
+    
+    <ul type="square">
+        <li>Estudiar para downpour</li>
+        <li>Hacer su preproduccion</li>
+        <li>Hacer un esqueleto</li>
+        <li>Limpiarlo</li>
+        <li>Enviarlo a MPVP</li>
+    </ul>
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Listas de definicion</h2> 
+        
+    <h3>Cosas por hacer</h3>
+
+    <!--Son poco populares, son para casos particulares, se las utiliza para nombrar un glosario de terminos. Estas utilizan dos elementos en vez de <li>-->
+
+    <dl>
+        <dt>Html</dt> <!--Definition term-->
+        <dd>Es un lenguaje de marcado que define el conetenido de la web</dd> <!--Texto para definir el dt-->
+        <br> <!--Lo agregue yo para que deje un espacio, no hace falta-->
+        <dt>CSS</dt>
+        <dd>Es un lenguaje de definicion que da estilos al codigo html</dd> 
+        <br>    
+        <dt>JavaScript</dt>
+        <dd>Es el lenguaje de la web</dd>
+    </dl>
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Tablas</h2>  <!--Tabla de caballeros del zodiaco-->
+
+
+    <table>
+        <tr>
+            <td>Nombre</td>         <!--Los primeros elementos van a ser las columnas-->
+            <td>constelacion</td> 
+            <td>tipo</td>
+        </tr>
+        
+        <!--Estos tres que siguen son cada uno de los elementos que caen en las columnas anteriores-->
+        <tr>
+            <td>Ikki</td>
+            <td>Fenix</td>
+            <td>Bronce</td>
+        </tr>
+
+        <tr>
+            <td>Shaina</td>
+            <td>Ofiuco</td>
+            <td>Plata</td>
+        </tr>
+
+        <tr>
+            <td>Saga</td>
+            <td>Geminis</td>
+            <td>Dorado</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+    <!--Segunda tabla, un poco mas elavaorada-->
+
+    <table>
+
+        <thead> <!--Cabecera en negrita-->
+            <tr>
+                <!--El colspan le dice cuantas columnas quiere ocupar -->
+                <th colspan="3">Tabla de los santos de Athena</th> 
+            </tr>
+
+            <tr>
+                <th>Nombre</th>
+                <th>Constelacion</th>
+                <th>Tipo</th>    
+            </tr>
+        </thead>
+
+        
+        <tbody> <!--Cuerpo con los datos-->
+            <tr>
+                <!--Si a este primer (ikki) le pusiera rowspan(tomar mas de una fila) todo se desvarataria, pero es posible, si hago <td rowspan="2"> TODO VUELA A LA PUTA-->
+                <td>Ikki</td>
+                <td>Fenix</td>
+                <td>Bronce</td>
+            </tr>
+    
+            <tr>
+                <td>Shaina</td>
+                <td>Ofiuco</td>
+                <td>Plata</td>
+            </tr>
+    
+            <tr>
+                <td>Saga</td>
+                <td>Geminis</td>
+                <td>Dorado</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <th colspan="3"><small>Saint Seiya fue creado por Masami Kurumada</small> </th>
+        </tfoot>
+
+    </table>
+    
+    <br>
+    <br>
+    <br>
+
+    <!--Uso del rowspan-->
+
+    <table>
+
+        <thead>
+            <tr>
+                <th colspan="3">Tabla de los santos de Athena</th> 
+            </tr>
+
+            <tr>
+                <th>Nombre</th>
+                <th>Constelacion</th>
+                <th>Tipo</th>    
+            </tr>
+        </thead>
+
+        
+        <tbody>
+            <tr>
+                <td>Shaina</td>
+                <td rowspan="2">Ofiuco</td>
+                <td>Plata</td>
+            </tr>
+
+            <tr>
+                <td>Odiseo</td>
+                <!--Esta que es la segunda columna, es ocupada por la primer fila, con fila doble-->
+                <!--Esto es porque los dos caballeros provienen del mismo lugar -->
+                <td>Dorado</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <th colspan="3"><small>Saint Seiya fue creado por Masami Kurumada</small> </th>
+        </tfoot>
+
+    </table>
+
+    
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Enlases</h2>
+    
+    <!--Recordar que los enlases son etiquetas de linea, si uno las desea en dos lineas distintas es necesario crear un salto de linea-->
+
+    <a href="linkeodehtml.html">Con este enlase me voy a la otra pagina</a>
+
+    <br>
+
+    <a href="http://youtube.com">Youtube (Cargado en esta misma pagina)</a>
+
+    <br>
+
+    <!--En el caso de ir a otra direccion que no tenga nada que ver con la pagina de uno SIEMPRE debe abrirse en una pagina aparte, no hacerlo es una practica HORRIBLE, se agrega la hoja den blanco => target="_blank" y le agrego un rel="nofollow"-->
+
+    <!--Ahora si mando a una persona a otra pagina (que no sea mia), que no tiene relacion con el contenido de esta, rel="nofollow" le avisa al buscador que la pagina no tiene 	relacion con la mia y que tenga cuidado-->
+
+    <a href="http://youtube.com" target="_blank" rel="nofollow">Youtube (Cargado en otra pagina)</a>
+
+    <br>
+
+    <p>link en una imagen</p>
+    <!--El enlase se pega en la imagen porque esta dentro de <a>ACA ESTA LA IMAGEN</a>-->
+    <a href="http://youtube.com" target="_blank"><img src="assets/Imagenes/bat-svgrepo-com.svg" alt="Linka otra pagina"></a>
+    
+    <!------------------------------------------------------------->
+
+
+
+    <hr>
+    <h2 id="Enlases_internos">Enlases internos</h2>
+
+    <!--Para que los saltos no sean tan bruscos con el enlase interno modifique algunas cosas con CSS-->
+
+    <!--El enlase interno es para hacer saltos dentro de un mismo documento html, esto se hace con el linkeo y un # lo que quede despues de eso sera el id al que quiero saltar, entonces previamente debo crear los id a los que quiero saltar. -->
+    <ul>
+        <li><a href="index.html#Hola_we">Hola we</a></li>
+        <li><a href="index.html#Chau_we">Chau we</a></li>
+    </ul>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <!--Creo ids-->
+    <h2 id="Hola_we">Hola we</h2>
+    <!--Creo el link de vuelta al inicio con un emoji, un emoji no es una imagen es un texto plano, se puede poner en el codigo-->
+    <a href="index.html#Enlases_internos">☝️</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <h2 id="Chau_we">Chau we</h2>
+    <a href=""></a>
+    <a href="index.html#Enlases_internos">☝️</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <!------------------------------------------------------------->
+    
+    <hr>
+    <h2>Enlases y protocolos especiales</h2>
+    
+    <!--Sirve para activar automatizaciones a travez de urls que lo permitan-->
+
+    <!--Ej: el tercer link me redirige a whatsapp app o whatsapp web para ya tener en la pagina un mensaje para un numero especifico -->
+
+    <a href="mailto:facuaguerog@gmail.com">Enlase para enviar un mail</a>
+    <br>
+    <a href="tel:1162794454">Enlase para llamada telefonica</a>
+    <br>
+    <a href="http://api.whatsapp.com/send?phone=5491162427106&text=hola ramiro cara de culo" target="_blank">Enviar mensaje por whatsapp</a>
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Elementos interactivos</h2>
+
+    <!--Algunos elementos interactivos explicados a continuacion son elementos que se deberian trabajar en Javascript por que SON PROGRAMACION, pero solo por mostrar algunos de ellos se demostraran-->
+
+    <!--Boton que desprende una alerta-->
+    <button onclick="alert('hola, esto es una alerta')">Este es un boton</button>
+
+    <!--Acordeon-->
+    <details>
+        <summary>Titulo del acordeon</summary>
+        <article>
+            <h3>Contenido del acordeon</h3>
+            <img src="assets/Imagenes/DarkSouls1.jpg" alt="Knight in the twilight">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus corrupti, blanditiis cum, modi incidunt cumque ab alias aperiam quis earum odio numquam at sint nulla excepturi delectus! Fugit, inventore vitae.</p>
+        </article>
+    </details>
+
+    <!--Acordeon abierto-->
+    <details open>
+        <summary>Titulo del acordeon</summary>
+        <article>
+            <h3>Contenido del acordeon</h3>
+            <img src="assets/Imagenes/DarkSouls1.jpg" alt="Knight in twilight">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus corrupti, blanditiis cum, modi incidunt cumque ab alias aperiam quis earum odio numquam at sint nulla excepturi delectus! Fugit, inventore vitae.</p>
+        </article>
+    </details>
+
+    <!--Esto esta en desarrollo y no anda muy bien todavia en todos los navegadores
+
+    <dialog open>Esta aparece oculta, hace falta abrirla con un open
+        Esto es una ventana modal en HTML
+    </dialog>
+
+    -->
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Audio y video</h2>
+
+
+
+    <!--Despues de "controls" puedo agregar 
+        
+    autoplay - para que la musica arranque de una, pero no en todos los navegadores va a funcionar y en moviles hay que darle los permisos
+
+    loop - va a looper el sonido una vez que termine
+
+    muted - si le doy play al sonido o arranca cuando entro a la pagina este entra muteado 
+
+    preload - MUY RECOMENDADO, para que cuando el usuario le vaya a dar el boton este ya estuviera cargado en el cache y no comenzara a cargarse desde entonces.
+
+    -->
+    <h3>Audio</h3>
+    <audio src="assets/audio/Pista acto 1(V0.3 Dellamer).mp3" controls preload></audio>></audio>
+
+    <br>
+    <br>
+    <br>
+
+    <!--Todo lo anteriormente mencionado se puede aplicar dentro de el video-->
+
+    <!--poster - sirve para poder cargar una imagen antes de que arranque el video, hay que serciorarse que el video sea cargado mientras entro a la pagina en el cache con preload. -->
+    <h3>Video</h3>
+    <video src="assets/video/2021-11-06 10-53-00.mkv" controls preload poster="assets/Imagenes/bat-svgrepo-com.svg"></video>
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>Iframe</h2>    
+
+    <!-- 
+    iframe sirve para poder cargar el contenido de otras paginas dentro de la nuestra pero es necesario entender que esto puede llegar a traver problemas con la carga
+
+    frameborder - lo que hace es agregarle un grosor al borde
+
+    -->
+    <iframe src="linkeodehtml.html" frameborder="1"></iframe>
+    <br>
+    <!--Esto no va a funcionar xQ puede que la otra pagina tenga cierta reestriccion para que no se la utilice fuera de su dominio -->
+    <!-- <iframe src="http://youtube.com" frameborder="0"></iframe> -->
+    
+    <br>
+    <iframe src="assets/documentos/Clase 3 de SolidWorks Parte B.pdf" frameborder="0"></iframe>
+    <br>
+    <!--Ciertas paginas ya te dan el codigo del iframe para que puedas agregarlo a tu citio web, es el caso de las ubicaciones de google maps-->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125522217.92441107!2d-118.4711418!3d16.23924039080415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb39055993f7%3A0xbc891fc1b60f587a!2sNaughty%20Dog%20Inc!5e0!3m2!1sen!2sar!4v1636748462223!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ynTI7ibmHk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <!--Hay algunas plataformas que permiten tener el modelado 3D o incluso listas de reproduccion etc. El problema de esto es lo que lleva cargar todo esto dentro de la pagina puesto que estoy cargando muchas cargas dentro del documento. Se recomienda no utilizar mas de una por documento -->
+
+
+    <!------------------------------------------------------------->
+
+    <hr>
+    <h2>formularios</h2>    
+
+    <h3>Elementos de formularios</h3>
+
+    <input type="text"> <!--Elemento de linea-->
+    <br>
+    <input type="checkbox">
+    <br>
+    <input type="radio">
+    <br>
+    <input type="date"> <!--No esta soportado en todos los navegadores-->
+    <br>
+    <input type="color">
+    <br>
+    <input type="button" value="Boton pa tocar">
+    <br>
+    <input type="submit"> <!--Boton para enviar-->
+    <br>
+    <input type="reset"> <!--Limpia los valores de los formularios ¿¡Quien goma usa este boton!?'-->
+    <br>    
+    <input type="file"> <!--Permite agarrar archivo de mis discos locales-->
+    <br>
+    <input type="file" multiple> <!--Puedo cargar mas de un archivo-->
+    <br>
+    <input type="hidden" name="NombreDeLaVariable" value="ValorDeLaVariable"> <!--Cuando el formulario se envide, como programador puedo mandar algun valor escondido-->
+    <br>
+    <input type="email"> <!--Al estar en un telefono este nos marcara dentro del teclado el @ y el .com para poder escribir con mas facilidad-->
+    <br>
+    <input type="number"> <!--Este me cambia el teclado para los dispositivos tactiles, para que salga el teclado de numeros-->
+    <br>    
+    <input type="tel"><!--Este me cambia el teclado para los dispositivos tactiles, para que salga el teclado de numeros-->
+    <br>
+    <input type="password"> <!--Oculta lo escrito-->
+    <br>
+    <input type="search"> <!--Tiene una cruz para eliminar la busqueda escrita-->
+    <br>
+    <textarea name="Comentario" id="01" cols="30" rows="10">NO ESCRIBIR NADA ACA PORQUE APARECE EN LA CAJA DE TEXTO</textarea> <!--caja de texto grande para enviar un comentario, ademas de esto incluye su cols = La cantidad de caracteres por renglon, rows = la cantidad de renglones disponibles antes de que aparezca una barra de scroll-->
+    <br>
+    <select name="Choose your fighter" id="01">
+        <option value="01">Batman</option>
+        <option value="02">Robin</option>
+        <option value="03">JesusChrist</option>
+    </select>
+    <br>
+    <select name="Choose your fighter" id="02" multiple> <!--para seleccionar mutiple uso ctrl-->
+        <option value="04">Batman</option>
+        <option value="05">Robin</option>
+        <option value="06">JesusChrist</option>
+    </select>
+
+    <br>
+    <!------------------------------------------------------>
+
+    <hr>
+    <h2>Datos especificos de formularios</h2>
+    
+    <br>
+    <!--En algunos lugares aparece este tipo de texto, readonly no permite escribir y disable da el aspecto de "apagado"-->
+    <input type="Text" value="ACA NO SE PUEDE ESCRIBIR Y APARECE EN GRISACEO" readonly disabled> 
+    <br>
+    <!--En algunos otros lugares aparece un tipo de texto "disable" el cual nos indica que debemos hacer sobre la caja de texto y una vez que comenzamos a escribir este se borra-->
+    <p>Nombre</p>
+    <input type="Text" placeholder="Ingrese su nombre">
+    <br>
+
+    <h3>Ejemplos de formularios</h3>
+    <h4>Formulario de login</h4>
+
+    <!--
+    Por consola va a salir algo como esto cuando le de submit al formulario, eso, a traves de JS puedo enviarlo a la Pag seleccionada
+    http://jonmircha.com/?Name=LOQUETIPEO&Password=LOQUETIPEO
+    -->
+    <form action="http://jonmircha.com/" method="GET" autocomplete="off" ><!--No autocompleta el formulario con datos anteriores-->
+        <!--Cuando yo termine el formulario y se quera mandar luego de darle submit, este puede ser enviado a travez del metodo GET que ya esta puesto por defecto dentro de from, o puede ser enviado por medio del metodo POST. Se explica en los videos de JS-->
+        <!--GET manda los datos en la url, POST manda los datos "escondidos" en las cabeceras de la pagina-->
+        <label for="id_name">Usuario</label> <!--Vinculo el label con el input del nombre-->
+        <input type="text" name="Name"  id="id_name" placeholder="Escribe tu usuario" required> <!--Sin el required no puedo dar submit-->
+
+        <br>
+
+        <label for="id_password">Contraseña</label> <!--Vinculo el label con el input de la contraseña-->
+        <input type="password" name="Password" id="id_password" placeholder="Escribe tu contraseña" required> <!--Sin el required no puedo dar submit-->
+
+        <br>
+
+        <!--Cuando yo le de enviar se va a recargar la pagina, y eso no es lo deseado -->
+        <input type="submit">
+        <br>
+        <input type="reset">
+        <br>
+
+    <!--
+        Para este formulario estaria bueno saber sobre expresiones regulares, xQ podria agregar la funcion pattern. La cual me permite agregar expresiones regulares en forma de "orden" dentro del input. Una de esas ordenes en forma regular podria ser una que me permita pedirle al usuario que solo igrese caracteres mayus y minus, nada de caracteres o numeros, si estos se intentan agregar no seran tomados.
+        Se veria asi en expresion regular. pattern="^[A-Za-z]+$"
+        Todo esto esta dentro del curso de JS de jonmircha (Hay clases especiales de expresiones regulares)
+    -->
+    </form>
+
+
+    <!------------------------------------------------------>
+
+    <hr>
+    <h2>Select, checkbox y radio buttons.</h2>
+
+    <!--Los formularios se suelen manejar con JS asi que el action no hace falta-->
+    <form>
+        <p>Elige tu idioma</p>
+        <select name="idioma" required>
+            <option value="" selected>Elige una opcion</option> <!--Al no tener un value este no puede ser enviado si tengo un requiered en el select--> <!--Si a esta le agreso "selected" esta es la que se ve por defecto (puedo usarlo en cualquiera), obvio solo puede estar en 1-->
+            <option value="EN">Ingles</option> <!--El usuario ve "ingres" pero si lo selecciono lo que sale es "EN" como dato-->
+            <option value="IT">Italiano</option> 
+            <option value="PR">Portuges</option>
+            <option value="ES">Español</option>
+            <option value="RS">Ruso</option>
+        </select>
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <br>
+
+    <form>
+        <p>Por favor seleccione su lenguaje de programacion preferido</p>
+        <!--Si utilizo radio buttons y elijo uno en particular este sera enviado como "on" junto con su Id-->
+        <label for="JavaScript">JavaScript</label>
+        <input type="radio" name="LenguajeDeProg" id="JavaScript" required> <!--Con requiered se necesita poner minimo 1 opcion para enviar-->
+        <br>
+        <label for="C#">C#</label>
+        <input type="radio" name="LenguajeDeProg" id="C#" required checked> <!--Si le doy checked se marca por defecto-->
+        <br>
+        <label for="Phyton">Phyton</label>
+        <input type="radio" name="LenguajeDeProg" id="Python" required>
+        <br>
+        <input type="submit">
+        <br>
+        <input type="reset">
+        <br>
+    </form>
+
+    <br>
+    <form>
+        <p>Por favor selecciona tus Intereses</p>
+
+        <!--utilizar dentro del checkbox el required no tiene mucho sentido, xQ no nos dejara avanzar mientras no tengamos las opciones marcadas-->
+
+        <label> <!--Al poner el input dentro del label no hace falta un for para el label ni un id para el input-->
+            <input type="checkbox" name="Intereses" value="Deportes">
+            Deportes
+        </label>
+
+        <label>
+            <input type="checkbox" name="Intereses" value="Programacion">
+            Programacion
+        </label>
+
+        <label>
+            <input type="checkbox" name="Intereses" value="Salto con rocha desde la punta del everest">
+            Salto con rocha desde la punta del everest
+        </label>
+
+        <label>
+            <input type="checkbox" name="Intereses" value="Politica">
+            Politica
+        </label>
+
+        <br>
+        <label>
+            <!--ACA SI PODRIA TENER SENTIDO EL REQUIRED-->
+            <input type="checkbox" name="Terminos_y_condiciones" value="Terminos y condiciones" required> 
+            Acepto los terminos y condiciones
+        </label>
+        <br>
+        <input type="submit">
+        <input type="reset">
+        <br>
+
+    </form>
+
+    <!------------------------------------>
+    <hr>
+    <h2>Formulario de contacto</h2>
+
+    <form action="https://formsubmit.co/facuaguerog@gmail.com" method="POST"> <!--Para eque esto funcione necesita que esto sea en un servidor en red, con liveserver eso se puede hacer (Es el entorno en el que trabaje hasta ahora)-->
+        <!--Dentro del title se agrega el tipo de error que podria salir si rompo el patter-->
+        <input type="text" name="Nombre" placeholder="Escribe tu nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="El nombre solo acepta letras y espacios en blanco" required> <!--El patter es una expresion regular-->
+        <br>
+        <input type="email" name="email" placeholder="Escribe tu email " pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" title="Formato de correo invalido" required>
+        <br>
+        <textarea name="Comentarios"cols="30" rows="10" required></textarea> <!--Este no acepta el pattern-->
+        <br>
+        <input type="submit">
+        <br>
+        <input type="reset">
+    </form>
+
+
+        <!------------------------------------>
+        <hr>
+        <!--Data attribute es una forma propia de escribir atributos para las etiquetas, para que? NI PUTA IDEA-->
+        <h2>Data attributes</h2>
+        <ul>
+            <li data-id="1" data-name="Spring">Primavera</li> 
+            <li data-id="2" data-name="Summer">Verano</li>
+            <li data-id="3"data-name="Autumn">Otoño</li>
+            <li data-id="4"data-name="Winter">Invierno</li>
+        </ul>
+
+        <!--No entiendo muy bien como funciona pero no es nada del otro mundo-->
+
+        <!--
+        Una explicacion de google
+
+        Para tener contexto, explicaré una parte de la historia de HTML. En épocas pre-HTML5 era muy complicado guardar información asociada a diferentes elementos del DOM. Uno se veía obligado a guardar la información a atributos como el class o id, y como estos no estaban y actualmente siguen sin ser diseñados para guardar información, se introdujeron los Custom Data Attributes en la llegada de HTML5.
+
+        En palabras sencillas, los CDA son todos los atributos de un elemento cuyo nombre comienza con data-*, entonces podríamos declarar simples elementos HTML como objetos programáticos llenos de información.
+        -->
+    <!-------------------------------------->
+    <hr>
+    <h2>Metaetiquetas para SEO</h2> <!--Son etiquetas para un mejor posicionamiento en los motores de busqueda-->
+
+    <!--ESTA CLASE ESTA POR COMPLETO EN EL HEAD CLASE 43-->
+
+    <!--Estas metaetiquetas de posicionamiento ayudan a que de alguna manera el posicionamiento de nuestra pagina en internet mejore. Como? Imaginemos que tenemos descuentos en ciertos productos y por lo tanto hay distintos links para llegar al mismo producto. Entonces con la metaetiqueta decidimos cual es el "origen" el verdadero producto, esto hace que mas gente entre a ese link y mejor se posiciona en internet-->
+
+    <!--
+    Pagina canonica
+    <link rel="canonical" href="http://tudominio.com/la-url-canonica">
+
+    Agrego icono en el nombre de la pagina
+    <link rel="icon" href="assets/Imagenes/GINGERDOGELECTRO.png"> 
+
+    Si en apple o android intento guardar la pag en pantalla principal esta se guarda con el icono
+    <link rel="apple-touch-icon" href="assets/Imagenes/GINGERDOGELECTRO.png">
+
+    Cambio color de la barra de arriba en buscadores moviles (Chrome)
+    <meta name="theme-color" content="#FF6600"> 
+
+    -->
+
+    <!--------------------------------------------------->
+
+    <hr>
+    <h2>Metaetiquetas para redes sociales</h2> 
+
+    <!--Las meta etiquetas de redes sociales son las etiquetas que aparecen por ejemplo cuando comparto un video de youtube por whatsapp y sale el icono del video mas una pequeña descripcion etc, etc. Esas etiquetas son las que salen cuando comparto tambien cosas sobre otras paginas que tengan esto configurado. En una pagina como la mia tambien se puede desarrollar-->
+
+    <!--ESTA CLASE ESTA POR COMPLETO EN EL HEAD CLASE 44-->
+
+    <!--Hay paginas que al compartir mi link forman por completo la tarjeta como es el caso de facebook que usan un open source para esta clase de cosas, pero otras webs como twitter piden un codigo especial. Cada una de las redes sociales tiene un codigo asociado, hay que buscar en google el nombre de la red social y poner "developer" al final para buscar en la documentacion y ver que onda, como se hace exactamente con esa red social para que se genere la tarjeta al compartir nuestra web desde la misma-->
+
+    <!--------------------------------------------------->
+
+    <hr>
+    <h2>Accesibilidad web</h2> 
+
+    <!--La accesibilidad web es para las personas con diferentes capacidades, es algo tan profundo que podria darse un curso completo de esto, pero con el corto tiempo de este curso es importante dejar en claro como funciona lo siguiente-->
+
+    <!--role (lee el rol para la persona que lo necesite)-->
+    <h3 role="title">Las estaciones del año</h3>
+
+    <ul role="list">
+        <!--Si deseo que la pagina se pueda leer por un bot el tabindex es el que guia al bot para que lea en orden-->
+        <li tabindex="1"role="listitem">Primavera</li>
+        <li tabindex="2"role="listitem">Verano</li>
+        <li tabindex="3"role="listitem">Otoño</li>
+        <li tabindex="4"role="listitem">Invierno</li>
+    </ul>
+    <!--arialabel le da indicaciones sobre las descripciones al bot para que este pueda leer-->
+    <a href="#link" aria-label="Esto lee una descripcion para la persona que lo necesite Ej: en este enlase encontraras mas accesibilidad sobre las estaciones del año" target="_blank">Mas informacion...</a>
+
+    <!--
+    https://web.dev/accessible/
+    https://html5accessibility.com/
+    https://www.w3.org/blog/news/archives/8889
+    https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA
+    -->
+
+</body>
+</html>

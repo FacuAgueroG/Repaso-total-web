@@ -1,0 +1,677 @@
+Bibliografia
+
+Permite escribir codigo de forma rapida con comandos escritos en el editor
+· Emmet.io 
+
+Shortcutes para visual studio
+· visual studio code cheat sheet windows
+
+Se encargan de la documentacion de HTML, CSS y Javascript. 
+· W3C.org (Un poco mas tedioso de leer)
+· html.spec.whatwg.org (Mas sencilla y mas util)
+· developer.mozilla.org/es/docs/web/HTML (De mozilla, super util)
+· htmlreference.io
+
+
+Tabla periodica de los elementos html es una tabla que permite encontrar las etiquetas que son utilizables dentro de html
+·Tabla periodica de los elementos html
+
+
+__________________________________
+
+Para comenzar a trabajar lo que se hace es crear un archivo index, ese sera nuestro nucleo, nuestro main, desde ahi se comienza a trabajar al rededor de ese punto. El archivo index obvio al trabajar con hmtl, necesita una extension del mismo tipo
+
+index.html
+
+__________________________________
+
+Historia de HTML
+
+HTML es un lenguaje de marcado, no un lenguaje de programacion
+
+HTML es algo que los navegadores ya van a entender cuando uno intente ejecutar el codigo desde visual studio, por lo tanto no hace falta tener ni este ni tampoco hace falta tener instalado CSS.
+
+HTML es un lenguaje de marcado, HyperText markup lenguage. 
+¿Que son las marcas? Son los tipos de etiquetas que existen.
+
+__________________________________
+
+CLASE 07
+
+
+Hay etiquetas que abre y cierran en la misma linea de codigo
+
+ej
+<meta charset="UTF-8">
+
+y hay otras que cierran en una otro lugar separado del inicio 
+
+ej
+<head>
+</head>
+
+
+_____
+
+¿Que hay dentro de las etiquetas? hay atributos como por ejemplo charset dentro de la etiqueta <meta charset="UTF-8"> cada uno de estos atributos funciona para algo en particular.
+
+Despues se explica para que sirven cada uno de ellos.
+
+
+
+
+_____
+
+<p></p> 
+<p>ES PARA LOS PARRAFOS</p> 
+
+_____
+
+El documento html esta compuesto de dos partes, la etiqueta, cabeza head etc.
+
+La etiqueta <head></meta> es para enlazar otro tipo de archivos, imagenes, iconos, titulos y descripciones, etc. 
+
+en <body></body>
+
+<body>ENCUENTRO EL CUERPO DE LA PAGINA Y TODO LO QUE NECESITO AGREGAR A LA PAGINA</body>
+
+__________________________________
+
+
+CLASE 08
+
+Comentarios
+
+El comentario es para escribir notas que no quiero que el navegador interprete. 
+
+para que el texto no se viera necesito 
+
+<!--ACA VA EL COMENTARIO PERRO-->
+
+asi se escriben las anotaciones en VS CODE
+
+<!--TAMBIEN PUEDO DEJAR COMENTARIOS EN VARIAS LINEAS
+DE ESTA MANERA
+SE PODRIA
+HACER-->
+__________________________________
+
+CLASE 09
+
+la etiqueta <html> es la que se encarga de contener tanto la cabeza como el cuerpo del archivo .html
+
+lo que aparece luego de <html> dentro de nuestro codigo es esto
+
+<html lang="en"> esto lo que esta diciendo es en que idioma se encuentra el codigo en el que estamos escribiendo dentro del archivo .html
+
+ahora, bien, si en mi caso quiero escribir codigo para una pagina de argentina lo que pongo es el idioma en el que esta escrito con su abreviacion correspondiente. 
+
+<html lang="es"> PERO, que pasa si lo que escribo utiliza modismos argentinos y ademas de eso esta escrita justamente para el publico argentino en particular?
+
+utilizo
+
+<html lang="es-AR">
+
+
+__________________________________
+
+
+CLASE 10
+
+<!DOCTYPE html>
+
+Esto tiene que ver con la historia de HTML, con anterioridad lo que ocurria era que habia muchos tipos de documentos de html, y cada uno de los programadores de estos tenia que espeficicar que carajo estaba haciendo. Entonces, para evitar que esto pasara con la ultima version de HTML, osea, HTML 5 se creo el DOCTYPE que decia "ESTO ES HTML TODO EN UNO" basicamente... ahora cuando se epieza el documento uno justamente especifica que el documento que esta trabajando uno es un HTML 5
+
+__________________________________
+
+CLASE 11
+
+<meta charset="UTF-8">
+
+Esto es el juego de caracteres con el que esta referido el codigo y su idioma, osea... UTF-8 de alguna manera es un estandar. 
+
+EJ el codigo esta escrito en ingles, es el lenguaje MAS COMUN y el ESTANDAR. Entonces, para no andar rompiendo las bolas con caracteres que no existen dentro del lenguaje ingles lo que se hace es poner UTF-8 esto me carga todos los tipos de caracteres del mundo para poder trabajar.
+
+En la antiguedad esto no ocurria y habia que cargar que tipo de caracteres queria utilizar. 
+
+OJO, TENER EN CUENTA QUE: hay navegadores viejos, por ejemplo explorer, que no cargan bien estas paginas de la forma correcta puesto que no tienen las actualizaciones de lo que es UTF-8
+
+de hecho en los nuevos navegadores (Actualizados) puedo borrar esa linea "<meta charset="UTF-8"> y esto funciona de todas maneras, xQ lo tienen cargado. dentro del mismo navegador. 
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+Es una etiqueta de microsoft, esta etiqueta lo que hace es intentar volver compatible nuestro codigo con Internet explorer y edge, ambos exploradores de MICROSFOT. esto lo que hace es trabajar por si solo, y no cambia mi codigo para nada. 
+
+__________________________________
+
+Clase 12
+
+<name ="viewport" content ="width=device-width, initial-scale=1.0">
+
+viewport es donde se renderiza el contenido del html. 
+
+Imaginate que voy al navegador web, tengo pestañas, direcciones, marcadores etc.
+
+El area donde se visualiza el contenido, osea debajo de todo lo anterior mencionado. 
+
+esta etiqueta tiene mas atributos detras y tienen que ver con lo siguiente
+
+content ="width=device-width, initial-scale=1.0" 
+
+width=device-width
+esto quiere decir que, el archo del contenido se tiene que adaptar al ancho de la ventana que tengo abierta. 
+
+y el initial scale=1.0 
+muestra el contenido en su tamaño 1.0=100% de forma predeterminada. 
+
+si lo tuviera en 2.0 tendria obviamente el 200%
+
+_________________________________
+
+Clase 13
+
+Titulo
+
+El titulo tiene que ser referente a lo que se va a tratar la pagina
+
+Es el titulo que se va a encontrar el usuario en la pagina que esta queriendo visitar. 
+
+despues del titulo se utiliza la descripcion en otro meta
+
+Descripcion
+
+<meta name="description" content="QUE NO PASE LOS 165 CARACTERES">
+
+(La descripcion no se puede ver dentro de la pagina, solo en el motor de busqueda al buscarla en google)
+
+es para decirle a la persona que clase de contenido se va a encontrar en el html. 
+
+Es importante que la descripcion no tenga mas de 50-60 caracteres porque asi hay mejor posicionamiento entre las paginas de google. Esto lo vuelve a uno mejor programador web
+
+esta descripcion es la que aparece justo debajo del nombre de una pagina cuando la busco en google y aparecen todos los resultados. 
+
+Subtitulos y subdescripciones
+
+Dentro de algunos ejemplos, al buscar en google encontramos que no solo podemos acceder al sitio oficial si no que algunos hipervinculos de la pagina principal que nos llevan a otras pestañas de la misma pagina pueden salir dentro del motor de busqueda. Es necesario ponerle a estos subtitulos y subdescripciones para cada uno de ellos. 
+
+___________________________________________
+
+Clase 14
+
+Nunca dejar suelto parrafos o texto dentro del body. siempre tiene que estar dentro de etiquetas. 
+
+APARTE
+
+Visitar periodic table of the elements, ahi voy a encontrar TODAS las etiquetas disponibles para HTML. De esta manera voy a poder tener una mejor referencia de todas las cosas que son posibles, ademas es necesario tener siempre abierto htmlreference para poder saber a que se refiere cada una de las etiquetas de la tabla. 
+
+___________________________________________
+Clase 15
+
+Encabezados
+
+Sirven para titularizar el contenido. 
+
+De esta manera puedo elegir la importancia de cada uno de estos titulos. 
+
+El encabezado de N°1 es el mas importante. 
+
+_________________________________________
+
+Clase 16 Etiquetas de texto
+
+<p>PARA PARRAFOS</p>
+
+<p>Lorem</p> <!--Tira un parrafo aleatorio-->
+
+<p>Palabras en <b>Negrita</b></p> <!--Con las B creo negrita-->
+
+<p><i>Italica</i></p>
+
+<p><u>Subrayado</u></p>
+
+<p>e=mc<sup>2</sup></p>   <!--Numero chiquito como si estuviera elevado-->
+
+<p>H<sub>2</sub>O</p> <!-- numero chiquito como si fuera el indice de hidrogeno en h2o-->
+
+<p><mark>marcatexto</mark></p> <!--Resalta como si fuera resaltador amarillo-->
+
+<p><small>Letras pequeñas</small></p>
+
+_________________________________________
+
+Clase 17 Mas Etiquetas de texto 
+
+
+<strong>Este texto es imporatante</strong>  <!--Negrita pero IMPORTANTE-->
+<em>Este texto tiene enfasis</em>  <!--italica importante-->
+
+    <!--Esto me sirve para agregar un tiempo para que la computadora pueda 
+        entenderlo, tiene un atributo y toda la bola-->
+     <p>El partido empieza las<time datetime="2017-04-29T19:00"> 19:00hrs</p></time>
+______________________________________
+
+Clase 18 etiquetas de salto
+
+<br> salto de linea
+
+<hr> <!--Suelta una linea divisora para mejorar a la vista como se ven las divisiones de los temas. -->
+
+
+______________________________________
+
+19 Formateos o preformateos
+
+Esto sirve para poder escribir codigo dentro del html de forma tal que este respete las identaciones que necesito en la renderizacion. Por otra parte ademas es necesario marcar que esto es codigo con otro tipo de etiqueta, la etiquete <code></code>
+
+_________________________________________
+
+Clase 20 Etiquetas semanticas estructurales
+
+Permiten definir zonas de maquetacion. Esto nos permite delimitar las diferentes partes de nuestra pagina y todo su contenido. 
+
+Antes de que se creara esta estructura con las etiquetas semanticas lo que ocurria es que se utilizaba la etiqueta <div></div> pero esta es una etiqueta que no tiene division semantica. 
+
+Entonces a partir de 2009 se dejo de utilizar las div para esto. 
+
+Ahi nacen las nuevas etiquetas 
+
+<header> header - cabecera de un sitio web o de una seccion</header>
+
+<main>
+	<nav> </nav>
+
+
+	<!--Mucha gente dice que el section va dentro del 
+	article, otros dicen que es al reves, DA IGUAL-->
+
+	<section></section>
+
+	<article> </article>
+
+	<aside>
+</main>
+
+<footer></footer>
+
+
+<adrees>adress - contacto con una pagina o un cliente</adrees>
+
+
+ahora bien, porque este estructurado de esta manera no quiere decir que sea la unica forma [MIRAR IMAGEN DE BUSQUEDA DE GOOGLE]
+
+https://www.google.com/search?q=estructura+semantica+html5&client=opera-gx&hs=9Nt&sxsrf=AOaemvIUWc51x3kvpABpGqdUI9dnlhV_qQ:1636558404095&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiF5dGSj470AhV_FbkGHXWVD8IQ_AUoAXoECAEQAw&biw=919&bih=936&dpr=1#imgrc=LYN1oKEvEIzogM
+
+
+___________________________________
+
+Clase 21
+
+Analisis de distintas paginas web 
+
+__________________________________
+
+Clase 22 etiquetas de bloque vs etiquetas de linea
+
+[Se ve mejor dentro de CSS, pero es necesario entender lo siguiente]
+
+Dentro de las etiquetas html hay etiquetas que trabajan en linea y otras que lo hacen en bloque
+
+La etiqueta de bloque por excelencia es la <div></div> 
+La etiqueta de linea por excelencia es la etiqueta <span></span>
+
+Ninguna de estas dos etiquetas tiene contenido semantico, son dos cajas basicamente. 
+
+La etiqueta de bloque es aquella que genera saltos de linea con sus etiquetas hermanas. La etiuqueta de bloque utiliza todo el ancho disponible. Ej si yo quiero marcar o pintar con algo de CSS la etiqueta de bloque <div> pinta de izquierda a derecha por mas que no haya nada de contenido en TODA su extencion 
+
+La etiqueta de linea solo ocupa el espacio necesario para su contenido
+
+___________________________________
+
+Clase 23 Estilos CSS en HTML
+
+Comienzo a crear estilos con CSS y le doy algunos retoques a mi documento html, ademas creo un nuevo documento al que llamo "estilos.css" y muestro como se linkea todo esto
+
+El link esta dentro del head, osea que se encuentra en la parte superior del documento
+
+<link rel="stylesheet" href="">
+
+link rel es el tipo de documento con el que me estoy enlasando.
+href es el documento y la ruta con la que me quiero enlasar
+
+VER EL EJEMPLO QUE APLIQUE DENTRO DEL DOCUMENTO
+
+___________________________________
+
+Clase 24 Scripts en HTML
+
+Esto se trabaja tambien en un archivo aparte y para enlasarlo uso esta otra instruccion 
+
+
+     <script src="assets/codigo.js"></script>
+
+debe ir cerca del cierre del body y asi voy a comprender que es lo que estoy intentando linkear. 
+
+ademas, es necesario crear otro archivo, este en el que voy a cargar todo mi script debe ser de tipo JS
+
+___________________________________
+
+Clase 25 Agregar imagenes
+
+Dentro de esta seccion lo que hice fue agregar una imagen con la instruccion 
+
+
+    <!--Se permite jgp, png, gif y svg (svg es para VECTORES)-->
+    <img src= "assets/Imagenes/TP3D (2).png" alt="Imagen de la pieza a realizar para el TPD-S3">
+
+agrege la ruta y la descripcion de la imagen (NUNCA OLVIDAR LA DESCRIPCION DE LA IMAGEN NO SER RANCIO. )
+
+_______________________________________
+
+Clase 26 Vectores
+
+Recordar que el tipo de imagen (vectorial) SVG no esta comprendida dentro del codigo como una imagen como tal, si no que esta es traducida a un codigo de marcado asi como html en el cual se dibuja. Osea que... no es posible previsualizarla en html, si no directamente en el renderizado en el explorador. 
+
+ilustrator o phothoshop the dejan guardar las imagenes en svg, las cuales no son visibles. Luego cargo esa "imagen/codigo" como cualquier otra imagen con
+
+<img src="AGARRO LA RUTA DE LA IMAGEN" alt="Descripcion de la imagen">
+
+________________________________________
+
+
+Clase 27 Figuras
+
+La etiqueta de las figuras me sirve para trabajar especificamente con una imagen y darle algunos moldeados a lo que se refiere su figura. El caso mas significativo es el de encerrar la imagen dentro de un figure y luego agregarle una etiqueta de figcaption la cual le va a dar una descripcion al pie de la imagen. 
+
+     <figure>
+         <img src="Ruta imagen" alt="Descripcion imagen">
+         <figcaption>Descripcion al pie de imagen</figcaption>
+     </figure>
+
+__________________________________________
+
+Clase 28 Listas ordenadas
+
+Dentro de html existen varios tipos de listas y una de ellas son las listas ordenadas y otra las desordenadas. 
+
+las listas se crean de la siguiente manera
+
+<!--Podria ser conveniente agregarle un titulo-->
+
+<h3>Las estaciones del año</h3>
+
+<ol>
+	<li>primavera</li>
+	<li>verano</li>
+	<li>otoño</li>
+	<li>invierno</li>
+</ol>
+
+<!--Luego de esto es posible hacer cambios dentro de la lista, los cuales estan especificados dentro del index.html-->
+
+__________________________________________
+
+Clase 29 Listas ordenadas
+
+Son listas sin ningun orden en particular
+
+
+    <ul type="bullet">
+        <li>Estudiar para downpour</li>
+        <li>Hacer su preproduccion</li>
+        <li>Hacer un esqueleto</li>
+        <li>Limpiarlo</li>
+        <li>Enviarlo a MPVP</li>
+    </ul>
+
+_______________________________________________
+
+Clase 30 Las listas de definicion
+
+las listas de definicion estan para poder hacer cosas muy particulares como por ejemplo crear una lista de glosario.
+
+En donde tengo el nombre de lo que quiero definir y la definicion con una indentacion
+
+<dl>
+	<dt>NOMBRE DE LO QUE QUIERO DEFINIR</dt>
+	<dd>Definicion de html</dt>
+
+	<!--Puedo poner muchos elementos mas-->
+</dl>
+
+
+_______________________________________________
+
+Clase 31 Tablas 
+
+Las tablas son justamente como las que usamos en excel, solo que aqui no estan delimitadas por ningun tipo de linea. Entonces nosotros decidimos como utilizar los espacios. 
+
+Es un tema un poco enrevesado para ver directamente sobre el bloc de notas. 
+
+pero es importante saber que si bien se puede hacer una tabla simple sin un cuerpo predefinido en donde solo suelte datos y estos se mantengan en cierto orden como la primer tabla resuelta en el index.html. Tambien es posible hacer tablas mas estructuradas que contengan un cuerpo y un footer
+
+    <table>
+
+        <thead> <!--Cabecera en negrita-->
+            <tr>
+                <th>NOMBRE DE TABLA</th> 
+            </tr>
+
+            <tr>
+                <th>NOMBRE DE COLUMNA</th>
+                <th>NOMBRE DE COLUMNA</th>
+                <th>NOMBRE DE COLUMNA</th>    
+            </tr>
+        </thead>
+
+        
+        <tbody> <!--Cuerpo con los datos-->
+            <tr>
+                <td></td>
+                <td></td>
+                <td>/td>
+            </tr>
+    
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+    
+            <tr>
+                <td>/td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
+        <tfoot> <!--Anotacion por debajo de la tabla-->
+            <th></th>
+        </tfoot>
+
+    </table>
+
+_________________________________
+
+Clase 32 enlases
+
+Los enlases a otras paginas son sencillos, y como regla general en esta clase se establece que para navegar entre mi propia pagina web necesito que los links se mantengan en una misma pestaña, mientras que si salgo a un enlase externo utilizo una pestaña en blanco
+
+    <a href="PAGINA PROPIA">PALABRAS PARA CLIQUEAR</a>
+
+	<!--
+	target="_blank"  es una pagina en blanco separada
+	rel="nofollow" le avisa al buscador que la pagina no tiene 	relacion con la mia y que tenga cuidado
+	-->
+
+    <a href="PAGINA EXTERNA" target="_blank" rel="nofollow">PALABRAS PARA CLIQUEAR</a>
+
+_________________________________________
+
+Clase 33 Enlases internos 
+
+Los enlases internos son enlases dentro de la misma pagina que van de un lado a otro dando saltos
+
+[Para que los saltos no queden tran bruscos modifique algunas cosas con CSS para que al moverse de punta a punta no ocurra de forma tan brusca]
+
+________________________________________
+
+Clase 34 Enlases y protocolos especiales
+
+los enlases especiales son aquellos que pueden abrir alguna aplicacion instalada o redirigirnos a alguna pagina y actuar directamente sobre ella si esta tiene alguna automatizacion a travez de una url en la que puedo cliquear
+
+es el caso de whatsapp en la cual a travez de un link puedo entrar directamente a la App y ademas de eso ya tener un mensaje preescrito para algun numero en particular
+
+Si estuviera en el movil podria utilizar tambien gmail y otras aplicaciones del estilo 
+
+algunos ejemplos son
+
+<a href="mailto:facuaguerog@gmail.com">Enlase para enviar un mail</a>
+
+<br>
+
+
+<a href="http://api.whatsapp.com/send?phone=5491162427106&text=hola ramiro cara de culo" target="_blank">Enviar mensaje por whatsapp</a>
+
+____________________________________________
+
+Clase 35 Elementos interactivos
+
+Uno de los elementos interavos mas comunes es el boton el cual puede desplegar diversas funciones
+
+
+boton que despliega alerta
+
+<button onclick="alert('hola, esto es una alerta')">Este es un boton</button>
+
+o
+
+acordeon que puede desplegar distintas opciones o en este caso articulos
+
+    <details>
+        <summary>Titulo del acordeon</summary>
+        <article>
+            <h3>Contenido del acordeon</h3>
+            <img src="assets/Imagenes/DarkSouls1.jpg" alt="Knight in the twilight">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus corrupti, blanditiis cum, modi incidunt cumque ab alias aperiam quis earum odio numquam at sint nulla excepturi delectus! Fugit, inventore vitae.</p>
+        </article>
+    </details>
+
+__________________________________________________
+
+Clase 36 Audio y video
+
+Desde html 5 hay soporte para audio y video, antes solo se podia hacer a traves de flash
+
+El audio y video se cargan de una manera mas que sencilla, pero a estos los puedo modificar de muchas maneras algunas de ellas estan explayadas en el codigo
+
+la forma de cargar el audio y el video son las siguientes: 
+
+<audio src="assets/audio/Pista acto 1(V0.3 Dellamer).mp3" controls preload></audio>></audio>
+
+<video src="assets/video/2021-11-06 10-53-00.mkv" controls preload poster="assets/Imagenes/bat-svgrepo-com.svg"></video>
+
+
+______________________________________________
+
+Clase 37 iframes
+
+
+Sirve para cargar partes de otra pagina dentro de la nuestra, asi como puede ser un documento html colgado en la red etc. Pero ojo con esto, puede llegar a tener problemas en el momento de la carga dentro de nuestra pagina
+
+En el ejercicio cargo la segunda pagina .html que habia creado, todo dentro de la primera
+
+asi como puedo cargar mis otros documentos .hmtl puedo cargar modelos 3d de otras paginas que permitan el iframe, video de yt, llistas de reproduccion de sopotify etc. Es una etiqueta con mucha portencia pero que tiene que ser utilizada con mucho cuidado
+
+Tener en cuenta que se habla de esto como que el maximo a cargar dentro de una misma pagina es de UNA PAGINA ifrema por HTML
+
+documento local
+
+    <iframe src="assets/documentos/Clase 3 de SolidWorks Parte B.pdf" frameborder="0"></iframe>
+
+
+documento de web
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125522217.92441107!2d-118.4711418!3d16.23924039080415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb39055993f7%3A0xbc891fc1b60f587a!2sNaughty%20Dog%20Inc!5e0!3m2!1sen!2sar!4v1636748462223!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+____________________________
+
+Clase 38 elementos de formularios
+
+LO ENVIADO DENTRO DE LOS FORMULARIOS PUEDE SER VISTO A TRAVES DE LA URL EN CHROME NO EN OPERA, ESTE NO LO MUESTRA A TRAVES DE LA URL 
+
+Los elementos de formularios son muchos como para poner aca
+
+pero lo que si cabe destacar antes de pasar directamente al codigo es que
+
+Algunos de estos pueden ser guardados en un conjunto ordenado mientras que otros de estos no. El conjunto es "input" y el resto tiene un nombre particular para cada uno de los elementos como puede ser el caso de "select".
+
+Ademas cabe destacar que cada uno de estos elementos es de linea y no de bloque
+
+_____________________________
+
+Clase 39 Atributos de inputs y formularios
+
+En esta seccion se ve como se pueden agregar distintos tipos de atributos dentro de los inputs y como estos funcionan o interactuan entre si.
+
+Hay muchas cosas que remarcar dentro de esto, pero todo estan en el codigo, lo mas importante tiene que ver con que algunas de estas cosas se terminan de aprender dentro de JS, y otra es que muchas de estas cosas tienen MUCHAS formas de presentarse o de darles uso. Es importante entender que tipo de uso queremos darle para darle un correcto funcionamiento para el usuario. 
+
+_________________________________
+
+Clase 40 Select, radio y checkbox
+
+El radio funciona de forma tal que al marcar uno de ellos entre un par de opciones las otras se desmarcaran dejandonos ingresar solo una opcion valida
+
+mientras que el checkbox nos permite ingresar mas de una opcion a la vez.
+
+Para estos dos todas las otras acciones que se venian viendo dentro de los formularios tambien pueden ser utilizadas sin problema alguno
+
+_________________________________
+
+Clase 41 Formulario real
+
+Se hace un ejemplo de un formulario de contacto real en donde puedo mandar a traves de formsubmit junto con la extension live server un mail. 
+
+_______________________________
+
+Clase 42 Data atributes
+
+Los data atributes de alguna manera son etiquetas comunes con la palabra data por delante ej
+
+data-input donde de alguna manera esto es una "etiqueta personalizada" que va a cumplir la funcion que nosotros deseemos. COMO FUNCIONA? NO ENTENDI UNA CHOTA 
+
+___________________________
+
+Clase 43 Meta data
+
+En meta data se aprenden algunas cosas sobre el posicionamiento de la pagina en la web
+
+pagina canonica: sirve para que al tener mas de una pagina web con el mismo contenido una de estas se destaque como canonica haciendo que al buscarla en la web sea la primera que aparezca. Esto puede pasar si creamos links a esta pagina con descuentos o con promociones, etc. Declaramos una sola como "canonica"
+
+·cambiar el icono
+·Icono para moviles
+·cambiar color de la barra del navegador en moviles
+
+
+___________________________________
+
+Clase 44 Metaetiquetas para redes sociales
+
+<!--Las meta etiquetas de redes sociales son las etiquetas que aparecen por ejemplo cuando comparto un video de youtube por whatsapp y sale el icono del video mas una pequeña descripcion etc, etc. Esas etiquetas son las que salen cuando comparto tambien cosas sobre otras paginas que tengan esto configurado. En una pagina como la mia tambien se puede desarrollar-->
+
+<!--ESTA CLASE ESTA POR COMPLETO EN EL HEAD CLASE 44-->
+
+<!--Hay paginas que al compartir mi link forman por completo la tarjeta como es el caso de facebook que usan un open source para esta clase de cosas, pero otras webs como twitter piden un codigo especial. Cada una de las redes sociales tiene un codigo asociado, hay que buscar en google el nombre de la red social y poner "developer" al final para buscar en la documentacion y ver que onda, como se hace exactamente con esa red social para que se genere la tarjeta al compartir nuestra web desde la misma-->
+
+_____________________________
+
+
+Clase 45 Accesibilidad web
+
+La accesibilidad web es para las personas con diferentes capacidades, es algo tan profundo que podria darse un curso completo de esto, pero con el corto tiempo de este curso es importante dejar en claro como funciona lo siguiente
+
+https://web.dev/accessible/
+https://html5accessibility.com/
+https://www.w3.org/blog/news/archives/8889
+https://www.youtube.com/channel/UCU6ljj3m1fglIPjSjs2DpRA

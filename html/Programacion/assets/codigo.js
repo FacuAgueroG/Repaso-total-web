@@ -1,0 +1,1 @@
+console.log("Este es mi segundo console log dentro de JS para mi archivo html")
