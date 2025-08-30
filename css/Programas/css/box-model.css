@@ -1,0 +1,430 @@
+.bg-red
+{
+  background-color: red;
+}
+
+.bg-green
+{
+  background-color: green;
+}
+
+.bg-steelblue
+{
+  background-color: steelblue;
+}
+.bd-back
+{
+  border-color: black;
+}
+
+.bd-3px
+{
+  border-width: 3px;
+}
+
+.bd-solid
+{
+  border-style: solid;
+}
+
+.width-200px
+{
+  width: 200px;
+}
+
+.height-250px
+{
+  height: 250px;
+}
+
+/*------------------------------CLASE 24-------------------------MODELO DE CAJA*/
+
+h1
+{
+
+  border-width: 3px; /*Borde de 3px*/
+  border-style: solid; /*linea solida*/
+
+} /*Si yo inspecciono el border despues de esto me dice que el border es de "1"*/
+
+
+/*developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model
+Ahi es donde me explica mas o menos que es lo que es el modelo de caja. En pocas palabras es la forma en la que CSS interpreta cada una de las lineas de estilo que voy mandando para la lectura.
+
+Para css todo es una caja, cada una de las lineas que mando esto lo hago en un nuevo archivo llamado box-model.html
+*/
+
+/*La siguiente explicacion esta aca y en el CSS de esta clase y en el bloc de notas
+  Cuando yo voy al navegador y entra en en documento html de la clase 24 e inspecciono y con el clic de inspeccionar una parte del CSS le doy al titulo o a lo que sea y veo en la parte de estilos que es lo que pasa voy a ver una caja con varias cajas adentro, esto que es?
+
+  Cada linea que yo de de estilos para CSS es una caja
+
+  esa caja me da un margen distancia a otro elemento html (incluido la misma caja html osea... el borde de la pantalla) o la distancia a otro elemento html , un borde para el contenido, el relleno (paddin, distancia desde el contenido hasta el borde) y el mismo contenido(tamaño del contenido, tener en cuenta que esto puede referirse a texto de tipo bloque, entonces que pasa si lo abro desde un celu o extiendo la pantalla del navegador? EL TAMAÑO AUMENTA)
+
+  Entonces... el modelo de caja: es la fomra en la que CSS ve a los elementos HTML y ¿como los ve? como si fueran cajas con las siguientes propiedades::after
+  1-El contenido(content): el contenido(texto del elemento html)
+  2-El borde(border): lo que delimita cada uno de los elementos HTML
+  3-El relleno(padding): son las distancias internas(la distancia del borde al contenido)
+  4-El margen(margin): son las distancias externas(la distancia entre el elemento html y sus elementos hermanos o padres)
+
+  dentro del modelo de caja hay 4 lados y estos se aplican para el lado que va un reloj, osea, sentido horario:
+
+  1-top
+  2-right
+  3-botton
+  4-left
+
+
+
+*/
+
+
+/*------------------------------CLASE 25------------------------With y height*/
+
+h1/*Puedo aplicar nuevos cambios en el h1*/
+{
+  width: 400px;
+  height: 200px;
+}
+
+
+/*Aplicamos en el h1 anterior los cambios de el tamaño de la caja que formamos y esta la podemos ver visualmente ya que tiene bordes anteriormente aplicados de 3px*/
+
+/*------------------------------CLASE 26------------------------bordes*/
+
+
+/*El borde solo tiene tres propiedades*/
+h1
+{
+
+  /*Propidades shorthand*/
+  /*Hay que tener en cuenta que esto le cambia el color a los 4 bordes, entonces... ES POSIBLE ELEGIR EL COLOR DE CADA BORDE Y EL GROSOR Y EL TIPO DE BORDE... 
+  EJ
+  border-top-color: red;*/
+ border-color: green; 
+ border-width: 3px; /*puedo usar thin- 1px, medium-3px, thick-5px*/ /*Todo esto lo puedo corroborar en el navegador*/
+ border-style: solid; /* son los tipos de bordes Muchas opciones*/ /*CSSREFERENCE.IO para saber como son todos los tipos de estilos*/
+
+ /*
+  tambien, y si quiero cambiar todo de una puedo hacer lo siguiente
+  border: 10px solid blue;       Pero esto es un poco roñoso y rapido, es preferible ver cada una de estas propiedades por separado
+ */
+}
+
+/*------------------------------CLASE 27------------------------Pading y margin*/
+
+/*El concepto de padding y margin son casi el mismo. El padding(relleno) es la distancia interna desde la caja que contiene al elemento hasta el borde del contenido, mientras que el margen son las distancias externas hasta otro elemento html o las paredes del navegador */
+
+.caja-uno,
+.caja-dos
+{
+  background-color: chocolate;
+  border: medium solid orange;
+
+  /*Recordar que estos son shorthands, APLICA ESTO A TODO LOS LADOS*/
+  padding: 55px; /*Esto es el margen hasta el BORDE de la misma caja*/
+
+  margin:20px; /*Hago crecer las distancias entre elementos html y los costados del navegador*/
+
+  /*Hay otras formas para aplicar el margin y padding*/
+
+  /*se puede aplicar de 2valores=para lados verticales  (top,but) se puede aplicar de 2valores=para los lados horizontales(left,right)
+  padding: 20px 40px*/
+
+  padding: 15px 5px;
+
+  /*Se puede aplciar a 3 valores top, left-right, bottom*/
+
+  padding: 0px 15px 50px;
+  margin: 20px 15px 30px;
+
+  /*se puede aplicar a 4 valores por separado en sentido horario... top, right, bottom, left*/
+
+  /*
+  padding: 10px 20px 30px 40px
+  margin: 10px 20px 30px 40px
+  */
+
+  /*todo esto lo puedo ver de mejor manera en cssreference.io*/
+}
+
+
+
+/*------------------------------CLASE 28------------------------Cajas de linea vs cajas de bloque*/
+
+/*
+  Caja de linea
+  ·Ocupan el espacio necesario para mostrar su contenido
+  ·no tienen dimensiones modificables (ancho y alto)
+  ·permiten a otros elementos a su lado
+  ·padding y margin solo emepujan a elementos adyacentes en horizontal, nunca en vertical
+
+  caja en bloque
+
+  ·Ocupan todo el ancho disponible, lo que genera saltos de linea
+  ·tienen dimensiones modificables(ancho y alto)
+  ·no permiten otros elementos a su lado(aunque especifique un ancho, siguen ocupando todo el espacio disponible a lo ancho, generando saltos de linea)
+
+*/
+
+.caja-bloque,
+.caja-linea
+{
+  color: white;
+  /*Con lo siguiente la unica caja que va a crecer va a ser la caja de bloque*/
+  background-color: darkcyan;
+  width: 500px;
+  
+  /*En este caso la caja de linea va a intentar empujar a la de bloque, pero como solo ocupa (el contenido) lo que contiene, nunca podra empujar a la otra caja porque la altura de sus letras no cambio. ADEMAS el bloque detecta que la otra esta encima y si lo hago crecer crece hacia abajo*/
+  border: medium solid black;
+  padding: 16px;
+
+  /*Esto solo se va a aplicar para el bloque haciendo que este se mueva en sus 4 direcciones, PERO A LA LINEA solo la mueve en horizontal, en vertical no hara nada por despegarse del bloque*/
+  margin: 32px;
+
+
+
+
+}
+
+/*------------------------------CLASE 29------------------------Propieadad display*/
+
+/*Es la forma de decirle al navegador como se va a comportar un elemento HTML desde CSS. Si buscamos esta propiedad desde css reference encontramos como se comportar el display y cuales son sus valores. */
+
+/*
+Propieadad display
+
+inline hace que una caja en bloque se comporte como una en linea
+
+block hace que una caja en linea se comporte como una en bloque
+
+inline-bloc - se comporta como un elemento de linea pero acepta modificar sus dimensiones
+none - la caja none hace desaparecer una caja, pero tener en cuenta que esta pierde su espacio, lo de abajo puede subir si no esta bien armada la pagina
+
+table
+
+list-item
+
+flex - ver el curso de flexbox
+
+grid- ver el curso de grid css
+
+*/
+
+.caja-none /*MUCHO CUIDADO CON LA CAJA NONE, PORQUE TODO LO QUE PONEMOS CON ESTA CLASE SE VA A CARGAR DE IGUAL MANERA POR MAS QUE NO PUEDA RENDERIZARSE. ENTONCES, SI YO PONGO UN VIDEO Y LE PONGO NONE, ESTE SE CARGA IGUAL... SI FUERA UNA RED MOVIL ESTOY GASTANDO EL CREDITO DE ALGUIEN*/
+/*none - la caja none hace desaparecer una caja, pero tener en cuenta que esta pierde su espacio, lo de abajo puede subir si no esta bien armada la pagina*/
+{
+  background-color: green;
+  display: none;    
+}
+
+.caja-linea-bloque
+{
+  background-color: green;
+  
+  display: inline-block;  
+
+  width:600px;
+  height: 500px;
+}
+
+/*------------------------------------Clase 30---------------------Visibility*/
+
+.visibility /*Esto lo que hace es hacer desaparecer un elemento del renderizado pero guarda su espacio para que otra etiqueta no lo ocupe*/
+{
+  visibility: hidden; 
+}
+
+/*------------------------------------Clase 31---------------------Overflow*/
+
+/*Que pasa si le doy tamaño a una caja y su contenido lo supera? este sale de la caja, a eso se le llama overflow, por defecto este deja las cosas en visible, pero por dentro del overflow tengo mas propiedades para que esto no ocurra*/
+
+.overflow
+{
+ /* overflow: visible; Este es el valor por defecto del overflow. Si se sobrepasa el contenido al de la caja lo deja visible
+    overflow: hidden; esconde todo lo que se sobrepase
+    overflow: scroll; crea un scroll para x e y
+    overflow: auto; crea un scroll solo para el lado que lo necesite, sea x o y
+ */
+
+ overflow: scroll;
+}
+
+
+/*------------------------------------Clase 32---------------------Tamaño de caja*/
+
+/*Uno de los problemas mas comunes al trabajar CSS es comprender como funciona el tamaño de las cajas
+
+El tamaño de las cajas es una propiedad que se llama box-sizing, el valor por defecto es content-box. Esto nos dice desde donde va a comenzar a contar el tamño de la caja, osea, del content-box (contenido). 
+*/
+
+.box-sizing-content
+{
+  background-color: deepskyblue;
+  width: 500px;
+  height: 250px;
+
+
+  /*Que hace esto? ahora tengo un width + padding por ambos lados y un height + padding por ambos lados*/ /*El tamaño real de la caja es 500+10+10=520px y 250+10+10=270px*/
+  padding: 10px; 
+
+  border: thick solid black;/*thick es 5px*//*Pasa lo mismo con esta propiedad*//*El tamaño real de la caja es 530px x 280px */
+}
+
+.box-sizing-border
+{
+  box-sizing: border-box; /*Si yo agrego esta propiedad aca, lo que hace es darme la caja con el tamaño maximo de 500px x 250px y todo lo otro que yo le ponga como tamaño VA HACIA ADENTRO DE LA CAJA*/
+
+  /*La mayoria, por no decir todos los developers trabajan con este tipo de desarrollo de cajas, para no hacer que todo sea un quilombo. en la pagina https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  esta el siguiente codigo
+
+  html
+  {
+    box-sizing: border-box;
+  }
+
+  *,*:before, *:after
+  {
+    box-sizing:inherits;
+  }
+
+  Q sirve para resetear las cajas en donde yo quiero trabajar, pero, si traigo copiado y pegado codigo de otro lado y estos usan el valor por default del box sizing, estos puedan usarlos gracias a este codigo de paulirish.com
+  
+  */
+
+  background-color: deepskyblue;
+  width: 500px;
+  height: 250px;
+
+  padding: 10px; 
+
+  border: thick solid black;
+}
+
+
+
+/*Ejemplo de desbordamiento por no tener el box-sizing: border-box*/
+
+/*Cree un article con 3 sections en html*/
+.container-col-3
+{
+  background-color: burlywood;
+
+  width: 600px;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.container-col-3 >*
+{
+  width: 200px;
+
+  /*con la propiedad float los pongo uno al lado del otro, y esto lo que hace es agregar un borde fino 1px. PERO. QUE PASA? si las palabras estan cada 200px como indica el width y la caja mide 600px como dice la clase estilizadora anterior, entonces tengo 3 secciones de 200px pero tengo en cada una de ellas a los 2 lados 1px, NO PUEDO ACOMODAR LOS 3 EN FILA, PORQUE DESBORDAN y uno tiene que bajar al renglon de abajo (Ver como quedo por no utilizar el border-box)*/
+  border: thin solid red;
+
+  /*No se va a explicar esto, se explica en otra seccion, pero lo que hace a fin de cuentas es ponerme 3 elementos seguidos uno al lado de otro, y con el width 200px le dije que se pongan a 200px entre cada uno de ellos*/
+  float: left;
+
+  /*Si pusiera 
+  
+  box-sizing: border-box; TODO LO ANTERIOR SE SOLUCIONA
+  */
+}
+
+  /*------------------------------------Clase 33---------------------Float & clear*/
+
+  /*A dia de hoy se considera una mala practica trabajar con float & clear*/
+
+  /*Permite floatar hacia la derecha o hacia la izquierda los elementos. El valor por defecto es float none para todos los elementos. 
+  Si tengo un <p> por ejemplo y le aplico float left o right el elemento pierde el flujo de las etiquetas html.... literalmente salen de la disposicion creada, una vez que lo hacen se pegan al lado que decidi que se pegaran.
+
+  Antes de que existiera grid y flexbox existia float! Una de las primeras tecnicas de maquetacion. A dia de hoy se considera una mala practica trabajar con float & clear
+
+  Esto es porque despues de que se usa podemos encontrarnos con algun elemento que no flote y se superpongan
+  */
+
+  .container-floats /*No use esta clase xQ solo agrega color*/
+  {
+   background-color: cornflowerblue; 
+  }
+
+  .float-right
+  {
+    float: right;
+  }
+
+  .float-left
+  {
+    float: left;
+  }
+
+  /*La caja fue definida, se le agrego un color al background que fue negro e hize flotar los dos elementos que contenia la seccion (2 articles) al estar flotando y salirse de la disposicion del html, dejan de ser hijos de la section... entonces el section NO TIENE ELEMENTOS DENTRO para poder pintarles un background color black... los dos elementos que estan flotando pueden tomar el color que quieran, como lo son el rojo y el verde puestos*/
+
+  /*=======*/
+
+  .clearfix
+  {
+    clear: left;
+    clear: right;    
+    /*clear: both*/
+  }
+
+  
+
+  /*------------------------------------Clase 34---------------------Colapso de margenes verticales*/
+
+  .margin-top-bottom16px
+  {
+    margin-top: 16px; /*para la parte superior de los articles sumo 16px de margen*/
+    margin-bottom: 16px; /*para la parte inferior de los articles sumo 16px de margen*/
+
+    /*ahora mi texto deberia ser...
+    
+    16px    CORRECTO (POR MAS QUE NO LO PAREZCA SE ESTA APLICANDO, PERO SOLO APLICA PARA DENTRO DE LA MISMA ETIQUTA, COMO NO HAY NADA ARRIBA NO LO APLICA)
+    texto   CORRECTO
+    16px    INCORRECTO
+    16px    INCORRECTO
+    texto   CORRECTO
+    16px    CORRECTO
+    
+    porque la parte de 16px+16px es incorrecta? porque los margenes tienen colapso en vertical... no se suman, solo queda el mas grande como margen... los 2 miden 16px entonces solo hay 16px de margen entre los dos
+    */
+  }
+
+  /*------------------------------------Clase 35---------------------Adicion de margenes horizontales*/
+
+
+/*Leer clase anterior*/
+.margin-collapse span
+{
+  border:thin solid black;
+  display: inline-block;
+
+  /*A diferencia de el margen vertical este NO COLAPSA*/
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+
+/*------------------------------------Clase 36---------------------Centrado de caja*/
+
+/*Muchas paginas tienen un diseño centrado,  osea... trabajado en el centro, en esta clase se enseña como hacer eso... un ejemplo de centrado de pagina es el de jonmircha.com*/
+
+.sitio-web
+{
+  border: thin solid black;
+  background-color: thistle;
+  width: 800px;
+  height: 1000px;
+  padding: 16px;
+
+  text-align: center; /*Esto centra el contenido de la caja en los bordes del html*/
+
+  /*ahora centro con respecto a la ventana del navegador*/
+
+  margin-left: auto; /*Ajustalo automaticamente*/
+  margin-right: auto;
+}
+
+
+/*Cambio de html y css*/

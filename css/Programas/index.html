@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo css</title>
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!--CLASE 22 RESETEO Y NORMALIZACION-->
+    <!--<link rel="stylesheet" href="./css/reset.css"> esta no la estoy utilizando, es una o la otra para la normalizacion, esto pertenece a la clase 22-->
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        html
+        {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Aprendiendo css</h1>    
+
+    <article id="temario-css">
+        <h2>Temario del curso</h2>
+
+        <ul>
+            <li><a href="index.html#selectores-basicos">Selectores basicos</a></li>
+            <li><a href="index.html#selectores-avanzados-hijos-descendientes"> Selectores avanzados - hijos y descendientes</a></li>
+            <li><a href="index.html#selectores-avanzados-hermanos"> Selectores avanzados - hermanos</a></li>
+            <li><a href="index.html#selectores-de-atributo"> Selectores avanzados - atributo</a></li>
+            <li><a href="index.html#selectores-universal"> Selectores avanzados - universal</a></li>
+            <li><a href="index.html#pseudoclases-de-estado"> pseudo clases de estado</a></li>
+            <li><a href="index.html#pseudoclases-posicion-y-estilo"> pseudo clases de posicion y estilo</a></li>
+            <li><a href="index.html#pseudoelementos"> pseudoelementos</a></li>
+            <li><a href="index.html#agrupacion-selectores"> Agrupacion de selectores</a></li>
+            <li><a href="index.html#algoritmo-de-css"> Algoritmo de CSS</a></li>
+            <li><a href="index.html#la-cascada"> La cascada</a></li>
+            <li><a href="index.html#especificidad">Especificidad</a></li>
+            <li><a href="index.html#practica-de-cascada-y-especificidad">practica de cascada y especificidad</a></li>
+            <li><a href="index.html#herencia">Herencia</a></li>
+            <li><a href="index.html#reseteo-y-normalizacion-de-estilos">Reseteo y normalizacion de estilos</a></li>
+            <li><a href="index.html#prefijo-de-los-navegadores">Prefijo de los navegadores</a></li>
+            <li><a href="index.html#al-otro-html">Modelo de caja</a></li>
+            <li><a href="index.html#al-otro-html">with y height</a></li>
+            <li><a href="index.html#al-otro-html">borde</a></li>
+            <li><a href="index.html#al-otro-html">padding y margin</a></li>
+            <li><a href="index.html#al-otro-html">clases de linea vs clases de bloque</a></li>
+            <li><a href="index.html#al-otro-html">Propiedad display</a></li>
+            <li><a href="index.html#al-otro-html">Visibility</a></li>
+            <li><a href="index.html#al-otro-html">Overflow</a></li>
+            <li><a href="index.html#al-otro-html">Tamaño de caja</a></li>
+            <li><a href="index.html#al-otro-html">Float & clear</a></li>
+            <li><a href="index.html#al-otro-html">Colapso de margenes verticales</a></li>
+            <li><a href="index.html#al-otro-html">Adicion de margenes horizontales</a></li>
+            <li><a href="index.html#al-otro-html">Centrado de caja</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento CSS</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento static</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento relativo</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento absolute</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento fixed</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento sticky</a></li>
+            <li><a href="index.html#al-otro-html-2">Posicionamiento z index</a></li>
+            <li><a href="index.html#al-otro-html-3">Ejercicios posicionamiento</a></li>
+            
+
+
+        </ul>
+    </article>
+
+    <br>
+    <hr>
+
+    <!--------------------------CLASE 7------------------SELECTORES BASICOS-->
+    <article id="selectores-basicos">
+        <h2>Selectores basicos</h2>
+
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, a sint. Vero dolore eveniet, eius quisquam corporis voluptatum quia ut optio illo amet excepturi vitae ratione minima facilis debitis et.
+        </p>
+
+        <p id="parrafo-dos">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ducimus recusandae, blanditiis a voluptatibus, ipsa autem neque eius incidunt mollitia soluta! Fugit nemo eaque ipsa distinctio reiciendis voluptatum quis vitae.
+        </p>
+
+        <!--Ademas, cuando cree una clase es imporatante hacer que esta sea lo mas descriptiva posible para que el codigo mejore y sea mas entendible hasta desde el mismo html-->
+        <!--Texto tamaño 32 con background red-->
+        <p class="text-32 bg-red">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, rerum ab. A et fugit sequi minus. Pariatur omnis quaerat aperiam? Architecto inventore sit amet veniam nulla repudiandae. Reiciendis, dicta aliquid.
+        </p>
+        <!--Texto tamaño 20 con background steelblue con texto blanco-->
+        <p class="text-20 bg-steelblue text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestias doloremque quia repellendus et id molestiae provident nesciunt modi porro iste, voluptatum eum cum distinctio, perspiciatis sapiente repudiandae atque nulla.</p>
+
+        <!--¿Que pasa si creo una clase que convine las otras clases anteriormente creadas? todo lo que yo quiera hacer con este texto se va a hacer de forma automitca porque ya va a estar anteriormente estilizada-->
+        <p class="text-32 text-white bg-steelblue">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et reprehenderit quidem deserunt eius exercitationem nam libero magni rem corporis consequatur, impedit inventore sint ea similique eos explicabo, veritatis earum harum?
+        </p>
+        <br>
+        <a href="index.html#temario-css">☝️</a>
+
+    </article>
+
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 9----------------------SELECTORES AVANZADOS: HIJOS DIRECTOS Y DESCENDIENTES-->
+
+    <article id="selectores-avanzados-hijos-descendientes">
+
+        <h2>Selectores avanzados</h2>
+
+        <h3>Selectores de hijos</h3>
+
+        <h4>Selector de hijo directo</h4>
+        <ul class="hijos-directos">
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+
+        <h4>Selector de hijos descendientes</h4>
+        <ul class="hijos-descendientes">
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 10----------------------SELECTORES AVANZADOS:HERMANOS-->
+
+    <article id="selectores-avanzados-hermanos">
+        <h3>Selector de hermanos</h3>
+
+        <h4>Selector de hermanos (en general)</h4>
+
+        <ul>
+            <li><b>Primavera</b></li>
+            <li class="hermanos-general"><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+
+        </ul>
+
+        <h4>Selector de hermanos(Adyacentes)</h4>
+
+        <ul>
+            <li><b>Primavera</b></li>
+            <li class="hermanos-adyacentes"><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            
+            <li><b>Invierno</b></li>
+        </ul>
+
+    </article>
+
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+
+    
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 11----------------------SELECTORES AVANZADOS: Atributos-->
+
+    <article id="selectores-de-atributo">
+        <h3>selectores de atributo</h3>
+
+        <nav class="selectores-atributos">
+            <ul>
+                <li><a href="http://jonmircha.com" target="_blank">Inicio</a></li> <!-- $ Este es el unico que termina en .com-->
+                <li><a class="menu-item cursos button" href="http://jonmircha.com/cursos" target="_blank">Cursos</a></li> <!--tiene una clase-->
+                <li><a href="http://jonmircha.com/blog" target="_blank">Blog</a></li>
+                <li><a href="http://jonmircha.com/cv" target="_blank">CV</a></li>
+                <li><a class="menu-item ahora button" href="http://jonmircha.com/ahora" target="_blank">Ahora</a></li> <!--tiene una clase-->
+                <li><a href="http://jonmircha.com/notas">Notas</a></li> <!-- * Este no tiene el target="_blank"-->
+                <li><a href="index.html#temario-css">☝️</a></li> <!-- ^ El unico que no empieza con http-->
+            </ul> 
+        </nav>
+
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+        
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 12----------------------SELECTORES AVANZADOS: Universal-->
+
+    <article id="selectores-universal">
+        <h3>selector universal</h3>
+
+        <!--El selector universal significa que se lo va a aplicar a todo el documento-->
+        <ul class="selector-universal">
+            <li><b>Primavera</b></li>
+            <li class="hermanos-adyacentes"><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+
+
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+
+            
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 13----------------------Pseudoclases de estado-->
+
+    <!--https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes-->
+
+    <article id="pseudoclases-de-estado">
+        <h3>pseudoclases de estado</h3>
+
+        <form class="form-pseudoclases">
+            <input type="text" name="nombre" placeholder="escribe tu nombre" required>
+            <br>
+            <input type="email" name="correo" placeholder="escribe tu correo" required>
+            <br>
+            <input type="submit" disabled>
+            <br>
+            <input type="submit" >
+            <br>
+        </form>
+
+
+        <nav class="menu-pseudoclases">
+            <a href="#seccion1">Seccion 1</a> <!--Obviamente no existen-->
+            <a href="#seccion2">Seccion 2</a>
+            <a href="#seccion3">Seccion 3</a>
+            <a href="#seccion4">Seccion 4</a>
+        </nav>
+
+        <p class="p-pseudoclases">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium illo blanditiis eaque error laborum quibusdam eveniet exercitationem aliquam, asperiores hic assumenda, quae totam mollitia ullam cumque cupiditate nostrum, magnam fuga.</p>
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 14----------------------Pseudoclases por elemento-->
+
+    <article id="pseudoclases-posicion-y-estilo">
+        <h3>pseudoclases de posicion y estilo</h3>
+
+        <ol class="lista-pseudoclases">
+            <li>Batman</li>
+            <li>Robin tim drake</li>
+            <li>Robin jason todd</li>
+            <li>Robin dick grayson</li>
+            <li>Robin damian wayne</li>
+            <li>Robin carrie kelly</li>
+            <li>Redrobin</li>
+            <li>Huntress</li>
+            <li>Batwoman</li>
+            <li>Nightwing</li>
+            <li>Red hood</li>
+            <li>Batgirl Barbara gordon</li>
+            <li>Batgirl cassandra cain</li>
+            <li>Oracle</li>
+            <li>James gordon</li>
+            <li>Alfred Penniworth</li>
+        </ol>
+    </article>
+
+    <br><br><br>
+
+    <article class="articulo-pseudoclases">
+
+        <header>Esto es un header</header>
+        <p>Esto es un p</p>
+        <div>esto es un div</div>
+        <p>esto es un p</p>
+        <section>esto es una section</section>
+        <p>esto es un p</p>
+        <div>esto es un div</div>
+        <p>esto es un p</p>
+        <footer>esto es un footer</footer>
+
+    </article>
+
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 15----------------------Pseudo elementos-->
+
+
+    <article id="pseudoelementos">
+        <h3>pseudoelementos</h3>
+        <!--esto tiene que ver con los caballeros del zodiado, no asustarse con los nombres-->
+
+        <!--Trabajo con un texto de un parrafo-->
+        <p>
+            <i>Bandai myth cloth ex</i> <span class="saga-geminis">Saga de geminis</span> <span class="saga-precio">500</span>            
+        </p>
+
+
+        <!--Trabajo con un parrafo-->
+        <p class="p-pseudoelementos">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur harum consequuntur repudiandae fuga neque delectus quam maxime facere ipsam? Velit fugiat, aliquam quasi nemo reiciendis nihil quos laudantium repellat commodi?
+        </p>
+
+        <!--Trabajo con un input-->
+
+        <input class="input-pseudoelementos" type="text" name="nombre" placeholder="Escribe tu nombre">
+        
+
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 16----------------------AGRUPACION DE SELECTORES-->
+
+
+    <article id="agrupacion-selectores">
+        <h3>agrupacion de selectores</h3>
+
+        <form class="form-agrupar-selectores">
+            <input type="text" name="nombre" placeholder="Escribe tu nombre"> 
+            <input type="email" name="correo" placeholder="Escribe tu correo"> 
+
+            <textarea name="comentarios" placeholder="Escribe tus comentarios" cols="30" rows="10"></textarea>
+
+            <input type="submit">
+        </form>
+
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+    
+    <br>
+    <hr>
+
+    <!--LA CLASE 17 ES TEORICA-->
+    
+    <!--------------------------------CLASE 17----------------------ALGORITMO DE CSS-->
+    <h3 id="algoritmo-de-css">Aloritmo de css</h3>
+    <a href="index.html#temario-css">☝️</a>
+
+    <!--LA CLASE 18 ES TEORICA-->
+    <!---------------------------------CLASE 18---------------------LA CASCADA-->
+
+    <h3 id="la-cascada">la cascada</h3>
+    <a href="index.html#temario-css">☝️</a>
+
+    <!--LA CLASE 19 ES TEORICA-->
+    <!--------------------------------CLASE 19----------------------ESPECIFICIDAD-->
+    <h3 id="especificidad">Especificidad</h3>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+        
+    <!--------------------------------CLASE 20----------------------PRACTICA DE CASCADA Y ESPECIFICIDAD-->
+
+
+    <article id="practica-de-cascada-y-especificidad">
+        <h2>Practica de cascada y especificidad</h2>
+
+        <blockquote id="cita-marco" class="cita-marco"> <!--Esto esta hecho a proposito (lo del nombre y la clase)-->
+            Se tolerante con los demas y estricto contigo mismo - <cite>Marco Aurelio</cite>
+        </blockquote>
+    </article>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--LA CLASE 21 HERENCIA-->
+    
+    <!--------------------------------CLASE 21----------------------HERENCIA-->
+    <h3 id="herencia">herencia</h3>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+    
+    <!--------------------------------CLASE 22----------------------RESETEO Y NORMALIZACION DE ESTILOS-->
+
+    <h3 id="reseteo-y-normalizacion-de-estilos">reseteo y normalizacion de estilos</h3>
+    <!--Se carga arriba de todo (en el head) el normalizado de normalized-->
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--------------------------------CLASE 23----------------------PREFIJO DE LOS NAVEGADORES-->
+    <!--Ver el CSS ahi esta toda la informacion de como funcionan los prefijos-->
+    <h3 id="prefijo-de-los-navegadores">Prefijos de los navegadores</h3>
+    
+    <article>
+        <ul>
+            <li>Navegadores microsoft <code><b>-ms-</b></code> </li>
+            <li>Firefox <code><b>-moz-</b></code></li>
+            <li>Para todos los demas navegadores <code><b>-webkit-</b></code></li>
+        </ul>
+    </article>
+    
+
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+
+    <!--------------------------------CLASE 24----------------------MODELO DE CAJA-->
+    <!--------------------------------CLASE 25----------------------WITH Y HEIGHT-->
+    <!--------------------------------CLASE 26----------------------Borde-->
+    <!--------------------------------CLASE 27----------------------padding y margin-->   
+    <!--------------------------------CLASE 27----------------------padding y margin-->  
+    <!--------------------------------CLASE 28----------------------clases de linea vs clases de bloque-->     
+    <!--------------------------------CLASE 29----------------------Propiedad display-->     
+    <!--------------------------------CLASE 30----------------------Visibility--> 
+    <!-----------------------------CLASE 31---------------------overflow-->
+    <!-----------------------------CLASE 32---------------------Tamaño de caja-->
+    <!-----------------------------CLASE 33---------------------Propiedades float and clear-->
+    <!-----------------------------CLASE 34---------------------Colapso de margenes verticales-->
+    <!-----------------------------CLASE 35---------------------Adicion de margenes horizontales-->
+    <!-----------------------------CLASE 36---------------------Centrado de caja-->
+
+    <!--[NUEVO DOCUMENTO HTML box-model.html Y NUEVO DOCUMENTO CSS box-model.css]-->
+
+    <h3 id="Al-otro-html">OTRO HTML</h3>
+
+
+    <p>Las clases 24,25,26,27,28,29,30,31,32,33,34,35,36  estan en otro html</p><br>
+
+    <a href="./html/box-model.html" id="al-otro-html">ir al OTRO HTML</a>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <!--OTRO  HTML Y CSS-->
+    <!-----------------------------CLASE 37---------------------Posicionamiento CSS-->
+    <!-----------------------------CLASE 38---------------------Posicionamiento static-->
+    <!-----------------------------CLASE 39---------------------Posicionamiento relativo-->
+    <!-----------------------------CLASE 40---------------------Posicionamiento absolute-->
+    <!-----------------------------CLASE 41---------------------Posicionamiento fixed-->
+    <!-----------------------------CLASE 42---------------------Posicionamiento sticky-->
+    <!-----------------------------CLASE 43---------------------Posicionamiento z index-->
+
+
+    <h3 id="Al-otro-html-2">OTRO HTML</h3>
+
+    <p>Las clases 37,38,39,40,41,42 y 43 estan en otro html</p><br>
+
+    <a href="./html/positions.html" id="al-otro-html-2">ir al OTRO HTML</a>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+    <h3 id="Al-otro-html-3">OTRO HTML</h3>
+
+    <p>Las clases 44,45,46 y 47 estan en otro html</p><br>
+
+    <a href="./html/positions-examples.html" id="al-otro-html-3">ir al OTRO HTML</a>
+    <br>
+    <a href="index.html#temario-css">☝️</a>
+
+    <br>
+    <hr>
+
+
+</body>
+
+</html>

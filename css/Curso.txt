@@ -1,0 +1,540 @@
+CSS se implementa en el 96
+
+Las siglas CSS
+signfican cascading stylee sheets
+
+(hojas de estilo en cascada)
+
+Si bien CSS no es un lenguaje de programacion, este actualmente permite hacer ciertas funcionalidades de estos. En "cierto punto" se pueden programar ciertas cosas. 
+
+osea, en cierto punto choca con la interactividad y puede resolverla, pero, aun asi para eso esta Javascript. 
+
+___________________
+
+Clase 3 Sintaxis basica
+
+
+La sintaxis basica tiene que ver con 2 cuestiones en particular
+
+1-El selector
+2-Bloque de declaraciones con {}
+
+_____________________
+
+Clase 4 Comentarios en CSS
+
+Los comentarios en css se hacen con el asterisco y barra hacia la derecha
+ Estos comentarios tambien se pueden utilizar dentro de HTML, PERO, dentro de los <style></style> que vaya a utilizar que son "CSS" dentro de HTML
+
+____________________________
+
+Clase 5 Formas de invocacion CSS desde html
+
+Las formas de enlase de html y css 
+
+son en linea, en bloques, a traves del linkeo y a traves del import
+
+la mas correcta es a traves de la etiqueta link
+
+
+NUNCA USAR EL @IMPORT
+__________________
+
+Clase 6 versiones, documentacion y enlases de referencia
+
+A medida que los navegadores crecen y se vuelven mejores, html, css y las demas tecnologias que trabajar para la red se vuelven mejores tambien, y esto ocasiona que haya cada vez mas versiones. Pero actualmente HTML ya no saca mas versiones si no que se trabaja por modulos, de igual manera CSS aplica este tipo de versionado.
+
+Entonces, cada modulo tiene sus propias versiones... Ej
+
+La animacion de CSS puede tener 1000 versiones 
+pero tal vez otros elementos no tengan nuevas versiones...
+
+a traves de w3.org/TR/css-2020 puedo ver como evoluciona CSS 
+
+w3.org
+caniuse.com
+cssreference.io
+
+____________________________________
+
+Clase 7 Selectores basicos: etiquetas, identificadores y clases
+
+se pueden modificar etiquetas para que todo dentro del codigo con la misma etiqueta tenga el aspecto deseado pero... no es recomendable
+
+se pueden agregar id para que algunas cosas en particular cambien su aspecto al deseado, pero eso hace que el codigo no pueda ser reutilizado
+
+entonces llegan las clases a las cuales se les puede agregar mas de un nombre y ademas los nombres que se le agregan son descriptivos del estilo que queremos darle, esto hace que cuando las modifiquemos desde CSS utilicemos los nombres descriptivos para darle la forma deseada.
+
+entonces que pasa si otra clase tiene que tener el mismo nombre? se agregaran todos los efectos deseados sin que tenga que hacer nada mas que agregar el nombre deseado 
+
+__________________________
+
+Clase 8 Orden y estructura al codico HTML y CSS
+
+
+estructuracion del codigo
+
+_________________________
+
+
+Clase 9 Selector de hijos directos y desendientes
+
+Esto es para seguir trabajando con las clases y otro tipo de selectores, pero en este caso se trata sobre las estructuras anidadas dentro de otras, siendo algunas hijas, ñietos o algo con mas profundidads aun
+
+_________________________________
+
+Clase 10 Selector avanzado: hermano
+
+hermanos funciona solo para las etiquetas del mismo tipo que se encuentren a la misma altura de tabulado, obviamente estas utilizan su propia simbologia para invocarlas desde CSS
+
+_____________________
+
+Clase 11 Selectores de atributos
+
+los selectores avanzados de atributos sirven para señalar especificamente y de que manera quiero hacer caer sobre los atributos de distintas clases o ids cada uno de los estilos que quiero agregar
+
+______________________________
+
+Clase 12 Selectores universales
+
+los selectores universales son los encargados de señalar cada uno de los contenedores de una clase y darles el atributo deseado. Todo esto sin importar si estoy trabajando con un li, ui, a, input, etc. A todos y cada uno de los elementos dentro de la clase universal se le dara el estilo deseado
+
+______________________________
+
+Clase 13 Pseudoclases 
+
+la pseudoclase da estilo dependiendo del contexto, posicion o estado del elemento
+
+me deja interactuar con el estilo de la pagina justamente dependiendo de en que contexto se encuentre cada una de las cosas en ella
+
+Ej:
+
+si tengo un formulario y el usuario escribe algo incorrecto como numeros dentro de "nombre" puedo cambiar el borde de la caja para escribir a rojo
+
+___________________________
+
+Clase 14 pseudoclases por elementos
+
+Los pseudoelementos por clase lo que hacen es darle estilo puntualmente a los elementos de clases en las que yo quiera realizar cambios de tipo estilistico segun la posicion de cada uno de sus elementos
+
+ej
+
+EN HTML
+
+<article class="A">
+	<li>hola</li>
+	<li>chau</li>
+
+</article>
+
+EN CSS
+
+.A li:last-child
+{
+	background-color: pink;
+}
+
+
+Esto aplicaria color solo al ultimo li de la clase A
+
+
+______________________________
+
+
+Clase 15 pseudoelemento
+
+Los pseudoelementos sirven basicamente para hacer cambios estilisticos dentro de los textos, agregando contenido al principio o al final, ademas de poder cambiar algunos aspectos puntuales como letras o lineas, como se ve la seleccion o el color de la letra seleccionada de texto
+
+_____________________
+
+
+Clase 16 Agrupacion de selectores
+
+imaginemos que tenemos que aplicarle los mismos estilos a varios tipos de sectores o clases, entonces ahi es cuando entra la coma. para eso sirve
+
+_______________
+
+Clase 17 algoritmo de css
+
+Esta clase se encarga de demostrar como funciona CSS, como se aplican los estilos y como funcionan las hojas de estilo en cascada
+
+
+Este algoritmo se divide en 3 partes
+
+·La cascada
+·La especificada
+·La herencia
+
+
+1-el origen del codigo
+			·User agent=Estilos que por defecto le pone el navegador a ciertas etiquetas. Si yo reviso una h2 dentro del navegador, este tiene estilos (En todo el documento hasta este punto no realice ningun cambio sobre ellos. CADA NAVEGADOR DECIDE EL ESTILO DE ALGUNAS ETIQUETAS)
+
+			·Personalizacion de usuario= Personalizaciones que como usuario le hacemos al sistema operativo. Ejemplo, youtube te permite cargar youtube en modo oscuro. O por ejemplo la barra de chrome se carga en modo oscuro si tengo windows en modo oscuro. Lo mismo pasa si yo aumento el zoom en el navegador estando en FB y entro a YT, ambos se verian en 125%
+
+			·Estilos de autor=Es lo que hacemos con CSS y la forma en que vamos cargando nuestro estilos a las paginas que diseñamos
+
+2-Especifidad=Si un estilo entra en conflicto con otro, la diferenciacion la hace la especifidad
+
+3-Herencia= Esto tiene que ver con el orden en el que aparecen las cosas en pantalla
+_______________
+
+
+clase 18 la cascada
+
+esto tiene que ver con la forma en la que el navegador web va aplicando los estilos y en base a esto toma 3 aspectos en particular
+
+1-el origen del codigo
+			·User agent=Estilos que por defecto le pone el navegador a ciertas etiquetas. Si yo reviso una h2 dentro del navegador, este tiene estilos (En todo el documento hasta este punto no realice ningun cambio sobre ellos. CADA NAVEGADOR DECIDE EL ESTILO DE ALGUNAS ETIQUETAS)
+
+			·Personalizacion de usuario= Personalizaciones que como usuario le hacemos al sistema operativo. Ejemplo, youtube te permite cargar youtube en modo oscuro. O por ejemplo la barra de chrome se carga en modo oscuro si tengo windows en modo oscuro. Lo mismo pasa si yo aumento el zoom en el navegador estando en FB y entro a YT, ambos se verian en 125%
+
+			·Estilos de autor=Es lo que hacemos con CSS y la forma en que vamos cargando nuestro estilos a las paginas que diseñamos
+
+2-Especifidad=Si un estilo entra en conflicto con otro, la diferenciacion la hace la especifidad
+
+3-Herencia= Esto tiene que ver con el orden en el que aparecen las cosas en pantalla
+
+
+
+----------LA CASCADA--------
+
+El navegador lee linea por linea los archivos que le cargo para que lea mi pagina web. Entonces que pasa cuando se cruza con un import? SE DETIENE y va a leer TODO el linkeo, una vez que entra si encuentra otro linkeo SE DETIENE y lee todo el nuevo linkeo. Tener mucho cuidado con esto porque al entrar en tantos links puede romperse la pagina al cargar de mala manera dependiendo de que tan pesados puedan ser nuestros linkeos
+
+
+Ahora, si yo entro al navegador y me fijo el orden de aparicion de las cargas de estilos me va a mostar arriba de todo (lo ultimo en cargar)
+
+Entonces si me fijo bien, el orden de aparicion es... carga el link dentro de style (ejemplo de import), despues carga style y ULTIMO cargaria los estilos dentro del index. 
+
+Que pasa si cargo un background-color en style y despues otro en background-color en la misma etiqueta pero desde algo que se carge despues de style como puede ser el index? SE SOBREESCRIBE Y AGREGA SOLO EL ESTILO DEL ULTIMO
+
+h1 
+{
+background-color:red;
+background-color:black; /*Solo carga black*/
+}
+
+_________________________________
+
+Clase 19 especificidad
+
+Cada selector tiene cierto puntaje (peso especifico) para CSS. Obviamente dependiendo de este peso, el que queda es el que sobreescribe a otros estilos. ACA NO IMPORTA LA CASCADA. Entonces, hay que ver QUE tiene MAS PESO. 
+
+Si yo paso el mouse encima de una clase de estilos dentro de CSS me dice la especificidad de una de la clase. se compone de tres (son cuatro pero solo se ven 3) numeros Ej: (0,1,2) 
+
+Como se calcula la especificidad?
+
+HAY UNA TABLA
+
+La especificidad es el peso que tiene un selector cuando hay un conflicto de estilos. Se calcula de la siguiente forma:
+
+Etiquetas y pseudoelementos__________0,0,0,1
+Clases,atributos y pseudoclases______0,0,1,0
+Identificadores______________________0,1,0,0
+Estilos en linea_____________________1,0,0,0
+!important__________________________Rompe la especificidad
+
+Dependiendo de que etiquetas tenga a lo que quiero aplicar estilos le sumo el puntaje que me dice la tabla
+
+usar !important es mala practica, pero hace justamente lo que dice su descripcion. SE CAGA EN TODO y mete el estilo sin importarle la cascada ni la especificidad
+
+
+Es importante entender que para trabajar en la medida de lo posible es MAS que util trabajar con CLASES y no con cualquier otra cosa, porque utilizar cualquier mierda para mandar estilos a mi pagina va a hacer que el codigo se carge a pleno de puntos y despues nunca voy a poder saber como arreglar las cosas x la cantidad de cuentas que voy a tener que estar haciendo para poder aplicar los estilos que yo quiero sin que algo me lo sobreescriba. Despues voy a querer aplicar un !important y despues cuando quiera aplicar otro todo se va a ir a la MIERDA
+
+___________________________
+
+Clase 20 practica de cascada y especificidad
+
+
+Se ve y se calcula como reacciona CSS a cada una de nuestros estilos agregados sobre Etiquetas, IDs, clases e importants
+
+ademas se desarrolla la idea sobre el orden que deben llevar las cosas al nombrarlas en CSS y otras teorias importantes
+
+
+___________________________
+
+Clase 21 Herencia
+
+La herencia tiene que ver con el hecho de poder tener en cuenta de donde vienen cada uno de los estilos aplicados en pantalla. Esto se puede ver abriendo el inspector y fijandonos a la derecha de cada una de las lineas de estilos de CSS (TODO SOBRE EL INSPECTOR). 
+
+Luego, es importante tener en cuenta dos lineas que solo sirven para trabajar con las herencias
+
+inherit (TOMO EL ESTILO DEL PADRE)
+initial (TOMO EL VALOR POR DEFECTO DEL NAVEGADOR)
+
+como hago para sacarme la herencia de algo? le doy estilo yo mismo ganando la especificidad o la cascada
+
+_____________________________
+
+Clase 22 reseteo y normalizacion de estilos
+
+Esto trabaja particularmente sobre los efectos y estilos que carga el navegador por defecto, con el paso de los años se dio que no importa mucho que estilo toma algo con un navegador u otro, si no que entre ellos se empezaron a estandarizar para no hacer que las paginas se vean muy diferentes y el dev pueda trabajar mejor. Sin envargo aun se pueden utilizar reseteos de estilo para dar una base propia 
+
+en el css se pasan los links de algunos normalizados estandar e incluso de cargan (recomendado utilizarlo SIEMPRE)
+
+_________________________________
+
+Clase 23 Prefijo de los navegadores
+
+El prefijo de los navegadores me sirve para poder utilizar ciertas funcionalidades cuando estan en fase "experimental". Esto se hace utilizando ciertas palabras clave para hacer que funcionen en cada uno de los exploradores en canIUse podria ver cuales son estas funciones experimentales
+
+los prefijos segun el navegador para usar estas funcionalidades son
+
+-ms- microsoft
+-moz- mozilla
+-webkit- para el resto de los navegadores
+
+
+_________________________________
+
+Clase 24 modelo de caja
+
+[NUEVO DOCUMENTO HTML Y NUEVO DOCUMENTO CSS]
+
+developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model
+Ahi es donde me explica mas o menos que es lo que es el modelo de caja. En pocas palabras es la forma en la que CSS interpreta cada una de las lineas de estilo que voy mandando para la lectura.
+
+Para css todo es una caja, cada una de las lineas que mando esto lo hago en un nuevo archivo llamado box-model.html
+
+
+La siguiente explicacion esta aca y en el CSS de esta clase y en el bloc de notas
+  Cuando yo voy al navegador y entra en en documento html de la clase 24 e inspecciono y con el clic de inspeccionar una parte del CSS le doy al titulo o a lo que sea y veo en la parte de estilos que es lo que pasa voy a ver una caja con varias cajas adentro, esto que es?
+
+  Cada linea que yo de de estilos para CSS es una caja
+
+  esa caja me da un margen distancia a otro elemento html (incluido la misma caja html osea... el borde de la pantalla) o la distancia a otro elemento html , un borde para el contenido, el relleno (paddin, distancia desde el contenido hasta el borde) y el mismo contenido(tamaño del contenido, tener en cuenta que esto puede referirse a texto de tipo bloque, entonces que pasa si lo abro desde un celu o extiendo la pantalla del navegador? EL TAMAÑO AUMENTA)
+
+  Entonces... el modelo de caja: es la fomra en la que CSS ve a los elementos HTML y ¿como los ve? como si fueran cajas con las siguientes propiedades::after
+  1-El contenido(content): el contenido(texto del elemento html)
+  2-El borde(border): lo que delimita cada uno de los elementos HTML
+  3-El relleno(padding): son las distancias internas(la distancia del borde al contenido)
+  4-El margen(margin): son las distancias externas(la distancia entre el elemento html y sus elementos hermanos o padres)
+
+  dentro del modelo de caja hay 4 lados y estos se aplican para el lado que va un reloj, osea, sentido horario:
+
+  1-top
+  2-right
+  3-botton
+  4-left
+
+________________________________________
+
+Clase 25 Width y height
+
+
+Aplicamos en el h1 anterior los cambios de el tamaño de la caja que formamos y esta la podemos ver visualmente ya que tiene bordes anteriormente aplicados de 3px
+
+___________________________________________
+
+
+Clase 26 Borde
+
+Aplicamos las 3 propiedades de los bordes y las estudiamos
+
+border-color
+border-width
+border-style
+
+esto se puede estudiar de mejor manera y mas visualmente en cssreference.io
+
+___________________________________________
+
+Clase 27 padding y margin
+
+puedo configurar el padding y el margin de varias maneras distintas, aplicando cambios en 1 solo lado, en 2, en 3, o incluso 4 lados a la vez.
+
+Ademas de esto se explica que es cada uno
+
+siendo el padding la distancia al borde
+siendo el margin la distancia al proximo elemento html y a los bordes del navegador
+
+_______________________________________
+
+Clase 28 Cajas de linea vs cajas de bloque
+
+  Caja de linea
+  ·Ocupan el espacio necesario para mostrar su contenido
+  ·no tienen dimensiones modificables (ancho y alto)
+  ·permiten a otros elementos a su lado
+  ·padding y margin solo emepujan a elementos adyacentes en horizontal, nunca en vertical
+
+  caja en bloque
+
+  ·Ocupan todo el ancho disponible, lo que genera saltos de linea
+  ·tienen dimensiones modificables(ancho y alto)
+  ·no permiten otros elementos a su lado(aunque especifique un ancho, siguen ocupando todo el espacio disponible a lo ancho, generando saltos de linea)
+
+
+_______________________________________
+
+Clase 29 Propiedad display
+
+La propiedad display tiene varias funcionalidades, pero las mas interesantes son, none, inlineblock, inline y block
+
+block- hace una etiqueta en linea un bloque
+
+inline- hace una etiqueta en bloque en linea
+
+inlineblock-Los elementos del tipo linea pueden hacer crecer su espacio de alto y ancho mas alla del espacio que ocupan
+
+none- los elementos no se pueden renderizar pero igual se cargan (pierden su espacio en pantalla)
+
+
+___________________________________
+
+Clase 30 Visibility
+
+Esta propiedad lo que me permite es hacer que una caja no se renderice en pantalla pero que guarde el lugar que ocupa y este no desaparezca
+
+_________________________________
+
+Clase 31 Overflow
+
+Que pasa si le doy tamaño a una caja y su contenido lo supera? este sale de la caja, a eso se le llama overflow, por defecto este deja las cosas en visible, pero por dentro del overflow tengo mas propiedades para que esto no ocurra
+
+
+_________________________________________
+
+Clase 32 tamaño de caja
+
+El tamaño de las cajas de html se mide a partir de el contenido de la caja hacia afuera, pero si sumo un padding y un borde con cierto grosor tengo que calcular cuanto mide en total...
+
+existe una tenica que permite que podamos medir una caja desde el borde hacia adentro, entonces al darle un width y un height siempre sepamos cuanto mide la caja en total, puesto que no puede superar esos valores. 
+
+border-box
+
+
+_______________________________________________
+
+Clase 33 Propieadad float & clear
+
+El float es una MALA PRACTICA 
+
+el float sirve para hacer que ciertos elementos rompan la estructura de css y no respeten algunas condiciones que les pone su gerarquia... 
+
+ejemplo... pinto un cuadro de azul y meto un texto dentro y lo hago flotar a la izquierda... que pasa? SE DESPINTA y deja de ser hijo de lo que lo contiene, ademas se pega a la izquierda como le indique
+
+esto puede hacer que se rompa la estructura de codigo que le sigue puesto que hay un texto flotando
+
+para solucionar lo que sigue uso
+
+en html
+<div class="clearfix"></div>
+
+en css
+
+.clearflix
+{
+clear=both;
+}
+
+________________________________________________
+
+Clase 34 colapso de margenes verticales
+
+Si tengo 
+
+texto 
+texto
+
+y agrego por encima y por debajo un margen de 16px con CSS
+
+los margenes tienen colapso en vertical... no se suman, solo queda el mas grande como margen... los 2 miden 16px entonces solo hay 16px de margen entre los dos
+
+_______________________________
+
+Clase 35 Adicion de margenes horizontales
+
+leer clase anterior
+
+dentro de los margenes horizontales NO HAY COLAPSO
+
+si tengo
+
+texto margen margen texto
+
+los 2 margenes se suman!
+
+______________________________
+
+
+Clase 36 centrado de caja
+
+el centrado de caja sirve para poder centrar una caja en el centro de la pantalla como su nombre lo indica. Esto se da ajustando los margenes de los costados
+
+______________________________
+
+Clase 37 Posicionamiento CSS
+
+[CAMBIO DE HTML Y CSS]
+
+Explicacion del posicionamiento y cuales son cada uno de ellos
+
+__________________________
+
+Clase 38 posicionamiento static
+
+static: es el valor por defecto, significa que el elemento respecta el flujo del documento html, por lo que no se puede mover ni posicionar
+
+_____________________________
+
+Clase 39 posicionamiento relativo
+
+Relative: el elemento conserva sus dimensiones y posicion original en el flujo del documento. Si se mueve toma como referencia su posicion original
+
+(recordar que tambien se pueden usar valores negativos)
+
+______________________________
+
+Clase 40 absolute
+
+Absolute: el elemento pierde sus dimensiones y posicion origianl en el flujo del documento. Si se mueve puede tomar como referencia 2 elementos::after
+
+1-El primer ancestro con posicionamiento relativo
+2- Si no encuentra un ancestro relativo, se mueve respecto del documento HTML
+
+Basicamente el absolute se caga en todo y puede irse a donde se le cante y su lugar no se va a guardar (su espacio ocupado por la caja)
+
+_____________________________
+
+Clase 41 fixed
+
+Sirve basicamente para poder poner contenido dentro de una caja que no va a perder su lugar por mas que haga scroll, osea... es como si pegara un sticker en el monitor, sin importar que es lo que haga con el soft, el sticker sigue ahi
+
+__________________________
+
+Clase 42 Sticky
+
+
+Imaginar una pagina en donde puedo poner algo como sticky, pero que no descubro que es sticky hasta scrollear hasta la posicion en la que se encuentra... osea... este elemento puede hallarse a mitad de scroll, y una vez que lo muestre scrollenado se va a pegar a mi pantalla mientras siga bajando (scrolleando hacia abajo) PERO cuando vuelva a subir y este elemetno vuelva a tocar su posicion original se quedara ahi, yo puedo seguir scrolleando hacia arriba y este no me seguira, hasta que otra vez, vuelva a a bajar.
+
+
+_____________________
+
+Clase 43 Z index
+
+Esto sirve para hacer "capas" como en photoshop, yo puedo decidir la profundidad de mis elemetnos de html y como se van a mostrar en pantalla (como se enciman unos con otros)
+
+ahora, este numero es automatico por defecto (yo puedo cambiarlo) entonces al ser automatico lo que ocurre es que se le otorgan esos numeros segun aparezcan en el html
+
+________________________
+
+
+Clase 44 cabecera fija vs cabecera pegajosa
+
+gana sticky
+
+_______________________
+
+Clase 45 Efecti sticky slides
+
+basicamente son los titulos sticky que hay en algunas paginas
+
+______________________
+
+Clase 46 Ventana modal
+
+______________________
+
+Clase 47 Margenes negativos
+
+se puede aplicar margenes negativos pero no padding negativos

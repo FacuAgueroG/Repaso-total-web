@@ -1,0 +1,744 @@
+
+
+/*---------------------CLASE 3----------------------------Sintaxis basica*/
+
+/*
+
+Una regla CSS consta de 2 partes
+1-Selector, es el elemento HTML al que podemos aplicarle el bloque de declaracion de estilos. 
+2-Bloque de declaraciones, son cada uno de los atributos a modificar. Pero, dentro de estos se tiene la siguiente sintaxis: atributo:valor; Todo esto esta definido por llaves {}
+Ej: 
+
+h1 //recordar que solo puedo tener 1 h1 por documento
+{
+    color: orangered;
+    background.color:skyblue;
+}
+
+*/
+
+/*---------------------CLASE 4----------------------------COMENTARIOS EN CSS*/
+
+/*Los comentarios en css se hacen con el asterisco y barra hacia la derecha
+ Estos comentarios tambien se pueden utilizar dentro de HTML, PERO, dentro de los <style></style> que vaya a utilizar que son "CSS" dentro de HTML
+*/
+
+/*----------------------CLASE 5-----------------------------DIFERENTES FORMAS DE DECLARAR ESTILOS*/
+
+/*
+Una de las formas mas comunes (pero de mala practica) es hacerlo desde HTML
+<style></style>
+
+O si no, en vez de darlos en linea puedo darlos dentro del documento con un <style></style> dentro del head utilizando declaraciones en bloque
+
+Ej
+
+<head>
+    <style>
+        h1
+        {
+            background-color:grey;
+        }
+    </style>
+
+</head>
+
+Aun asi, la forma mas limpia y segura de trabajar es con un archivo x separado de CSS y linkear el html al css
+
+la instruccion de linkeo desde el HTML es
+
+<link rel"sylesheet" href"RUTADELARCHIVOCSS">
+
+*/
+
+/*YA LO LINKEE DESDE HTML*/
+
+
+
+
+/*Con el import puedo mandar a llamar a otra hoja de estilos con su respectiva ruta. PERO utilizarlo es una mala practica, cuando desarrollo grandes paginas con muchos tipos de archivos, esta tecnica no conviene,puesto que el navegador al ir a leer el html y encontrarse con un .css sigue su curso de lectura del html mientras lee el css y lo descarga. PERO, cuando llega al css y lee el @import este no continua su curso, si no que se detiene para descargar todo el @import, esto puede traer una mala funcionalidad al programa*/
+@import url("./ejemploDeImport.css"); 
+
+h1
+{
+    color: yellowgreen;
+    background-color: black;
+}
+
+/*----------------------CLASE 7-----------------------------SELECTORES BASICOS: Etiquetas, identificadores y clases*/
+
+/*
+
+Selectores basicos :
+
+1-Etiquetas- Son elementos HTML
+2-Identificador - atributo Id - #
+3- Clases - atributo class - .
+*/
+
+/*1 - Si hago cambios directamente sobre una etiqueta TODOS las etiquetas de ese estilo que utilice se van a ver de esa manera*/
+p 
+{
+    color: midnightblue;
+} 
+
+/*Dar estilos con IDs es una mala practica (antipatron), xQ? porque ya le di un id a un parrafo, entonce ya no puedo tener otro id con el mismo nombre, y que permite CSS? la reutilizacion, entonces esto podria traerme problemas al querer trabajar en otros archivos con el mismo codigo reutilizado*/
+
+/*imaginemos que ya le di color de background a todos los parrafos en la etiqueta "p" en este archivo css, entonces ¿que pasa si le vuelvo a dar un background color desde este id? SE SOBREESCRIBE Y LE DA MAS IMPORTANCIA A MI ID personalizado, en este caos no lo hice*/
+#parrafo-dos
+{
+    background-color: skyblue;
+}
+
+/*Para aplicar clases se le puede agregar mas de un nombre a mi clase, Ademas, cuando cree una clase es imporatante hacer que esta sea lo mas descriptiva posible para que el codigo mejore y sea mas entendible hasta desde el mismo html*/
+
+/*Todos estos cambios se aplican en diferentes clases con sus {} esto hace que al encontrarnos con otra clase con el mismo nombre, no tengamos problemas puesto que probablemente querramos darle las mismas particularidades... siempre text-20 va a significar que quiero el texto con 20px x ejemplo*/
+.text-20
+{
+    font-size: 20px;
+}
+
+.text-32
+{
+    font-size: 32px;
+}
+
+.bg-red
+{
+    background-color:skyblue;
+}
+
+.bg-steelblue
+{
+    background-color: steelblue;    
+}
+
+.text-white
+{
+    color:white;
+}
+
+/*----------------------CLASE 9-----------------------------SELECTORES AVANZADOS: HIJOS DIRECTOS Y HEREDADOS*/
+
+/*Esto se puede aplicar porque para la clase hijos-directos > li SI ES UN HIJO DIRECTO DE LA CLASE, si quisiera aplicarselo a <b> no se podria, porque b es ñieto de hijos-directos*/
+.hijos-directos > li /*ESTO SOLO APLICA A LOS HIJOS, osea, primer nivel*/
+{
+    background-color: thistle;
+}
+
+/*En el caso de descendientes, con esta sintaxis, puede agarrar a los hijos/ñietos o el orden que tengan sin problema, en este caso b es ñieto  */
+.hijos-descendientes b
+{
+    background-color: thistle;
+}
+
+/*----------------------CLASE 10-----------------------------SELECTORES AVANZADOS: HERMANOS*/
+
+/*Este tipo de clase y agregado lo que nos permite es agarrar a las etiquetas que esten a la misma altura que esta en el tabulado y sean del mismo tipo, en este caso li y decir "desde esta etiqueta donde esta marcada la clase" hacia abajo, quiero que se apliquen estos efectos */
+/* para sacar ~ uso Alt Gr + tecla al lado de enter con el simbolo*/
+.hermanos-general ~ li 
+{
+    background-color: thistle;
+}
+
+/*Esto lo que hace es pintar solo el adyacente que tenga por debajo y ninguno mas.*/
+.hermanos-adyacentes + li
+{
+    background-color: thistle;
+}
+
+/*----------------------CLASE 11-----------------------------SELECTORES AVANZADOS: ATRIBUTOS*/
+
+
+/*En este caso los atributos de este tipo se fijan sobre un descendiente (por dejar el espacio se vuelve descendiente, (descendientes de .selectores-atributos)) y luego caen sobre los a que tengan el atributo href dentro de la etiqueta. SOBRE CUALQUIER OTRO "a" dentro de .selectores-atributos que no tenga href NO VA A CAER NINGUNO DE LOS CAMBIOS ESTETICOS QUE QUIERA REALIZAR*/
+.selectores-atributos a[href]
+{
+    background-color: thistle; 
+}
+
+/*Le doy negrita a todas clases .selectores-atributos con el descendiente a con el atributo target con el valor "_blank", justamente deje uno de la lista sin este atributo para demostrar que no se marca en negrita*/
+.selectores-atributos a[target="_blank"]
+{
+    font-weight: bold;
+}
+
+/*el asterisco * hace que se busque dentro del atributo una palabra que yo elija, entonces si mis enlases tienen ESA palabra que yo escribir va a darle el estilo que yo quiera aplicar. Justamente hay uno de los links de la lista que no tiene "jonmircha" por dentro que es el "regresar altermario"*/
+.selectores-atributos a[href*="jonmircha"]
+{
+    font-size: 24px;
+}
+
+/*El circunflejo ^ aplica el estilo solo si la palabra que selecciono esta al principio*/
+.selectores-atributos a[href^="http:"]
+{
+    text-decoration: none;
+}
+
+/*El simbolo de dolar me dice que la palabra que tengo que buscar tiene que estar al final de el texto en el que estoy buscando*/
+.selectores-atributos a[href$=".com"]
+{
+    background-color: black;
+}
+
+/*a los que tengan class buscar dentro la palabra "cursos" en una lista separada por espacios [Dentro de esta clase se puede ver la palabra clase entre espacios = class="menu-item cursos button"] */
+.selectores-atributos a[class~="cursos"]
+{
+    background-color: steelblue;
+}
+
+/*el simbolo | me sirve para las palabras que esten separadas por un - entonces esto quiere decir que si busco dentro de una clase un nombre que este seguido de un - lo tomara como objetivo para aplicar estilos, la clase es class="menu-item ahora button". ESTO SE APLICA AL LINK DE "CURSOS" Y "AHORA" */
+.selectores-atributos a[class|="menu"]
+{
+    font-style: italic;
+}
+
+
+/*--------------------------------CLASE 12----------------------SELECTORES AVANZADOS: Universal*/
+
+/*El selector universal significa que se lo va a aplicar a todo el documento*/
+
+*
+{
+    /*Esto se lo aplica A TODO EL DOUCMENTO*/
+    font-family: sans-serif;
+    
+}
+
+/*A todos los elementos de la clase selector universal aplicales un font size de 24px*/
+
+.selector-universal * 
+{
+    font-size: 24px;
+}
+
+
+/*--------------------------------CLASE 13----------------------PSEUDOCLASES de estado*/
+/*Las pseudo clases dan estilos dependiendo del contexto, posicion o estado del elemento*/
+.form-pseudoclases *:required /*En este caso, dice "a todas las clases de este tipo que tengan required dale el siguiente estilo*/
+{
+    border-color: yellow;
+}
+
+
+/*Esto hace que de alguna manera tengamos una interactividad a la hora de trabajar, puesto que hasta podriamos trabajar sobre la interfaz y la programacion directamente desde aca*/
+.form-pseudoclases *:valid
+{
+    border-color: green;
+}
+
+.form-pseudoclases *:invalid
+{
+    border-color: red;
+}
+
+.form-pseudoclases *:focus /*focus es el mouse y a donde apunta, entonces, si apunto a cualquier clase de este tipo cambio algo en pantalla [Solo si lo cliqueo]*/
+{
+    background-color: skyblue;
+}
+
+.form-pseudoclases *:disabled /*todo lo que tenga esta clase y este desabilitado recibe estos estilos*/
+{
+    background-color: pink;
+}
+
+/*En el caso de trabajar con enlases si hay una jerarquia a la hora de definirles estilos, hay que estudiarla, los siguientes estilos agregados a los enlases estan en orden*/
+
+/*
+El orden correcto es
+
+a:link
+a:active
+a:visited
+a:hover
+
+
+se puede leer mas a fondo aca https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
+*/
+
+/*Ejemplo visited tiene que estar encima de hover para que no inhabilite la segunda*/
+
+.menu-pseudoclases a:visited /*Esto es para las paginas que ya visite*/
+{
+    color: olive;
+}
+
+.menu-pseudoclases a:hover /*hover es para cuando el mouse pasa por encima de el elemento*/
+{
+    color: orange;
+}
+
+.p-pseudoclases:hover /*Cuando pase el mouse por encima del parrafo este aumenta el tamaño de la letra*/
+{
+    font-size: 20px;
+}
+
+#temario-css:target /*Recordar que el # es para ids. Entonces, si apreto la manito de vuelta al temario se activa esta mierda*/
+{
+    background-color: lightgreen;
+}
+
+
+
+/*--------------------------------CLASE 14----------------------PSEUDOCLASES por posicion y tipo*/
+
+.lista-pseudoclases li:first-child /*Solo se lo aplica al primer elemento*/
+{
+    color:green;
+}
+
+.lista-pseudoclases li:last-child
+{
+    color: violet;
+}
+
+.lista-pseudoclases li:nth-child(3) /*Necesita recibir un numero dentro*/
+{
+    color: navy;
+}
+
+.lista-pseudoclases li:nth-child(5n) /*de cuatro en cuatro hace lo que te marco aca adentro*/
+{
+    font-size: 20px;
+}
+
+.lista-pseudoclases li:nth-child(3n +1) /*de 4 en 4 (3+1=4) hace lo que te marco aca adentro*/
+{
+    font-weight: bold;
+}
+
+.lista-pseudoclases li:nth-child(even) /*Solo aplicaselo a los pares*/
+{
+    background-color:   yellow;
+}
+
+
+.lista-pseudoclases li:nth-child(odd) /*Solo aplicaselo a los inpares*/
+{
+    background-color: skyblue;
+}
+
+/*CAMBIO DE ARTICULO PARA TRABAJAR*/
+/*Si en este caso elijo a p:first-child para trabajar, me encontraria en el problema de ver que el primer hijo de la clase NO ES UN P entonces los cambios no se aplican*/
+
+/*
+.articulo-pseudoclases p:first-child 
+{
+    background-color: pink;
+}
+*/
+
+/*Para esto se utiliza lo siguiente*/
+
+.articulo-pseudoclases p:first-of-type /*El primero en su tipo dentro de la clase*/
+{
+    background-color: pink;
+}
+
+.articulo-pseudoclases p:last-of-type /*El ultimo en su tipo dentro de la clase*/
+{
+    background-color: red;
+}
+
+/*De la misma manera existen los n para esta clase de pseudoclases*/
+
+.articulo-pseudoclases p:nth-last-of-type(3) /*Se aplica al tercero*/
+{
+    background-color: fuchsia;
+}
+
+/*Ahora ¿que pasa si quiero aplicar para todo lo que contenga la clase algun tipo de estilo pero no para los p en especial?*/
+.articulo-pseudoclases *:not(p /*Si necesitace agregar a mas CLASES (de otras partes del documento)puedo agregarlas aca, ejemplo ",boton" */)      /*Aplica de forma universal (a la clase) pero no a p*/
+{
+    background-color: beige;
+}
+
+
+
+
+
+/*--------------------------------CLASE 15----------------------PSEUDOELEMENTOS*/
+
+/*Los pseudoelementos tienen de alguna manera un par de dobles dos puntos  ::  */
+/*Revisar que hay muchos que todavia estan en fase experimental*/
+
+
+/*Las dos primeras a examinar que son ::before y ::after son para agregar contenido antes o despues de que aparezca el contenido de la clase*/
+.saga-geminis::before/*Recordar los 2 PUNTOS [Si lo pongo con uno funciona... PERO ES NECESARIO PARA ENTENDERSE EN UN GRUPO DE TRABAJO PONER LOS 2]*/
+{
+    content:"🤼‍♀️";
+}
+
+.saga-geminis::after
+{
+    content: "♊";
+}
+
+.saga-precio::before
+{
+    content:"💲";
+
+}
+
+.saga-precio::after
+{
+    content:" USD";
+    font-weight: bold;
+}
+
+/*Ahora trabajo con un parrafo*/
+
+/*first letter, first line y selection sirven para cambiar algunos aspectos del texto y su interactividad con el usuario con distintos tipos de estilos*/
+
+.p-pseudoelementos::first-letter /*Trabajo con la letra capital*/
+{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.p-pseudoelementos::first-line /*Trabajo con la primer linea*/
+{
+    background-color: coral;
+}
+
+.p-pseudoelementos::selection /*Trabjo con la seleccion del usuario sobre el texto*/
+{
+    color: greenyellow;
+    background-color: black;
+}
+
+/*
+Si quisiera aplicar esto ultimo a toda la pagina podria...
+
+*::selection
+{
+    color: greenyellow;
+    background-color: black;
+}
+*/
+
+/*Trabajo con un input*/
+
+.input-pseudoelementos::placeholder /*Cambio el color del texto del placeholder (Ojo este no funciona en explorer, esta en fase experimental)*/
+{
+    color:green;
+}
+
+
+/*--------------------------------CLASE 16----------------------AGRUPACION DE SELECTORES*/
+
+/*La agrupacion de selectores tiene que ver con el hecho de agrupar los selectores de forma tal que puedan estar todos dentro de una misma aplicacion de estilo a traves de una coma, esto hace que podamos aplicar todos los estilos que esten dentro de las llaves {} a todas estas etiquetas*/
+
+.form-agrupar-selectores input[type="text"], /*La coma sirve como agrupador */
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea
+{
+    border-color: yellow;
+    border-width: 2px; /*El grosor de todas las cajas no es la misma, la normalizo*/
+    border-style: dashed;
+    background-color: black;
+    font-size: 20px;
+
+    display:block; /*Despus se habla de display, pero en particular esto hace que cada uno de estos elementos ocupe una linea diferente*/
+    width: 300px;
+
+}
+
+/*La clase 17 es teorica*/
+
+/*-----------------------------------CLASE 17-------------------------ALGORITMO DE CSS*/
+
+
+/*
+
+Clase 17 algoritmo de css
+
+Esta clase se encarga de demostrar como funciona CSS, como se aplican los estilos y como funcionan las hojas de estilo en cascada
+
+
+Este algoritmo se divide en 3 partes
+
+·La cascada
+·La especificada
+·La herencia
+
+1-el origen del codigo
+    ·User agent=Estilos que por defecto le pone el navegador a ciertas etiquetas. Si yo reviso una h2 dentro del navegador, este tiene estilos (En todo el documento hasta este punto no realice ningun cambio sobre ellos. CADA NAVEGADOR DECIDE EL ESTILO DE ALGUNAS ETIQUETAS)
+
+    ·Personalizacion de usuario= Personalizaciones que como usuario le hacemos al sistema operativo. Ejemplo, youtube te permite cargar youtube en modo oscuro. O por ejemplo la barra de chrome se carga en modo oscuro si tengo windows en modo oscuro. Lo mismo pasa si yo aumento el zoom en el navegador estando en FB y entro a YT, ambos se verian en 125%
+
+    ·Estilos de autor=Es lo que hacemos con CSS y la forma en que vamos cargando nuestro estilos a las paginas que diseñamos
+
+2-Especifidad=Si un estilo entra en conflicto con otro, la diferenciacion la hace la especifidad
+
+3-Herencia= Esto tiene que ver con el orden en el que aparecen las cosas en pantalla
+
+
+*/
+
+
+/*-----------------------------------CLASE 18-------------------------LA CASCADA*/
+
+/*
+
+clase 18 la cascada
+
+esto tiene que ver con la forma en la que el navegador web va aplicando los estilos y en base a esto toma 3 aspectos en particular
+
+1-el origen del codigo
+			·User agent=Estilos que por defecto le pone el navegador a ciertas etiquetas. Si yo reviso una h2 dentro del navegador, este tiene estilos (En todo el documento hasta este punto no realice ningun cambio sobre ellos. CADA NAVEGADOR DECIDE EL ESTILO DE ALGUNAS ETIQUETAS)
+
+			·Personalizacion de usuario= Personalizaciones que como usuario le hacemos al sistema operativo. Ejemplo, youtube te permite cargar youtube en modo oscuro. O por ejemplo la barra de chrome se carga en modo oscuro si tengo windows en modo oscuro. Lo mismo pasa si yo aumento el zoom en el navegador estando en FB y entro a YT, ambos se verian en 125%
+
+			·Estilos de autor=Es lo que hacemos con CSS y la forma en que vamos cargando nuestro estilos a las paginas que diseñamos
+
+2-Especifidad=Si un estilo entra en conflicto con otro, la diferenciacion la hace la especifidad
+
+3-Herencia= Esto tiene que ver con el orden en el que aparecen las cosas en pantalla
+
+
+
+----------LA CASCADA--------
+
+El navegador lee linea por linea los archivos que le cargo para que lea mi pagina web. Entonces que pasa cuando se cruza con un import? SE DETIENE y va a leer TODO el linkeo, una vez que entra si encuentra otro linkeo SE DETIENE y lee todo el nuevo linkeo. Tener mucho cuidado con esto porque al entrar en tantos links puede romperse la pagina al cargar de mala manera dependiendo de que tan pesados puedan ser nuestros linkeos
+
+
+Ahora, si yo entro al navegador y me fijo el orden de aparicion de las cargas de estilos me va a mostar arriba de todo (lo ultimo en cargar)
+
+Entonces si me fijo bien, el orden de aparicion es... carga el link dentro de style (ejemplo de import), despues carga style y ULTIMO cargaria los estilos dentro del index. 
+
+Que pasa si cargo un background-color en style y despues otro en background-color en la misma etiqueta pero desde algo que se carge despues de style como puede ser el index? SE SOBREESCRIBE Y AGREGA SOLO EL ESTILO DEL ULTIMO
+
+h1 
+{
+background-color:red;
+background-color:black; Solo carga black
+
+*/
+
+/*-----------------------------------CLASE 19-------------------------ESPECIFICIDAD*/
+
+/*
+Clase 19 especificidad
+
+Cada selector tiene cierto puntaje (peso especifico) para CSS. Obviamente dependiendo de este peso, el que queda es el que sobreescribe a otros estilos. ACA NO IMPORTA LA CASCADA. Entonces, hay que ver QUE tiene MAS PESO. 
+
+Si yo paso el mouse encima de una clase de estilos dentro de CSS me dice la especificidad de una de la clase. se compone de tres (son cuatro pero solo se ven 3) numeros Ej: (0,1,2) 
+
+Como se calcula la especificidad?
+
+HAY UNA TABLA
+
+La especificidad es el peso que tiene un selector cuando hay un conflicto de estilos. Se calcula de la siguiente forma:
+
+Etiquetas y pseudoelementos__________0,0,0,1
+Clases,atributos y pseudoclases______0,0,1,0
+Identificadores______________________0,1,0,0
+Estilos en linea_____________________1,0,0,0
+!important__________________________Rompe la especificidad
+
+Dependiendo de que etiquetas tenga a lo que quiero aplicar estilos le sumo el puntaje que me dice la tabla
+
+usar !important es mala practica, pero hace justamente lo que dice su descripcion. SE CAGA EN TODO y mete el estilo sin importarle la cascada ni la especificidad
+
+
+Es importante entender que para trabajar en la medida de lo posible es MAS que util trabajar con CLASES y no con cualquier otra cosa, porque utilizar cualquier mierda para mandar estilos a mi pagina va a hacer que el codigo se carge a pleno de puntos y despues nunca voy a poder saber como arreglar las cosas x la cantidad de cuentas que voy a tener que estar haciendo para poder aplicar los estilos que yo quiero sin que algo me lo sobreescriba. Despues voy a querer aplicar un !important y despues cuando quiera aplicar otro todo se va a ir a la MIERDA
+
+*/
+
+
+/*-----------------------------------CLASE 20-------------------------PRACTICA DE CASCADA Y ESPECIFICIDAD*/
+
+blockquote /*Esto es para aplicar esticlo a TODAS LAS ETIQUETAS DE ESTE TIPO*/ /*Especificidad de (0,0,1)*/
+{
+    background-color: burlywood;
+}
+
+blockquote.cita-marco /*Aplica los estilos de la regla a la etiqueta blockquote que tenga la clase cita-marco (ESTO ES AUMENTAR LA ESPECIFICIDAD A PROPOSITO- NUNCA SE HACE) *//*Especificidad (0,1,1)*/
+{
+    background-color: red;
+}
+
+.cita-marco /*Especificidad de (0,1,0)*/
+{
+    background-color: cornflowerblue;
+}
+/*HASTA ESE PUNTO SE APLICA EL ROJO, DESPUES CAMBIA X LO QUE VIENE MAS ABAJO*/
+/*Teniendo en cuenta lo anterior POR CASCADA se aplicaria el ultimo estilo agregado. PERO POR ESPECIFICIDAD se aplica el segundo por tener mas puntaje*/
+
+
+/*Que pasa si ahora utilizo el ID? la cascada da igual. lo importante es que use un id, ESO SUMA (1,0,0 a su especificidad y gana el ID)*/ /*Especificidad(1,0,0)*/
+
+#cita-marco
+{
+    background-color: lightgreen;
+}
+/*HASTA ESE PUNTO SE APLICA LIGHTGREEN, DESPUES CAMBIA X LO QUE VIENE MAS ABAJO*/
+
+/*Especificidad (1,0,1)*/
+blockquote#cita-marco
+{
+    background-color: lightsalmon;
+}
+/*HASTA ESE PUNTO SE APLICA LIGHTSALMON, DESPUES CAMBIA X LO QUE VIENE MAS ABAJO*/
+
+
+
+
+/*Lo siguiente lo pongo en comentarios porque creo que los ejemplos anteriores se entendio
+
+    
+Si hago esta guasada de poner clase, id, etiqueta y toda la bola... QUE NO HAY QUE HACERLO, intento por lo menos ir en orden, primero etiqueta, despues id y ultimo clase, osea... en orden de peso agregado. El de mayor pesaje primero y despues sigo...
+
+blockquote#cita-marco.cita-marco
+{
+    background-color: lightsteelblue;
+}
+
+
+
+si yo fuera a HTML y agrego ahi los estilos tengo que acordarme que eso agrega (1,0,0,0) de especificidad, entonces es muy probable que el que haya quedado en HTML gane la especificidad
+
+
+ahora... si yo usara !important  que pasa? tengo 1000 con mi supuesto codigo style en el html pero el important ROMPE TODA LA ESPECIFICIDAD.
+
+.cita-marco
+{
+    background-color: deiumaquamarine !important;
+}
+
+
+ahora... que pasa si agrego otro important en la misma clase?
+
+.cita-marco
+{
+    background-color: white !important; Al haber dos importants obviamente si aplica CASCADA
+}
+
+*/
+
+/*-----------------------------------CLASE 21-------------------------HERENCIA*/
+
+/*
+La herencia, es la capacidad de un selector de objetr (heredear) los valores de sus ancestros mas cercanos, para aplicarla se usa el valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestion con el valor initial
+
+Hay ciertas propiedades que no se heredan, como por ejemplo el fondo y los bordes. 
+
+La herencia puede verse dentro del navegador, utilizando la herramienta del inspector de codigo y marcando puntualmente para ver el CSS y marcando algo dentro de el renderizado. Una vez ahi a la derecha voy a ver de donde vienen cada uno de los estilos aplicados en pantalla
+ 
+
+Ej: Si yo voy ahora mismo (En este punto del curso) a ver que tipo de fuente tiene la pagina me va decir que la deifni yo mismo y no el navegador, eso lo hice mas arriba. Ahora si yo voy a ver que tipo de fuente le pone a una cita texual me va a decir que SI, yo marque que es lo que iba a ser una cita, pero que el estilo de las citas textuales los define el navegador, de el hereda el font-family
+
+
+Ahora veamos el siguiente caso
+
+*/
+
+/*Voy a la cita de marco aurelio de la clase anterior y veo como esta tiene un cierto background, ahora yo le cambio el background a el nombre "marco aurelio" porque este esta envuelto en la etiqueta cite*/
+
+
+.cita-marco cite
+{
+    background-color: pink; /*Cambia a rosa*/
+    background-color: inherit; /*Pero despues le digo que mejor herede el color del padre, el padre tiene background-color: lightsalmon;*/ /*Fijarse en la cascada como primero puso rosa y despues este color tachando el primero*/
+    /*Ahora bien, para cambiar lo que viene por herencia como por ejemplo el tamaño de la cita que es de 16px puedo o... cambiar esa herencia sobreescribiendo o y luego puedo decirle, No mejor poner la inicial*/
+    font-size: 24px; /*Aumento la tipografia*/
+    font-size: initial; /*Vuelve a la inicial osea, por defecto*/
+}
+
+/*para saber que aplica herencia en CSS y que no se deja la siguiente web
+http://web.dev/learn/css/inheritance/#which-propieties-are-inheritable
+*/
+
+
+/*-----------------------------------CLASE 22-------------------------RESETEO Y NORMALIZACION DE ESTILOS*/
+
+/*Esto trabaja particularmente sobre los efectos y estilos que carga el navegador por defecto, con el paso de los años se dio que no importa mucho que estilo toma algo con un navegador u otro, si no que entre ellos se empezaron a estandarizar para no hacer que las paginas se vean muy diferentes y el dev pueda trabajar mejor. Sin envargo aun se pueden utilizar reseteos de estilo para dar una base propia */
+
+/*
+    un lugar donde puedo resetear todo a cero (es una libreria) es esta https://necolas.github.io/normalize.css/ (normalize.css) ahi pongo "descargar" y me muestra el codigo a copiar. lo copio, creo un archivo css y lo linkeo con el index y cada hoja que vaya a utilizar, haciendo que lo que trae css por defecto se resetee, e incluso yo mismo pueda modificarlo
+
+    hay otra pagina que quedo un poco obsoleta pero de la que tambien voy a copiar el codigo (recet.css) https://meyerweb.com/eric/tools/css/reset/
+*/
+
+/*-----------------------------------CLASE 23-------------------------PREFIJO DE LOS NAVEGADORES*/
+
+/*HTML CSS Y JS son los estandares de la web y estos ni siquiera tienen que descargarse, ya vienen en nuestro ordenador para que podamos trabajar con ellos. Ahora bien si yo me fijo en Can i USE, la pagina que me sirve para saber si puedo utilizar o no algunas de las herramientas que tengo para usar en HTML en distintos navegadores, ahi puedo ver con detalle si algo se puede implementar o no. Pero ademas de esto se puede ver si algo se puede implementar en ciertos navegadores bajo un soporte especial con un prefijo unico, en el caso de mozilla el prefijo es -moz- en caso de microsoft el prefijo es -ms- en caso del resto -webkit- Ahi, y con todos estos prefijos dependiendo de para quien lo use puedo hacer funcionar las herramientas experimentales si es que Can i use me dice que tienen este soporte especial experimental */
+
+
+/*
+Un ejemplo del uso de esto es para esta funcion CSS
+para cuando grid no era soportado
+
+.example
+{
+    display: -ms-grid;
+    display: grid;
+    -webkit-transition:all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    background -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+    background: -o-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
+}
+
+*/
+
+/*-----------------------------------CLASE 24-------------------------MODELO DE CAJA*/
+
+
+/*developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model
+Ahi es donde me explica mas o menos que es lo que es el modelo de caja. En pocas palabras es la forma en la que CSS interpreta cada una de las lineas de estilo que voy mandando para la lectura.
+
+Para css todo es una caja, cada una de las lineas que mando esto lo hago en un nuevo archivo llamado box-model.html
+*/
+
+/*La siguiente explicacion esta aca y en el CSS de esta clase y en el bloc de notas
+  Cuando yo voy al navegador y entra en en documento html de la clase 24 e inspecciono y con el clic de inspeccionar una parte del CSS le doy al titulo o a lo que sea y veo en la parte de estilos que es lo que pasa voy a ver una caja con varias cajas adentro, esto que es?
+
+  Cada linea que yo de de estilos para CSS es una caja
+
+  esa caja me da un margen distancia a otro elemento html (incluido la misma caja html osea... el borde de la pantalla) o la distancia a otro elemento html , un borde para el contenido, el relleno (paddin, distancia desde el contenido hasta el borde) y el mismo contenido(tamaño del contenido, tener en cuenta que esto puede referirse a texto de tipo bloque, entonces que pasa si lo abro desde un celu o extiendo la pantalla del navegador? EL TAMAÑO AUMENTA)
+
+  Entonces... el modelo de caja: es la fomra en la que CSS ve a los elementos HTML y ¿como los ve? como si fueran cajas con las siguientes propiedades::after
+  1-El contenido(content): el contenido(texto del elemento html)
+  2-El borde(border): lo que delimita cada uno de los elementos HTML
+  3-El relleno(padding): son las distancias internas(la distancia del borde al contenido)
+  4-El margen(margin): son las distancias externas(la distancia entre el elemento html y sus elementos hermanos o padres)
+
+  dentro del modelo de caja hay 4 lados y estos se aplican para el lado que va un reloj, osea, sentido horario:
+
+  1-top
+  2-right
+  3-botton
+  4-left
+
+
+
+*/
+
+
+
+/*-----------------------------------CLASE 25-------------------------Width y height*/
+/*------------------------------CLASE 26------------------------bordes*/
+/*------------------------------CLASE 27------------------------padding y margin*/
+/*------------------------------CLASE 28------------------------clases de linea vs clases de bloque*/
+/*------------------------------CLASE 29------------------------Propieadd display*/
+/*------------------------------CLASE 30------------------------Visibility*/
+/*------------------------------CLASE 31------------------------Overflow*/
+/*------------------------------CLASE 32------------------------Tamaño de caja*/
+/*------------------------------CLASE 33------------------------Float & clear*/
+/*------------------------------CLASE 34------------------------Colapso de margenes verticales*/
+/*------------------------------CLASE 35------------------------Adicion de margenes horizontales*/
+/*------------------------------CLASE 36------------------------Centrado de caja*/
+
+
+
+/*En otro html y css*/
+
+/*------------------------------CLASE 37------------------------Posicionamiento CSS*/
+/*CAMBIA EL HTML Y CSS ANTERIOR PARA TRABAJAR EN UNO NUEVO*/

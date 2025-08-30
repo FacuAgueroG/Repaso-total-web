@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/box-model.css">
+
+    <title>Modelo de caja en CSS</title>
+
+</head>
+
+<body>
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h1>Modelo de cajas en CSS</h1>
+
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum distinctio odit alias blanditiis expedita nihil molestiae, vero aperiam soluta id? Cupiditate, hic earum? Expedita, illo amet! Quae alias beatae aspernatur!</p>
+
+    <!--
+        /*developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model
+    Ahi es donde me explica mas o menos que es lo que es el modelo de caja. En pocas palabras es la forma en la que CSS interpreta cada una de las lineas de estilo que voy mandando para la lectura.
+
+    Para css todo es una caja, cada una de las lineas que mando esto lo hago en un nuevo archivo llamado box-model.html
+    */
+
+    /*La siguiente explicacion esta aca y en el CSS de esta clase y en el bloc de notas
+    Cuando yo voy al navegador y entra en en documento html de la clase 24 e inspecciono y con el clic de inspeccionar una parte del CSS le doy al titulo o a lo que sea y veo en la parte de estilos que es lo que pasa voy a ver una caja con varias cajas adentro, esto que es?
+
+    Cada linea que yo de de estilos para CSS es una caja
+
+    esa caja me da un margen distancia a otro elemento html (incluido la misma caja html osea... el borde de la pantalla) o la distancia a otro elemento html , un borde para el contenido, el relleno (paddin, distancia desde el contenido hasta el borde) y el mismo contenido(tamaño del contenido, tener en cuenta que esto puede referirse a texto de tipo bloque, entonces que pasa si lo abro desde un celu o extiendo la pantalla del navegador? EL TAMAÑO AUMENTA)
+
+    Entonces... el modelo de caja: es la fomra en la que CSS ve a los elementos HTML y ¿como los ve? como si fueran cajas con las siguientes propiedades::after
+    1-El contenido(content): el contenido(texto del elemento html)
+    2-El borde(border): lo que delimita cada uno de los elementos HTML
+    3-El relleno(padding): son las distancias internas(la distancia del borde al contenido)
+    4-El margen(margin): son las distancias externas(la distancia entre el elemento html y sus elementos hermanos o padres)
+
+    dentro del modelo de caja hay 4 lados y estos se aplican para el lado que va un reloj, osea, sentido horario:
+
+    1-top
+    2-right
+    3-botton
+    4-left
+
+
+
+    */
+
+    -->
+
+    <!-----------------------------CLASE 25---------------------WITH Y HEIGHT-->
+
+    <!--Todo en CSS-->
+
+    <!-----------------------------CLASE 26---------------------Borde-->
+
+    <!--Todo en CSS-->
+
+    <br>
+    <hr>
+
+    <!-----------------------------CLASE 27---------------------padding y margin-->
+
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h3>Clase 27 padding y margin</h3>
+
+    <div class="caja-uno">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aperiam saepe blanditiis iusto rerum magnam, non deleniti autem! Accusamus distinctio et delectus, unde quod modi nam aspernatur esse ut deserunt?</div>
+    <div class="caja-dos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni reiciendis vero corporis, esse cumque, mollitia, recusandae saepe neque non illum repellendus molestiae labore culpa enim quia voluptatum architecto? Nulla, fugiat.</div>
+
+    <br>
+    <hr>
+
+    
+    <!-----------------------------CLASE 28---------------------cajas de linea vs cajas de bloque-->
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h3>Clase 28 clases de linea vs clases de bloque</h3>
+
+    <div class="caja-bloque">Esto es una caja de bloque</div>
+    
+    <span class="caja-linea">Esto es una caja de linea</span>
+
+    <br><br><br>
+    <hr>
+
+    <!-----------------------------CLASE 29---------------------Propiedad display-->
+
+
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h3>Clase 29 Propiedad display</h3>
+
+
+    <div class="caja-none"> <!--Esta caja no se muestra porque el display tiene puesto un none-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat tempora ad provident eaque quisquam nostrum voluptatibus nam dignissimos natus, dolore voluptates fuga porro eum libero, expedita doloribus atque ab. 
+    </div>
+    <br>
+    <div class="caja-linea-bloque"> <!--Esta caja permite que se le agregue espacio en vertical por mas que sea una etiqueta en linea-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat tempora ad provident eaque quisquam nostrum voluptatibus nam dignissimos natus, dolore voluptates fuga porro eum libero, expedita doloribus atque ab. 
+    </div>
+
+    <div class="caja-linea-bloque"> <!--Esta caja permite que se le agregue espacio en vertical por mas que sea una etiqueta en linea-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat tempora ad provident eaque quisquam nostrum voluptatibus nam dignissimos natus, dolore voluptates fuga porro eum libero, expedita doloribus atque ab. 
+    </div>
+
+    <br>
+    <hr>
+    <!-----------------------------CLASE 30---------------------Visbility-->
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2>visibility</h2>
+
+
+    <div class="visibility bd-black bd-3px bd-solid"> <!--Le agrego visibility hidden-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis commodi architecto non libero blanditiis fuga iure obcaecati! Voluptas quisquam, architecto commodi cum reprehenderit sit placeat perferendis eveniet id aperiam similique.
+        <br><br><br><br><br><br><br><br><br><br>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, ea neque! Cumque mollitia corporis blanditiis enim nostrum voluptate exercitationem repellat et perferendis ut, aliquid quos consequatur unde officia vel! Velit.
+    </div>
+
+    <div class="bd-black bd-3px bd-solid">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem minus perferendis pariatur doloremque? Debitis quas recusandae molestiae totam est earum soluta iusto deserunt ipsa, beatae id assumenda sequi cumque animi. <p class="bg-red">ESTA ES LA SEGUNDA CAJA, LA PRIMERA ESTA CON VISIBILITY NONE, Y AUN ASI GUARDA SU ESPACIO</p>
+    </div>
+
+
+    <br>
+    <hr>    
+
+    <!-----------------------------CLASE 30---------------------Overflow-->
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2>overflow</h2>
+
+    <p class="width-200px height-250px bd-3px bd-solid overflow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, beatae! Maxime ab corrupti animi quibusdam sapiente impedit reprehenderit deleniti dolorum neque ipsam. Omnis deserunt nesciunt perferendis! Temporibus aut praesentium dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eos doloribus harum nam quas natus impedit. Blanditiis sunt amet autem nostrum, qui corporis, dolore exercitationem sint perspiciatis facere mollitia beatae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi saepe inventore autem alias corporis quas! Ab asperiores nisi sapiente. Consectetur, exercitationem corrupti incidunt molestias commodi necessitatibus quia eligendi debitis quasi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse quasi cupiditate nemo blanditiis reprehenderit distinctio nihil cumque perspiciatis, amet hic quam eos voluptatem, dolor pariatur delectus! Dicta, consequuntur quia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum ipsum est harum mollitia nulla veniam culpa exercitationem illo recusandae nemo non explicabo nobis provident incidunt eveniet quibusdam error esse.</p>
+
+    <br>
+    <hr>
+    <!-----------------------------CLASE 32---------------------Tamaño de caja-->
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2> tamaño de caja</h2>
+
+    <div class="box-sizing-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam consectetur necessitatibus debitis beatae optio sed. Laborum ut ea architecto saepe molestias! Perspiciatis illo suscipit eos, ut quas nostrum autem.
+    </div>
+
+    <div class="box-sizing-border">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam consectetur necessitatibus debitis beatae optio sed. Laborum ut ea architecto saepe molestias! Perspiciatis illo suscipit eos, ut quas nostrum autem.
+    </div>
+
+    <!--ejemplo de desbordamiento por el tamaño de caja explicado en css-->
+
+    <article class="container-col-3">
+        <section class="item">Seccion 1</section>
+        <section class="item">Seccion 2</section>
+        <section class="item">Seccion 3</section>
+    </article>
+
+    <br>
+    <hr>
+
+    <!-----------------------------CLASE 33---------------------Float & clear-->
+    <a href="../index.html">Volver al index.html ☝️</a>
+
+    <h2>float & clear</h2>
+
+    <section class="bg-black"> <!--Ver que por mas que pinte un fondo negro para esta caja NO SE PINTA... explicacion en css-->
+        <article class="float-right bg-red">este elemento flota a la derecha</section>  <!--lo hago flotar-->
+
+        <!--La caja fue definida, se le agrego un color al background que fue negro e hize flotar los dos elementos que contenia la section (2 articles) al estar flotando y salirse de la disposicion del html, dejan de ser hijos de la section... entonces el section NO TIENE ELEMENTOS DENTRO para poder pintarles un background color black... los dos elementos que estan flotando pueden tomar el color que quieran, como lo son el rojo y el verde puestos
+        si yo agrego un article con un lorem en el centro y no lo hago flotar... tengo CONTENIDO! esto puede pintarse de negro por herencia de la section
+        -->
+
+        <article class="float-left bg-green">este elemento flota a la izquierda </article>  <!--lo hago flotar-->
+    </section>
+
+    <!--Que pasa si yo agrego aca un parrafo en un nuevo article? en una nueva section
+
+    El texto este se vuelve estupido y rompe toda la gerarquia anterior, xQ los elementos del float lo confunden. Con la propiedad clear se puede contrarrestar los efectos del float... osea hace que las cosas dejen de flotar-->
+
+    <!--<div class="clearfix"></div> CON ESTO LO SOLUCIONO y limpia las flotaciones que lo irrumpen
+
+    <section>
+
+        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quia tempora voluptatibus nostrum in magnam delectus optio nemo ab fugiat possimus sequi, dignissimos laboriosam cumque repellat! Laborum ullam saepe recusandae?</article>
+
+    </section>        -->
+    <!--mas abajo lo vuelvo a hacer pero sin estropear la explicacion de arriba-->
+    
+    <br>
+    <hr>
+
+    <!-----------------------------CLASE 34---------------------colapso de margenes verticales-->
+
+
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2>colapso de margenes verticales</h2>
+
+    <section class="bg-red">
+        <article class="bd-3px bd-black bd-solid margin-top-bottom16px">Seccion 1</article>
+        <article class="bd-3px bd-black bd-solid margin-top-bottom16px">Seccion 2</article>
+    </section>
+
+    <!-----------------------------CLASE 35---------------------Adicion de margenes horizontales-->
+
+    <br>
+    <br>
+    <hr>
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2>Clase 35 adiccion de margenes horizontales</h2>
+
+    <article class="bg-steelblue margin-collapse">
+        <section>
+            <span>section1</span><span>section2</span><span>section3</span>
+        </section>
+    </article>
+
+    <!-----------------------------CLASE 36---------------------Centrado de caja-->
+
+    <br>
+    <hr>
+
+    <a href="../index.html">Volver al index.html ☝️</a>
+    <h2>Clase 36 centrado de caja</h2>
+
+    <article class="sitio-web">
+        <header>cabecera</header>
+        <main>contenido principal</main>
+        <footer>pie de pagina</footer>
+    </article>
+
+    
+    <!--Cambio de html y css-->
+
+</body>
+</html>

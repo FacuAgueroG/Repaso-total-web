@@ -1,0 +1,25 @@
+body{
+    margin: 0%;
+    /* padding-top: 50px; En caso de querer probar sticky => comentar esto */
+}
+
+.header{
+    background-color: mistyrose;
+    width: 100%;
+    height: 50px;
+}
+
+/*Recordar que la cabecera de tipo sticky top siempre tiene que aparecer
+ primero que cualquier otro contenido */
+.sticky-top{
+    position: sticky;
+    top: 0;
+}
+
+.hero-image{
+    background-color: palegoldenrod;
+    width: 100%;
+    height: 100vh;
+}
+
+
