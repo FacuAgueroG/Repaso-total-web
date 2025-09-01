@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-------------------------CLASE 07------------------------->
+    <!---------------------flex-shrink---------------------------->
+
+    <style>
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+        }
+
+        .container
+        {
+
+            background-color: #333;
+            height: 30vh;
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            justify-content: flex-start; 
+
+            align-items: stretch;
+            align-content: flex-start;
+
+
+        }
+
+        .item   
+        {
+            border: medium solid #999;
+            background-color: #666;
+
+            flex-grow: 0; 
+
+            /*Cuando la caja flexbox no tenga espacio sobrante, los items pueden encogerse para entrar en la caja... osea, si achico la ventana o uso la pagina desde un celu sin responsive desing las cajas tienden a achicarse con tal de entrar en la ventana. SI APAGO EL VALOR NO SE ACHICAN Y SALE LA BARRA DE SCROLL LATERAL Y HORIZONTAL*/
+            flex-shrink: 1; /*default 1*/
+
+            /*Que pasa si a uno de ellos le doy un valor mas alto que 1? ejemplo 2, significa que ese item en particular se va a reducir el doble! se reduce a la mitad? NO, SE REDUCE EL DOBLE DE LO QUE LE CORRESPONDE CUANDO SE ACHIQUE LA PANTALLA*/
+        }
+
+        .item-special{
+            flex-shrink: 2;
+        }
+
+    </style>
+
+</head>
+
+<body>
+        <section class="container">
+            <article class="item">flex item 1</article> 
+            <article class="item-special">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">item1</article>
+            <article class="item">item2</article>
+            <article class="item">item3</article>
+            <article class="item">item4</article>
+            <article class="item">item5</article>
+            <article class="item">item6</article>
+            <article class="item">item7</article>
+            <article class="item">item8</article>
+            <article class="item">item9</article>
+            <article class="item">item10</article>
+            <article class="item">item11</article>
+            <article class="item">item12</article>
+            <article class="item">item13</article>
+            <article class="item">item14</article>
+            <article class="item">item15</article>
+            <article class="item">item16</article>
+            <article class="item">item17</article>
+            <article class="item">item18</article>
+            <article class="item">item19</article>
+        </section>
+</body>
+
+</html>

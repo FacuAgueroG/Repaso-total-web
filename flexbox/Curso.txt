@@ -1,0 +1,117 @@
+Clase 01 Introduccion
+
+Antes del 2009 las webs no ocupaban flexbox, esto hacia que trabajar sobre html y css sea mas dificil para la creacion de webs. Antes de que existiera flexbox se daba el uso de floats y clear. 
+
+2014 es cuando se empieza a implementar flexbox en los navegadores webs
+
+__
+
+Es importante para la creacion web que se entienda como funciona flexbox y luego obvio grid que sale de flexbox.
+
+__
+
+css-tricks.com/snippets/css/a-guide-to-flexbox 
+
+(la pagina se mantiene con updates continuos)
+
+esta pagina tiene muchisimos tips acerca de html y css pero dentro esta la guia de flexbox completa
+
+Flexbox tiene unas 12-13 propiedades fundamentales para aprender, con esto es mas que suficiente para poder maquetar de forma debida una web. 
+
+__
+
+Flexbox se volvio tan importante como para que frameworks como bootstrap y fundation la utilizan. 
+__
+
+Para que se haga mas sentillo aprender flexbox es importante instalar la extencion "CSS flexbox cheatsheet" en VS CODE
+
+_____________________________________
+
+Clase 02 Conceptos basicos
+
+Lo primero a entender de flexbox hay que enteder la terminologia basica... que si bien  parece que este genera filas y columnas, esto es falso. Puesto que solo puede generar FILAS O COLUMNAS. 
+
+ver imagen
+
+https://www.google.com/search?q=flexbox&client=opera&hs=ju9&sxsrf=AOaemvKh7qEZP_iUmUeANK-QrIR1SrNvAw:1638290168924&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjW1Lq8wsD0AhXXH7kGHUkbAhAQ_AUoAXoECAEQAw&biw=1320&bih=658&dpr=1#imgrc=tNZ9uWgQVEj0NM
+
+el x es el eje principal e y el transversal... aunque hay una propiedad de CSS flexbox que nos permite hacer que esto sea al reves. 
+
+[Creo un html index.html]
+
+Ahi trabajo con dos lineas
+
+display: flex; (Hace que los hijos de una caja se pongan en fila, si tengo mas de una con este valor los pone con propiedades de bloque, osea, las proximas saltan de linea)
+
+display: inline-flex; (hace que los hijos de una caja se pongan en fila, si tengo mas de una con este valor los pone al lado de lo anterior)
+
+____________________________________________
+
+Clase 03 El flujo de flexbox (flex-direction + flexwrap)
+
+Se enseña como funciona el flex direciton que es la configuracion que le vamos a dar a nuestro texto para ponerlo en ciertos lugares de la pantalla y como lo vamos a mostrar sobre ella. Por otra parte el flexwrap nos dice como saldran los items que tengamos en pantalla, si saldran en linea o con saltos de linea cada vez que lo necesiten...
+
+_________________________________________
+
+Clase 04 Alineacion del main axis
+
+Son propiedades que nos permiten alinear los items dentro de las cajas. Tambien se explica como giran los ejes y cuando uno u otro es el princiapl. 
+
+_____________________________________
+
+Clase 05 Alineacion del cross axis
+
+Esto explicac como funcionan algunas de las funcionalidades basicas como align-items y align-content. El primero sirve para trabajar especificamente sobre cada uno de los contenidos y el segundo sirve para trabajar sobre el total del contenido de una caja contenedora
+
+____________________________________
+
+Clase 06 flex-grow
+
+El flex grow sirve para que los items (ITEMS, NO CONTENEDORES) ocupen el espacio vacio de un contenedor. Aun asi, a los items al estar por separados se les puede dar la opcion de ocupar mas o menos espacio dentro de estos
+
+______________________________
+
+Clase 07 flex-shrink
+
+Cuando el navegador se achica y llega a ser lo suficientemente chico como para que se las cosas con flex tengan que achicarse esto le da o no permiso para hacerlo, PERO, ademas tambien puede ajustar item x item cuando tendran que achicarse con respecto a los otros
+
+_____________________________
+
+Clase 08 flex-basis y flex
+
+Esto sirve para darle un tamaño a los items (todos por igual). Esto se dara ancho o alto dependiendo a donde apunte el flex-direction. 
+
+flex es un shorthand de flex-grow flex-shrink y flex-basis
+
+____________________________
+
+Clase 09 Alineacion de hijos flexbox (order y align-self)
+
+order sirve para ordenar objetos en un contenedor... ahora bien, cada item debe tener su propia clase para que esto suceda
+
+self esto sirve para que podamos darle a un solo item alguna propiedad de align-items
+
+___________________________
+
+Clase 10 maquetacion y responsive desingn
+
+Ahora aplico responsive desing para que todo lo anterior funcione en cualquier medida como para dispositivos moviles, tablets, etc
+
+Esto que tengo que aplicar son media queries para adarptar el diseño, lo saco de bootstrap
+
+___________________________
+
+Clase 11 Casos practicos de flexbox
+
+Se crea una pagina utilizando flexbox y media queries
+
+___________________________
+
+Clase 12 Casos practicos de flexboxII
+
+Se crea una pagina utilizando flexbox y media queries
+
+________________________
+
+Clase 13 Boostrap y flexbox
+

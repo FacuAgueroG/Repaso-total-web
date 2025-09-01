@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendiendo flexbox</title>
+
+    <link rel="stylesheet" href="./CSS/style.css" />
+
+    <!-------------------------CLASE 06------------------------->
+    <!---------------------flex-grow---------------------------->
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      .container {
+        background-color: #333;
+        height: 30vh;
+
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        justify-content: flex-start;
+
+        align-items: stretch;
+        align-content: flex-start;
+        }
+
+      .item {
+        border: medium solid #999;
+        background-color: #666;
+
+        /*las siguientes propiedades se aplican a los items, no al contenedor! ejemplo, si yo aplico la propiedad flex-grow sobre todos los items, por estar en esta clase .item y luego creo otra clase donde sobree escribo eso para cierto item en especial diciendole que su flex-grow es 2 entonces  este podra tomar mas espacio del que deberia y el espacio no se repartir de forma equitativa para todas los objetos item del contendor .item*/
+
+        /*Cuando la caja flexbox tenga espacio sobrante, los items ocupan*/ /*con 1 se activa, con 0 se desactiva, con mas de 1 hace algo especial... le otorga al item la capacidad de consumir mas espacio del que deberia si se lo aplico SOLO A 1 ITEM*/
+        flex-grow: 1; /*default 0*/
+      }
+
+      .item-especial {
+        flex-grow: 2; /*este tomara el doble del espacio sobrante que le correspondia para que fuera equitativo con los otros items*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
+      <article class="item-especial">flex item 1</article>
+      <!--item-especial-->
+      <article class="item">flex item 2</article>
+      <article class="item">flex item 3</article>
+    </section>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br />
+
+    <section class="container">
+      <article class="item">flex item 1</article>
+      <article class="item">flex item 2</article>
+      <article class="item">flex item 3</article>
+    </section>
+
+    <br /><br />
+
+    
+
+    <section class="container">
+        <article class="item">item1</article>
+        <article class="item">item2</article>
+        <article class="item">item3</article>
+        <article class="item">item4</article>
+        <article class="item">item5</article>
+        <article class="item">item6</article>
+        <article class="item">item7</article>
+        <article class="item">item8</article>
+        <article class="item">item9</article>
+        <article class="item">item10</article>
+        <article class="item">item11</article>
+        <article class="item">item12</article>
+        <article class="item">item13</article>
+        <article class="item">item14</article>
+        <article class="item">item15</article>
+        <article class="item">item16</article>
+        <article class="item">item17</article>
+        <article class="item">item18</article>
+        <article class="item">item19</article>
+    </section>
+  </body>
+</html>

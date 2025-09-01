@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-------------------------CLASE 05------------------------->
+    <!---------------------Alineacion del cross axis-------------->
+
+    <style>
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+        }
+
+        .container
+        {
+
+            background-color: #333;
+            height: 30vh;
+
+            display: flex;
+
+            flex-flow: row nowrap;
+        
+
+            justify-content: flex-start; 
+
+            /*---------------ALIGN ITEMS-----------------*/
+
+            /*Valor por defecto streatch  (TRABAJA SOBRE EL EJE SECUNDARIO/TRANSVERSAL) FUNCIONA CUANDO EL FLEX ES NOWRAP*/
+            align-items: center;
+
+            /*
+            align-items: streatch; sirve para hacer que un objeto tome el largo del contenedor, en este caso al estar en fila (row) toman el largo de la columna
+
+            align-items:flex-start; sirve para alinearme al principio del eje en el que estoy trabajando.
+
+            align-items:flex-end; se alinean al final del eje en el que estoy trabajando
+
+            align-items: center; en el centro
+
+            align-items:baseline; alinea los objetos a la base del texto del mas grande... si tengo 3 tamaños de fuente aliña todas al renglon imaginario que dibuja el mas grande
+            */
+
+            /*---------------ALIGN CONTENT-----------------*/
+
+            /*Si quisiera alinear los hijos no por items... si no como un conjunto utilizo aling-content. Se parece a justify content... mientras que el otro lo hace en principal este lo hace en secundario. Ahora, es necesario entender que solo va a funcionar si todo el contenido no esta en la misma fila. Eso quiere decir que esto solo funciona cuando el wrap es wrap o wrap-reverse... NUNCA FUNCIONA CON nowrap*/
+             
+            align-content: flex-end; /*no se aplica porque para este html uso nowrap. FUNCIONA CUANDO EL FLEX ES WRAP*/
+            /*flex-start| flex-end| center| space-between| space-around| space-evenly| stretch*/
+        }
+
+        .item   
+        {
+            border: thin solid;
+            font-size: 20px;
+            background-color: #666;
+        }
+
+        .container2
+        {
+            /*Aclariacion sobre align-items. Esto funciona de forma tal que las alineaciones se hacen dependiendo de el wrap que tengan y sobre los tamaños aplicados. Ejemplo, si tengo un wrap que me permite ir a mas de un renglon y que guardan cierto espacio entre si porque lo puedo haber especificado de otra manera, entonces mi align-item respetara eso!, se entiende mejor en la practica. Aplico un ejemplo simple */
+
+            background-color: #333;
+            height: 30vh;
+
+            display: flex;
+
+            flex-flow: row wrap;
+
+            justify-content: flex-start; 
+
+            /*En este caso aliño mis cosas justo con la base de el texto de mayor maño... ver como todas las lineas se pegan a esa base a la altura que les corresponde segun su sepracion dado a travez del flex-flow:wrap y el tamaño de la fuente*/
+            align-items: baseline;
+        }
+
+        .item2:nth-child(15),
+        .item2:nth-child(30)
+        {
+  
+            font-size: 300%;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">item1</article>
+            <article class="item">item2</article>
+            <article class="item">item3</article>
+            <article class="item">item4</article>
+            <article class="item">item5</article>
+            <article class="item">item6</article>
+            <article class="item">item7</article>
+            <article class="item">item8</article>
+            <article class="item">item9</article>
+            <article class="item">item10</article>
+            <article class="item">item11</article>
+            <article class="item">item12</article>
+            <article class="item">item13</article>
+            <article class="item">item14</article>
+            <article class="item">item15</article>
+            <article class="item">item16</article>
+            <article class="item">item17</article>
+            <article class="item">item18</article>
+            <article class="item">item19</article>
+        </section>
+
+        <br><br>
+
+        <section class="container2">
+            <article class="item2 item">item1</article>
+            <article class="item2 item">item2</article>
+            <article class="item2 item">item3</article>
+            <article class="item2 item">item4</article>
+            <article class="item2 item">item5</article>
+            <article class="item2 item">item6</article>
+            <article class="item2 item">item7</article>
+            <article class="item2 item">item8</article>
+            <article class="item2 item">item9</article>
+            <article class="item2 item">item10</article>
+            <article class="item2 item">item11</article>
+            <article class="item2 item">item12</article>
+            <article class="item2 item">item13</article>
+            <article class="item2 item">item14</article>
+            <article class="item2 item">item15</article>
+            <article class="item2 item">item16</article>
+            <article class="item2 item">item17</article>
+            <article class="item2 item">item18</article>
+            <article class="item2 item">item19</article>
+            <article class="item2 item">item20</article>
+            <article class="item2 item">item21</article>
+            <article class="item2 item">item22</article>
+            <article class="item2 item">item23</article>
+            <article class="item2 item">item24</article>
+            <article class="item2 item">item25</article>
+            <article class="item2 item">item26</article>
+            <article class="item2 item">item27</article>
+            <article class="item2 item">item28</article>
+            <article class="item2 item">item29</article>
+            <article class="item2 item">item30</article>
+            <article class="item2 item">item31</article>
+            <article class="item2 item">item32</article>
+            <article class="item2 item">item33</article>
+            <article class="item2 item">item34</article>
+            <article class="item2 item">item35</article>
+            <article class="item2 item">item36</article>
+            <article class="item2 item">item37</article>
+            <article class="item2 item">item38</article>
+            <article class="item2 item">item39</article>
+            <article class="item2 item">item40</article>
+        </section>
+
+
+</body>
+
+</html>

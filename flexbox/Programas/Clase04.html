@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-------------------------CLASE 04------------------------->
+    <!---------------------Alineacion de main axis-------------->
+
+    <style>
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+        }
+
+        .container
+        {
+
+            background-color: #333;
+            height: 30vh;
+
+            display: flex;
+
+            flex-flow: row wrap;
+
+            /*Justify content determina la forma de acomodarse del eje princiapl... como se cual es el eje princiapl? sabiendo si estamos trabajando en row o en column!*/
+
+            justify-content: space-between; 
+
+            /*justify-content: flex-start alinea enlugar default arriba a la izquierda
+
+              justify-content: center  alinea en centro
+
+              justify-content: flex-end alinea en lugar default arriba  a la izquierda
+
+              justify-content: space-between pone los elementos lo mas pegados a izquierda y derecha que pueda y deja un espacio en el medio (si hay mas de dos reparte el lugar entre todos mientras que en los bordes siempre haya un objeto pegado al navegador)
+
+              justify-content: space-arround pone un elemento en el centro y cuenta a partir de el hacia afuera
+
+              justify-content: space-evenly pone todos los elementos a la misma distancia, pero no se pega a los bordes del navegador
+            */
+
+        }
+
+        .item   
+        {
+            border: thin solid;
+
+            background-color: #666;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">item1</article>
+            <article class="item">item2</article>
+            <article class="item">item3</article>
+            <article class="item">item4</article>
+            <article class="item">item5</article>
+            <article class="item">item6</article>
+            <article class="item">item7</article>
+            <article class="item">item8</article>
+            <article class="item">item9</article>
+            <article class="item">item10</article>
+            <article class="item">item11</article>
+            <article class="item">item12</article>
+            <article class="item">item13</article>
+            <article class="item">item14</article>
+            <article class="item">item15</article>
+            <article class="item">item16</article>
+            <article class="item">item17</article>
+            <article class="item">item18</article>
+            <article class="item">item19</article>
+        </section>
+</body>
+
+</html>

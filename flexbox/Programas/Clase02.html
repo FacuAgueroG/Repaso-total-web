@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    <link rel="stylesheet" href="./CSS/style.css">
+
+
+
+    <style>
+        .container
+        {
+            /*--------------------Clase 02 Flex y inline-flex--------------*/
+            background-color: #333;
+
+            display: flex; /*Al aplicarle esto a una caja pone todo en fila en este caso de articles*/
+
+            /*display: inline-flex;  si a lo anterior quisiera hacerlo de la misma manera pero que en vez de generar un salto de linea quisiera que todo quede en la misma fila uso esto!*/
+        }
+
+        .item
+        {
+            background-color: #666;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--todo lo trabajado en flexbox se trabaja en contenedores, nunca en items... osea, se trabaja con clases padre y nunca los hijos... por eso es que al tener dos "containers" estos se comportan como grandes estructuras por separado por mas que no tenga un br entre ellos-->
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+</body>
+
+</html>

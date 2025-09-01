@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos practicos de flexbox</title>
+
+    <style>
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*De la siguiente manera genero un sticky footer. Esto se logra a traves poner cada uno de los elementos como flex. Los pongo como columna poniendolos uno sobre otro y al main le digo que ocupe todo el espacio en pantalla que no vayan a utilizar ni el header ni el footer*/
+
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /*ocupa todo lo que puedo ver en pantalla*/
+        }
+        main
+        {
+            flex-grow: 1;
+        }
+
+        .titulares
+        {
+            padding: 1rem;
+            background-color: #222;
+            color: #EEE;
+        }
+
+        .menu ul
+        {
+            list-style-type: none;
+        }
+
+        .header
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-image
+        {
+            min-height: 100vh;
+            background-image: url("https://placeimg.com/1980/1084/any");
+            background-repeat: no-repeat;
+            color: #FFF;
+
+        }
+
+        .hero-image div /*Esto lo hace para que el texto dentro de la hero image se pueda leer*/
+        {
+            min-height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            text-align: center;
+        }
+
+        .hero-image h1
+        {
+            font-size: 5vw;
+        }
+
+        @media screen and (min-width:1024px)
+        {
+            .header
+            {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+            }
+
+            .menu ul
+            {
+                display: flex;
+            }
+
+
+            .menu li
+            {
+               padding: 0.5vw; 
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header class="titulares header">
+        <div class="logo">Logo</div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="">Seccion1</a></li>
+                    <li><a href="">Seccion2</a></li>
+                    <li><a href="">Seccion3</a></li>
+                    <li><a href="">Seccion4</a></li>
+                </ul>
+            </nav>
+    </header>    
+
+    <main>
+        <h2>contenido</h2>
+
+        <article class="hero-image">
+            <div><h1>Flexbox is fuking COOL!!!</h1></div>
+        </article>
+    </main>
+
+    <footer class="titulares">
+        <h2>Sticky footer</h2>
+    </footer>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-------------------------CLASE 03------------------------->
+    <!----------------Flex-direction + flex-wrap---------------->
+
+    <style>
+
+        /*RESET*/
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+        }
+
+        .container
+        {
+
+            background-color: #333;
+            height: 30vh;
+
+            display: flex;
+
+            /*Flex direction es un valor aplicado por defecto para flexbox, en el cual tengo las filas de objetos izquierda a derecha, pega el contenido a la izquierda porque a la derecha esta el contenedor*/
+            flex-direction: row;
+
+            /*flex-reverse hace lo contrario a la anterior pero ademas pega el objeto al margen derecho porque a la izquierda esta el contenedor*/
+            /* flex-direction: row-reverse; */
+
+            /*Pone a los elementos como columna de arriba a abajo, pega el contenido arriba, porque hacia abajo esta el contenedor*/
+            /*flex-direction: column;*/
+
+            /*Pone los elementos en columna de abajo a arriba, pega el contenido abajo, porque arriba esta el contenedor*/
+            /*flex-direction: column-reverse;*/
+
+            /*-------------*/
+
+            /*Valor por defecto, para que todos sus hijos se aliñen en una misma fila, o en una misma columna si el flex en la caja esta en columna*/
+            flex-wrap: wrap; /*Por mas que no tenga mas espacio ESTO SI O SI LOS MANTIENE EN UNA SOLA LINEA*/
+        
+            /*Se considera que si no entran en el ancho de la pantalla puede generar filas*/
+            /*flex-wrap: wrap*/
+
+            /*Los carga de izquierda a derecha*/
+            /* flex-wrap: wrap-reverse */
+
+        }
+
+        .item   
+        {
+            border: thin solid;
+
+            /*Si aplico el flex-wrap:wrap; del contenedor y aca aplico width:20%; entonces los elementos se bajan a distintas filas y se auto acomodan
+            Si en vez de aplicar flex-direction row aplicara column el width daria exactamente igual... para saber cuantos objetos entran por columna tendria que modificar height
+            */
+            background-color: #666;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+
+        <!--Que pasa si quiero aplicar flexwrap a esto? y todo tiene que aliñarse en fila? si achico la pagina crea un scrollbar con tal de que no se rompa la estructura-->
+        <section class="container">
+            <article class="item">item1</article>
+            <article class="item">item2</article>
+            <article class="item">item3</article>
+            <article class="item">item4</article>
+            <article class="item">item5</article>
+            <article class="item">item6</article>
+            <article class="item">item7</article>
+            <article class="item">item8</article>
+            <article class="item">item9</article>
+            <article class="item">item10</article>
+            <article class="item">item11</article>
+            <article class="item">item12</article>
+            <article class="item">item13</article>
+            <article class="item">item14</article>
+            <article class="item">item15</article>
+            <article class="item">item16</article>
+            <article class="item">item17</article>
+            <article class="item">item18</article>
+            <article class="item">item19</article>
+        </section>
+</body>
+
+</html>

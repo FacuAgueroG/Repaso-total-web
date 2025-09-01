@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo flexbox</title>
+
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-------------------------CLASE 07------------------------->
+    <!---------------------flex-shrink---------------------------->
+
+    <style>
+        *,
+        *::after,
+        *::before
+        {
+            box-sizing: border-box;
+        }
+
+        .container
+        {
+
+            background-color: #333;
+            height: 30vh;
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            justify-content: flex-start; 
+
+            align-items: stretch;
+            align-content: flex-start;
+
+
+        }
+
+        .item   
+        {
+            border: medium solid #999;
+            background-color: #666;
+
+            flex-grow: 0; 
+
+            flex-shrink: 1; 
+
+            /*Es el tamaño del elemento hijo dentro de la linea de la caja flexbox
+            si la caja flexbox tiene direccion de fila, flex-basis representa width
+            si la caja flexbox tiene direccion de columna, flex-basis representa el height
+            valor por defecto auto*/
+            flex-basis: 200px; /*valor por defecto "auto" osea... el valor que le pongo a los items yo mismo con height y width*/
+
+            /*Basicamente cambia el tamaño de cada uno de los items dependiendo la posicion del flex-direction*/
+
+            /*OJO, SI YO USO FLEX BASIS esto hace que para ese item en particular el uso de width 
+            o height segun corresponda, no valga para nada... CSS toma como peso de importancia
+            el uso de flex-basis*/
+
+            /*flex es el shorthand de flex-grow- flex-shrink y flex-basis... si te fijas los valores estan iguales que los de arriba*/
+            flex:0 1 200px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+        <section class="container">
+            <article class="item">flex item 1</article> 
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <section class="container">
+            <article class="item">flex item 1</article>
+            <article class="item">flex item 2</article>
+            <article class="item">flex item 3</article>
+        </section>
+
+        <br><br>
+
+        <section class="container">
+            <article class="item">item1</article>
+            <article class="item">item2</article>
+            <article class="item">item3</article>
+            <article class="item">item4</article>
+            <article class="item">item5</article>
+            <article class="item">item6</article>
+            <article class="item">item7</article>
+            <article class="item">item8</article>
+            <article class="item">item9</article>
+            <article class="item">item10</article>
+            <article class="item">item11</article>
+            <article class="item">item12</article>
+            <article class="item">item13</article>
+            <article class="item">item14</article>
+            <article class="item">item15</article>
+            <article class="item">item16</article>
+            <article class="item">item17</article>
+            <article class="item">item18</article>
+            <article class="item">item19</article>
+        </section>
+</body>
+
+</html>
