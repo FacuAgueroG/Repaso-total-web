@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendiendo Grid CSS</title>
+  <style>
+    html {
+      box-sizing: border-box;
+      font-size: 16px;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+    a[href="#top"] {
+      margin: 1rem;
+      display: block;
+      font-size: 2rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 50vh;
+      text-align: center;
+    }
+
+    img {
+      margin: auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .menu {
+      margin-bottom: 100vh;
+      font-size: 125%;
+    }
+
+    .menu li {
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 80%;
+      height: 80vh;
+      background-color: #222;
+      border: medium solid #000;
+    }
+
+    .item {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+
+    .grid-explicit{
+        display: grid; /*Con esto lo vuelvo una grid, pero debo configurarlo*/
+        /*fr de fraccion => toma el espacio sobrante*/
+        /*3x3*/
+        grid-template-columns: 50% 100px 1fr; /*Con esto le digo cuantas columnas quiero en mi contenedor y de cuanto quiero que sean*/
+        grid-template-rows: 2rem 20vh 30%; /*Con esto le digo cuantas filas quiero en mi contenedor y de cuanto quiero que sean*/
+
+        /*5x4*/
+        grid-template-columns: repeat(5,20%); /*repeat hace que tenga 5 columnas del 20%*/
+        grid-template-rows: repeat(4, auto);
+
+        /*Al poner 1fr en cada una reparte de forma proporcional*/
+        /*Tener cuidado con esto ya que puede ser que el contenido de algo se desvorde por culpa se ser tan marcado con el tamaño*/
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        /*Causa separacion entre celdas*/
+        grid-row-gap: 1rem; /*Propiedad obsoleta*/
+        grid-column-gap: 2rem; /*Propiedad obsoleta*/
+        grid-gap: 100px 0px; /*Propiedad obsoleta*/
+
+        /*En la actualidad se utiliza gap*/
+        column-gap: 4rem;
+        row-gap: 2rem;
+        gap: 1vh 1vw;
+    }
+
+    
+    .grid-explicit .item:nth-child(10){
+
+        color: aqua;
+        /*Lo cambio de posicion al item 10. Lo paso para que inicie en la 2 y termine en la 3, tanto en fila y en columna (no ocupa el lugar donde termina)*/
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        /*shorthand*/
+        grid-row: 2/3;
+        grid-column: 3/5; /*Ahora ocupa 2 espacios*/
+
+        /*Shorthand final*/
+        grid-area: 3/5 / 3 / 5;
+    }
+
+    .grid-explicit .item:nth-child(12){
+        color: aqua;
+
+        /*Las siguientes definiciones son raras y que no estan cumpliendo con los que les envio, estan ocupando filas y columnas al reves
+        o sea, 3 filas y 2 columnas*/
+        /*Abarca desde la posicion en donde te encuentas, 2 filas*/
+        grid-row: span 1;
+        /*Abarca desde donde te encuentras, 3 columnas*/
+        grid-column: span 2;
+    }
+
+    .grid-explicit .item:nth-child(15){
+        color: aqua;
+        /*De esta manera no solo expando, sino que doy una posicion a la que se deben mover*/
+        grid-row: 1 /span 2;
+        grid-column: 1/ span 2;
+    }
+
+    .grid-line-names{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        /*Esto es darle nombre, pero de una forma super verbosa*/
+        grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4]; 
+        grid-template-rows: [linea-r1] 1fr [linea-r2] 1fr [linea-r3] 1fr [linea-r4]; 
+    }
+
+    .grid-line-names .item:nth-child(3){
+            color: cyan;
+
+            /*Tambien puedo decirle como debe actuar alguna fila o columna con la que quiero trabajar*/
+            grid-row: linea-r3/linea-r4;
+            grid-column: linea-c1/linea-c4;
+    }
+
+    .grid-areas{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: 100px repeat(2, 1f) 60px; 
+        /*Trabajo a modo de nombre con la maquetacion*/
+        grid-template-areas: 
+        "header header"
+        "content sidebar"
+        "content ."
+        "footer footer";
+    }
+
+    /*a las clases les asigno el nombre que le di en grid-template-areas, creo que se tienen que llamar igual*/
+    .header
+    {
+        grid-area: header;
+    }
+
+    .content
+    {
+        grid-area: content;
+    }
+
+    .sidebar
+    {
+        grid-area: sidebar;
+    }
+
+    .footer
+    {
+        grid-area: footer;  
+    }
+
+    /*Los proximos items que se escapen a mi grid, tienen un tamaño implicito.
+    el tamaño lo toman con respecto a su contenido */
+    .grid-implicit{
+        /*3x4*/
+        display: inline-grid; /*Al pasar esto a inline esto incluso deja de centrarse ya que no puedo aplicarle margenes laterales*/
+        display: grid; /*Vuelvo a la normalidad*/
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,200px);
+    }
+
+    .grid-flow{
+        display: grid;
+        /*3x5*/
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4,150px);
+
+        
+        /*Marco como debe ser el flujo de orientacion de los items agregados de forma implicita*/
+        grid-auto-flow: row; /*Le digo que se agregue copiando la forma de los items anteriores*/
+
+        /*Trabajamos el flujo de cuadricula automatico que le da grid a los siguientes elementos a agregar*/
+        /*El valor por defecto es auto, se toma todo el espacio disponible*/
+        grid-auto-rows: 100px;  /*Le asigno cuanto tiene que tomar lo que sigue de forma automatica*/
+
+        /*Marco como debe ser el flujo de orientacion de los items agregados de forma implicita*/
+        grid-auto-flow: column; 
+        grid-auto-columns: 50px;
+    }
+
+    .grid-flow-dense{
+        display: grid;
+        /*4x5*/
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(4, 1fr);
+        /*Al agregar dense, digo que si algo rompe la grid, la grid se autocomplete en los espacios vacios con los siguientes items*/
+        grid-auto-flow: row dense;  /*Tambien podria no querer aprovechar esos espacios vacios*/
+        /*Puedo hacer lo mismo con columne dense*/
+        /*grid-auto-flow: column dense*/
+    }
+
+    .grid-flow-dense .item:nth-child(9){
+        color: cyan;
+        grid-row: span 3;
+        /*Esto seria imposible ya que este item no alcanza a tomar 3 columnas, estaba pegado a la pared derecha, pero el item se crea de todos modos y mueve todo de lugar
+        pero sin cambiar el orden de la grid, entonces, quedan espacios vacios e incluso se terminan creando grids implicitas por su culpa*/
+        /*Esto no se rompe actualmente ya que agregue dense.*/
+        grid-column:  span 3; 
+    }
+
+    .grid-layers{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+    }
+
+    .grid-layers .item:nth-child(1){
+        background-color: #dbea33;
+        grid-column: 1/3;
+        grid-row: 1/3;
+    }
+
+    .grid-layers .item:nth-child(2){
+        background-color: #497af8;
+        grid-column: 3/5;
+        grid-row: 1/3;
+    }
+
+    .grid-layers .item:nth-child(3){
+        background-color: #90e971;
+        grid-column: 1/3;
+        grid-row: 3/5;
+    }
+
+    .grid-layers .item:nth-child(4){
+        background-color: #f0952a;
+        grid-column: 3/5;
+        grid-row: 3/5;
+    }
+
+    /*Predisponiendo de esta manera puedo hacer que los items se superpongan en capas
+    todo esto sin utilizar codigo nuevo, se hace solo con lo aprendido en las clases anteriores*/
+    .grid-layers .item:nth-child(5){
+        background-color: rebeccapurple;
+        opacity: .75;
+        grid-column: 2/4;
+        grid-row: 2/4;
+    }
+
+    .grid-order{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    .grid-order .item:nth-child(1){
+        /*Order cambia la predisposicion de los items, 0 default para todos los items.
+        si pongo 1 en este, este mismo se va hasta el final ya que seria el mayor (ultimo) si
+        le pusiera -1 este seria el primero*/
+        /*Mueve uno a la derecha en la predisposicion de los items*/
+        order: 1; 
+    }
+
+    .grid-order .item:nth-child(2){
+        order: 2; 
+    }
+
+    .grid-order .item:nth-child(5){
+        order: -1; 
+    }
+
+    .grid-align{
+        display: grid;
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(2,200px);
+        /*Valor por default strech*/
+        /*Trabaja sobre x*/
+        justify-items: stretch;
+        /*Ocupa el espacio de su contenido y ademas se centra, pero las celdas de la grid, mantienen su tamaño*/
+        justify-items: center;
+        /*otros valores que puede tomar son los siguientes
+        justify-items: start;
+        justify-items: end;
+        justify-items: baseline;*/
+
+        /*esto acomoda con respecto de y*/
+        /*valor por default strech*/
+        align-items: stretch;
+        /*otros valores a tomar son start, center, end o baseline*/
+    }
+    
+    .grid-align .item:nth-child(4){
+        /*Con esto trabajo sobre un item en especifico y no sobre todos los elementos a la vez*/
+        /*En este ejemplo tomo el x e y de el item 4 y lo pongo arriba a la derecha de su propio espacio
+        en la grid*/
+        justify-self: start;
+        align-self: start;
+    }
+
+    .grid-align-tracks{
+        display: grid;
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(2,200px);
+
+        /*Puedo utilizar esto para trabajar todos los items a la vez como en flexbox utilizando el tamaño total del contendor
+        rompiendo el contexto de la grid pero con los items aun conformados como grid*/
+        /*Los ejes no se como se manejan si cambio todo el contenido a column (ordenamiento) => grid-auto-flow*/
+        justify-content: center; /*Eje x*/
+        align-content: center; /*eje y*/
+
+        /*Los valores que pueden llegar a tomar son los mismos que en flex, space-between, space-around, space-evenly, end, center, start*/
+    }
+
+    .grid-min-max{
+        display: grid;
+        /*Vamos a trabajar con una cuadricula con columnas definidas pero filas desconocidas, creadas de forma implicita*/
+        grid-template-columns: repeat(4,1fr);
+        /*Esto es para que se vuelva adaptable, OJO EL GRID NO SE ROMPE, si voy a algo mas chico que el minimo, la grid crea un overflow (nowrap)*/
+        grid-template-columns: repeat(4, minmax(100px, 200px)); 
+        grid-template-columns: repeat(4, minmax(min-content, 200px)); /*Min content le dice que el minimo es la cantidad minima de contenido que tiene el item*/
+
+        /*tambien puedo hacerlo con max*/
+        grid-template-columns: repeat(4, minmax(100px,max-content)); /*Tambien existe un max content (no crece mas de "el maximo de lo que ocupa el item")*/
+        grid-template-columns: repeat(4, minmax(max-content, 200px)); /*Mi minimo es mi maximo de contenido (le dice "NOWRAP" y no pasa el contenido a los renglones de abajo)*/
+
+        /*Todo esto se hace sin utilizar media queryes*/
+    }
+
+    .grid-repeat{
+        display: grid;
+        /*Si trabajo con columns y sin marcar las rows y dejarlas de forma implicita esto puede generar problemas, lo que tengo que hacer es definiir si 
+        o si una grid-template-rows*/
+        grid-template-columns: repeat(4,10% 20% 30% 40%); 
+        /*Filas implicitas*/
+        grid-template-rows: repeat(2, 100px, 200px); /*Probar comentando esta fila para ver los problemas que genera*/
+        grid-auto-rows: 150px; /*Las que estan por fuera del patron guardan el siguiente alto de fila*/
+    }
+
+    .grid-dynamics{
+        display: grid;
+        /*Auto fill rellena la grid con tracks generados dinamicamente*/
+        /*Esto ocurre en aplicaciones como instagram o cualquier aplicacion que me permite agregar contenido dinamicamnete*/
+        grid-template-columns: repeat(auto-fill, 100px); /*Auto-fit la reemplaza mas abajo por cascada, probar*/
+
+        /*auto-fit ajusta la grid con los tracks existentes*/
+        /*Esto creo que no tiene sentido si hago lo mismo en las rows, ya que nunca sabria cuantas columnas debe haber, pondria
+        todo en columna*/
+        grid-template-columns: repeat(auto-fit, 100px); /*Reemplazada una vez mas por auto-fill mas abajo, probar*/
+
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /*Esto ajusta el contenido al tamaño del container*/
+    }
+
+    .grid-responsive{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,  1fr)); /*Al poner 1fr, el tamaño max es dinamico*/
+    }
+
+    .grid-nested{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /*filas implicitas*/
+    }
+
+    .sub-item{
+        padding: 1rem;
+        border: medium solid #ccc;
+        background-color: #DDD;
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .sub-grid{
+        /*Trabajamos con Abuelo-Padre-Ñetos*/
+        /*Para que la caracteristica de subgrid funcione es necesario hacer lo siguiente:
+        1)Definir explicitamente el tamño que ocupara el elemento que aplicara subgrid dentro del contenedor padre
+        grid, es decir definir sus propiedades grid-column grid-row;*/
+        /*Definimos que espacio van a utilizar los items del padre del contenedor abuelo */
+        grid-column: span 3;
+        grid-row: 1/3;
+        /*2)Aplicar display grid al elemento que aplicara subgrid*/
+        display: grid;
+        /*3) Aplicar el valor de subgrid a las columnas, a las filas o ambas*/
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+    }
+</style>
+
+</head>
+
+<body>
+  <h1 id="top">Aprendiendo Grid CSS</h1>
+  <ul class="menu">
+    <li><a href="#grid-terms">Conceptos básicos</a></li>
+    <li><a href="#grid-explicit">Grid Explicita</a></li>
+    <li><a href="#grid-line-names">Grid con Nombres de Línea</a></li>
+    <li><a href="#grid-areas">Grid con Áreas</a></li>
+    <li><a href="#grid-implicit">Grid Implícita</a></li>
+    <li><a href="#grid-flow">Flujo de la Grid</a></li>
+    <li><a href="#grid-flow-dense">Grid flow dense</a></li>
+    <li><a href="#grid-layer">Grid Items en Capas (superposición)</a></li>
+    <li><a href="#grid-order">Ordenamiento de Grid Items</a></li>
+    <li><a href="#grid-align">Alineamiento de Grid Items</a></li>
+    <li><a href="#grid-align-tracks">Alineamiento de Grid Tracks</a></li>
+    <li><a href="#grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</a></li>
+    <li><a href="#grid-repeat">Grid con Patrones Repetitivos</a></li>
+    <li><a href="#grid-dynamics">Grids Dinámicas</a></li>
+    <li><a href="#grid-responsive">Responsive sin Media Queries</a></li>
+    <li><a href="#grid-nested">Grids Anidados</a></li>
+    <li><a href="#subgrid">Subgrids</a></li>
+    <li><a href="grid_layout_con_lineas.html">Grid Layout con Líneas</a></li>
+    <li><a href="grid_layout_con_areas.html">Grid Layout con Áreas</a></li>
+    <li><a href="https://jonmircha.com/grid" target="_blank">Más Recursos</a></li>
+  </ul>
+  <h2 id="grid-terms">Conceptos Básicos</h2>
+  <a href="#top">🔝</a>
+  <img src="https://jonmircha.com/img/blog/grid-conceptos.png" alt="Conceptos Básicos">
+    
+  <h2 id="grid-explicit">Grid Explícita</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-explicit">
+    <article class="item">
+        <p>Grid Item 1</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 5</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 6</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 7</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 8</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 9</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 10</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 11</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 12</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 13</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 14</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 15</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 16</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 17</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 18</p>
+    </article>
+    <article class="item">
+        <p>Grid Item 19</p>
+    </article>
+  </section>
+
+  <h2 id="grid-line-names">Grid con Nombres de Línea</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-line-names">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+    <article class="item">
+        <p>Item 6</p>
+    </article>
+    <article class="item">
+        <p>Item 7</p>
+    </article>
+    <article class="item">
+        <p>Item 8</p>
+    </article>
+    <article class="item">
+        <p>Item 9</p>
+    </article>
+  </section>
+
+  <h2 id="grid-areas">Grid con Áreas</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-areas">
+    <header class="item header">
+      <p>Header</p>
+    </header>
+
+    <header class="item content">
+      <p>Content</p>
+    </header>
+
+    <aside class="item sidebar">
+      <p>Sidebar</p>
+    </aside>
+
+    <footer class="item footer">
+      <p>Footer</p>
+    </footer>
+
+  </section>
+
+  <h2 id="grid-implicit">Grid Implícita</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-implicit">
+    <article class="item">
+        <p>Grid item 1</p>
+    </article>
+    <article class="item">
+        <p>Grid item 2</p>
+    </article>
+    <article class="item">
+        <p>Grid item 3</p>
+    </article>
+    <article class="item">
+        <p>Grid item 4</p>
+    </article>
+    <article class="item">
+        <p>Grid item 5</p>
+    </article>
+    <article class="item">
+        <p>Grid item 6</p>
+    </article>
+    <article class="item">
+        <p>Grid item 7</p>
+    </article>
+    <article class="item">
+        <p>Grid item 8</p>
+    </article>
+    <article class="item">
+        <p>Grid item 9</p>
+    </article>
+    <article class="item">
+        <p>Grid item 10</p>
+    </article>
+    <article class="item">
+        <p>Grid item 11</p>
+    </article>
+    <article class="item">
+        <p>Grid item 12</p>
+    </article>
+    <article class="item">
+        <p>Grid item 13</p>
+    </article>
+    <article class="item">
+        <p>Grid item 14</p>
+    </article>
+    <article class="item">
+        <p>Grid item 15</p>
+    </article>
+    <article class="item">
+        <p>Grid item 16</p>
+    </article>
+    <article class="item">
+        <p>Grid item 17</p>
+    </article>
+    <article class="item">
+        <p>Grid item 18</p>
+    </article>
+    <article class="item">
+        <p>Grid item 19</p>
+    </article>
+  </section>
+
+  <h2 id="grid-flow">Flujo de la Grid</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-flow"> 
+        <article class="item">
+            <p>Grid item 1</p>
+        </article>
+        <article class="item">
+            <p>Grid item 2</p>
+        </article>
+        <article class="item">
+            <p>Grid item 3</p>
+        </article>
+        <article class="item">
+            <p>Grid item 4</p>
+        </article>
+        <article class="item">
+            <p>Grid item 5</p>
+        </article>
+        <article class="item">
+            <p>Grid item 6</p>
+        </article>
+        <article class="item">
+            <p>Grid item 7</p>
+        </article>
+        <article class="item">
+            <p>Grid item 8</p>
+        </article>
+        <article class="item">
+            <p>Grid item 9</p>
+        </article>
+        <article class="item">
+            <p>Grid item 10</p>
+        </article>
+        <article class="item">
+            <p>Grid item 11</p>
+        </article>
+        <article class="item">
+            <p>Grid item 12</p>
+        </article>
+        <article class="item">
+            <p>Grid item 13</p>
+        </article>
+        <article class="item">
+            <p>Grid item 14</p>
+        </article>
+        <article class="item">
+            <p>Grid item 15</p>
+        </article>
+        <article class="item">
+            <p>Grid item 16</p>
+        </article>
+        <article class="item">
+            <p>Grid item 17</p>
+        </article>
+        <article class="item">
+            <p>Grid item 18</p>
+        </article>
+        <article class="item">
+            <p>Grid item 19</p>
+        </article>
+    </section>
+
+    <h2 id="grid-flow-dense">Grid flow dense</h2>
+    <a href="#top">🔝</a>
+    <section class="container  grid-flow-dense"> 
+        <article class="item">
+            <p>Grid item 1</p>
+        </article>
+        <article class="item">
+            <p>Grid item 2</p>
+        </article>
+        <article class="item">
+            <p>Grid item 3</p>
+        </article>
+        <article class="item">
+            <p>Grid item 4</p>
+        </article>
+        <article class="item">
+            <p>Grid item 5</p>
+        </article>
+        <article class="item">
+            <p>Grid item 6</p>
+        </article>
+        <article class="item">
+            <p>Grid item 7</p>
+        </article>
+        <article class="item">
+            <p>Grid item 8</p>
+        </article>
+        <article class="item">
+            <p>Grid item 9</p>
+        </article>
+        <article class="item">
+            <p>Grid item 10</p>
+        </article>
+        <article class="item">
+            <p>Grid item 11</p>
+        </article>
+        <article class="item">
+            <p>Grid item 12</p>
+        </article>
+        <article class="item">
+            <p>Grid item 13</p>
+        </article>
+        <article class="item">
+            <p>Grid item 14</p>
+        </article>
+        <article class="item">
+            <p>Grid item 15</p>
+        </article>
+        <article class="item">
+            <p>Grid item 16</p>
+        </article>
+        <article class="item">
+            <p>Grid item 17</p>
+        </article>
+        <article class="item">
+            <p>Grid item 18</p>
+        </article>
+        <article class="item">
+            <p>Grid item 19</p>
+        </article>
+  </section>
+  
+
+  <h2 id="grid-layer">Grid Items en Capas (superposición)</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-layers">
+    <article class="item">
+        <p>Grid item 1</p>
+    </article>
+    <article class="item">
+        <p>Grid item 2</p>
+    </article>
+    <article class="item">
+        <p>Grid item 3</p>
+    </article>
+    <article class="item">
+        <p>Grid item 4</p>
+    </article>
+    <article class="item">
+        <p>Grid item 5</p>
+    </article>
+  </section>
+
+  <h2 id="grid-order">Ordenamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-order">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+  </section>
+
+  <h2 id="grid-align">Alineamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-align">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+  </section>
+
+
+  <h2 id="grid-align-tracks">Alineamiento de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-align-tracks">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+  </section>
+
+
+  <h2 id="grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-min-max">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+  </section>
+
+
+  <h2 id="grid-repeat">Grid con Patrones Repetitivos</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-repeat">
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+    <article class="item">
+        <p>Grid item</p>
+    </article>
+  </section>
+
+
+  <h2 id="grid-dynamics">Grids Dinámicas</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-dynamics">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+  </section>
+
+
+  <h2 id="grid-responsive">Responsive sin Media Queries</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-responsive">
+    <article class="item">
+        <p>Item 1</p>
+    </article>
+    <article class="item">
+        <p>Item 2</p>
+    </article>
+    <article class="item">
+        <p>Item 3</p>
+    </article>
+    <article class="item">
+        <p>Item 4</p>
+    </article>
+    <article class="item">
+        <p>Item 5</p>
+    </article>
+    <article class="item">
+        <p>Item 6</p>
+    </article>
+    <article class="item">
+        <p>Item 7</p>
+    </article>
+    <article class="item">
+        <p>Item 8</p>
+    </article>
+    <article class="item">
+        <p>Item 9</p>
+    </article>
+    <article class="item">
+        <p>Item 10</p>
+    </article>
+    <article class="item">
+        <p>Item 11</p>
+    </article>
+    <article class="item">
+        <p>Item 12</p>
+    </article>
+    <article class="item">
+        <p>Item 13</p>
+    </article>
+    <article class="item">
+        <p>Item 14</p>
+    </article>
+    <article class="item">
+        <p>Item 15</p>
+    </article>
+    <article class="item">
+        <p>Item 16</p>
+    </article>
+    <article class="item">
+        <p>Item 17</p>
+    </article>
+    <article class="item">
+        <p>Item 18</p>
+    </article>
+    <article class="item">
+        <p>Item 19</p>
+    </article>
+  </section>
+
+  <h2 id="grid-nested">Grids Anidados</h2>
+  <a href="#top">🔝</a>
+  <!--grids, uno dentro de otro-->
+  <!--subgrid, hijos heredan propiedades de grid del padre-->
+  <section class="container grid-nested"> 
+    <article class="item grid-nested"> <!--Le agrego a este article la misma propiedad que la caja padre, obtengo una grid dentro de otra-->
+        <p><div class="sub-item">
+            <p>Grid sub item 1</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 2</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 3</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 4</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 5</p>
+        </div></p>
+    </article>
+    <article class="item">
+        <p>Grid item 2</p>
+    </article>
+    <article class="item">
+        <p>Grid item 3</p>
+    </article>
+    <article class="item">
+        <p>Grid item 4</p>
+    </article>
+    <article class="item">
+        <p>Grid item 5</p>
+    </article>
+  </section>
+
+
+  <h2 id="subgrid">Subgrids</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid">
+    <article class="item sub-grid"> 
+        <p><div class="sub-item">
+            <p>Grid sub item 1</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 2</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 3</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 4</p>
+        </div>
+        <div class="sub-item">
+            <p>Grid sub item 5</p>
+        </div></p>
+    </article>
+    <article class="item">
+        <p>Grid item 2</p>
+    </article>
+    <article class="item">
+        <p>Grid item 3</p>
+    </article>
+    <article class="item">
+        <p>Grid item 4</p>
+    </article>
+    <article class="item">
+        <p>Grid item 5</p>
+    </article>
+  </section>
+
+</body>
+
+</html>
