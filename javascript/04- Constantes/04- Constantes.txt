@@ -1,0 +1,24 @@
+const es la linea utilizada para crear constantes
+
+Ej: 
+const PI = 3.14;
+
+ahora si yo creo una constante SIEMPRE TIENE QUE TENER UN VALOR
+
+Ej: 
+
+const NUEVE; //esto no puede crearse de esa manera, necesita un valor 
+
+en el caso de let y var pueden crearse variables sin darles un valor. 
+
+Con un objeto o un valor compuesto esto mismo no pasa
+
+en el caso de un objeto o un array o valores no primitivos, se puede agregar o sacar valores dentro de la constante, ahora por convencion a estos se les marca como const SI siempre van a manejar el mismo tipo de dato en su interior
+
+Ej: 
+
+const colores = ["blanco, negro"];
+colores.push("anaranjado");
+
+//agregue un valor dentro de colores que es un array, pero el valor sigue siendo el mismo tipo, un string con un color, por convencion puedo llamarlo const. ahora si yo quiero comenzar a agregar numeros, y cambiar todo por numeros, utilizo LET
+_______________________

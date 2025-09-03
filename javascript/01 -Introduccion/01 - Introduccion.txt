@@ -1,0 +1,4 @@
+Fue creado en el 95, cuando la competencia de explorer le pide a brendan eich que trabaje en un nuevo lenguaje para hacer su explorador mucho mejor que su competencia.
+
+Claramente no tiene nada que ver con java, JAVASCRIPT es algo totalmente distinto. 
+

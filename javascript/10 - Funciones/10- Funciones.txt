@@ -1,0 +1,27 @@
+Dentro de las funciones (Que trabajan igual que las de c#) es posible devolver con un return, otra funcion
+
+esto es bastante particular en JS
+
+______________
+
+Se scriptea dentro del script, y esta no es llamada de ninguna manera si no es calleada
+
+______________________
+
+Ordenamiento de codigo
+
+importacion de modulos
+declaracion de variables
+creacion de funciones
+ejecusion de codigo
+
+por convencion se realiza de esta manera el codigo en JS
+
+_______________________
+
+Hay un tipo de funcion que no conocia y es la funcion anonima, que actuan diferente que en C#
+
+aca se declara con un const "NOMBREDELAFUNCION" = function () {}
+
+esta funcion no puede ser llamada antes de su declaracion, por lo tanto no es de ambito global hasta que se crea, luego de
+ella, osea, hacia abajo en el codigo, luego de su creacion esta puede ser calleada

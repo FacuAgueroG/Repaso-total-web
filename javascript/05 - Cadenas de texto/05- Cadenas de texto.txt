@@ -1,0 +1,19 @@
+documentacion web de MDN
+
+se busca con MDN (Mozilla, developer, network)
+es la documentacion no oficial para los programadores de JS
+
+hay traduccion a español, aunque puede que no siempre este traducida del todo. 
+
+
+________________
+
+en el caso del objeto string, como con todos los objetos tenemos, propiedades y metodos
+
+un ejemplo de esto seria todo lo que aparece en la documentacion de el string en MDN
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String
+
+TODA LA DOCUMENTACION DEL OBJETO STRING
+
+Durante el programa utilizo diversos metodos del string

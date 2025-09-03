@@ -1,0 +1,34 @@
+Si bien dentro de lo que son los ambitos de programacion tenemos tipos de numeros
+asi como lo son los int, float, double, etc. Aca en JS solo tenemos :
+
+let "NOMBREDELAVARIABLE"; 
+
+no es necesario siquiera iniciar la variable dandole un valor
+aca solo es necesario crearla.
+
+lo que si tiene
+
+let dentro de el, es una funcion que va a detectar cuando estemos trabajando con numeros
+para poder darnos todos los metodos que estos pueden llegar a utilizar.
+
+un caso de ello es 
+
+let A = 1.19;
+
+console.log(A.toFixed(1));
+
+//Esto lo que haria es darme un solo decimal despues de la coma, y ademas, redondear, en la
+consola lo que se mostraria es "1.2"
+
+________________
+
+Ademas de esto se muestran otras caracteristicas de los numeros con sus metodos
+
+
+como el parseInt que me sirve para pasar string a numero 
+o double a float, double a int, etc. 
+
+________________
+
+Explicacion de typeof, muestra que tipo de dato manejo dentro de una variable. muestra su naturaleza si fuera
+string, float, double, bool, int, etc. 

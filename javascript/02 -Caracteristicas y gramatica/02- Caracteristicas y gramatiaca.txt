@@ -1,0 +1,104 @@
+JavaScript es el unico lenguaje en el mundo en el cual se puede hacer una aplicacion completa. A esto se le llama ISOMORFISMO. 
+
+Esto quiere decir, que si bien se puede trabajar todo desde el lenguaje, puedo complementar con otras aplicaciones para terminar mi trabajo, aun asi, despues de todo este trabajo en conjunto con otras aplicaciones es necesario compilar en JS
+
+Con JS se puede hacer
+
+diseño web
+videojuegos
+experiencias 3D 
+Controlar Hardware
+Aplicaciones hibridas y moviles
+Machine Learning
+etc.
+
+
+__________
+
+CARACTERISTICAS
+
+Lenguaje de alto nivel : JS da ciertas abstracciones, no hace falta gestionar memoria, recoleccion de basura para gestionar los recursos de la computadora, etc. 
+
+Interpretado y Dinamico: No necesita 2 faces, la de compilado y ejecutado, basicamente se compila en tiempo de ejecucion.
+
+Debilmente Tipado: Cuando uno crea una variable, la variable no siempre va a ser de un solo tipo, puede ser un stirng, que luego va a int, luego a objetivo y tal vez terminar como funcion. 
+
+Multi Paradigma: Es decir, podemos utilizar Programacion estructurada, POO, programacion funcional, etc. Se adapta al tipo de paradigma que este utilizando. 
+
+CodeSensitive: importan las mayus y minusculas 
+
+No necesita los puntos y comas al fnal de cada linea
+_____________________________
+
+Escritura de codigo
+
+LOS IDENTIFICADORES 
+
+empiezan con una letra, con un signo $ o con un guion bajo_
+
+Nunca se puede empezar la variable con un numero o un caracter que no sea $ o _ 
+
+
+USA SNAKE_CASE en:
+los nombres de archivos se escriben asi
+Archivos: 
+
+mi_archivo_javascript.js
+
+USA UPPER_CASE
+las constantes se escriben asi
+Constantes
+const UNA_CONSTANTE = "Soy una constante", PI = 3.14
+
+Usa UPPERCAMELCASE en
+la primera letra arranca en mayus
+CLASES 
+
+class SerHumano
+{
+
+}
+
+Usa lowerCamelCase
+
+si tu variable tiene una sola palabra todo el nombre de la variable va en minuscula
+
+si tu variable tiene mas de una palabra, entonces a partir de la segunda palabra se escribe en Mayus
+
+const unObjeto = { nombre : "Jonathan"
+		   mail : "SoyElMacho@gmail.com"}
+
+_______________
+
+Ordenamiento de codigo
+
+1- Importancia de modulos
+2- Declaracion de variables
+3- Declaracion de funciones
+4- Ejecucion de codigo
+
+_________
+
+Tipos de datos en JavaScript
+
+1- Primitivos. Se accede directamente al valor
+
+-string
+-number
+-boolean
+
+particulares de JS
+
+-null 
+-undefined
+-NaN
+
+2-Compuestos
+
+-Objetct = {}
+-Array = []
+-Function (){}
+-Class {}
+-etc.
+
+

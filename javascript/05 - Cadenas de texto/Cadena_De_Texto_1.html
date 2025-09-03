@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba2 </title> 
+ </head>
+
+ <body>
+ <h1>laburado en consola</h1>
+ <script>
+     //cadenas de texto a.k.a string
+     let nombre = "jon";
+     let apellido = new String("Salchichon"); //esto es muy formal, no lo usa nadie
+     console.log(nombre, apellido);
+
+     console.log(nombre.length);
+
+     //Se pueden poner dos variables dentro de un console log
+     //tambien se puede poner varios dentro de un bloque
+
+     console.log
+     {
+        nombre.lenght,
+        apellido.lenght,
+        " Estos eran el nombre y apellido"         
+     }
+     //Tambien puedo cambiar su forma de escritura
+
+     console.log(nombre.toUpperCase());
+     console.log(nombre.toLowerCase());
+
+     /*de esta menera voy probando todas las cosas que se 
+     pueden hacer con el string y sus metodos
+     ejemplos de estos fueron el toUpperCase o el to LowerCase
+     otro ejemplo de esto seria utilizar su buscador de palabras
+     */
+
+     var CadenaDeTextoLargo = "Una vez me rompi la cabeza contra el piso";
+
+     console.log("Se encontro la palabra ?" , CadenaDeTextoLargo.includes("cabeza"));
+     
+
+     //Si utilizo trim, saco espacios en blanco
+
+     var SegundaCadenaDeTexto = "     Aveces como pizza      ";
+     console.log(SegundaCadenaDeTexto.trim());
+ </script>
+ </body>
+
+ </html>

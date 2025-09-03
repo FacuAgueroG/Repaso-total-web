@@ -1,0 +1,12 @@
+Nan, undefined y null son casos muy particulares de JS 
+
+_________________________
+
+
+
+let valorUno; //Undefined es una variable no inicializada . es una variable indefinida. 
+
+let valorDos = null; //es una variable con un valor null, asignado por el programador 
+
+let valorTres = "hola" * 37; //NaN = Not a number
+

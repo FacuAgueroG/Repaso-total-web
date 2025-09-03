@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+//todo lo que tengo para poder crear e iniciar valores numericos en JS es "let"
+
+    let numero;
+    numero = 1.19;
+
+    console.log(numero.toFixed(1));
+
+    //cuando el mismo let detecte que tipo de numero tiene dentro, me va a dar los metodos que tengo disponibles
+    //uno de ellos por ejemplo es toFixed el cual me da un solo decimal despues de la coma, y ademas lo redondea en
+    //caso de tener mas numeros depues de el primer decimal.
+
+    let numeroDos = 2.19;
+    numeroDos = numeroDos.toFixed(5);
+    console.log(numeroDos);
+
+    //tambien al igual que en c# tengo el parse
+
+    console.log("Paso el ultimo double a int y el resultado es ", parseInt(numeroDos));
+
+    //ademas de utilizarla para transformar los tipos de numeros que manejo en la consola 
+    //puedo utilizarla para transformar string a int o el tipo de numero que desee
+
+    let numeroTres = "2.4";
+
+    console.log(typeof(numeroTres));//typeof detecta que tipo de dato maneja la variable en este caso es un string
+
+    console.log(parseInt(numeroTres));
+
+    /*Un error muy grande seria intentar sumar
+
+    console.log(numeroTres+ numeroDos); lo unico que estaria pasando en este caso es una concatenacion de un double + string
+    */
+
+ </script>
+ </body>
+
+ </html>

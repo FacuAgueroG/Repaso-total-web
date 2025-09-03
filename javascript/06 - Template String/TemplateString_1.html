@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba2 </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+      let nombre = " jhon";
+      let apellido = " mircha";
+
+      //concatenar, texto 
+
+      let saludo = "Hola mi nombre es"
+
+      console.log(saludo + nombre + apellido )
+
+      let saludo2 = `hola mi nombre es ${nombre} y mi apellido es ${apellido}`;
+      console.log(saludo2);//concatenado 
+
+
+      //Que pasa si tengo una lista?
+      //Si uso comilla normal tengo que poner todo en una sola linea, si parto esto en parrafos con enter salta error
+      let listaUno = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li><ul>";
+
+      //Con estos tildes al reves si se puede estos salen con alt+96 se pueden dar alt la candidad de veces deseadas 
+      console.log(listaUno);
+      let listaDos = 
+      `<ul>
+         <li>Primavera</li>
+         <li>Verano</li>
+         <li>Otoño</li>
+         <li>Invierno</li>
+      <ul>`;
+
+      console.log(listaDos);
+ </script>
+ </body>
+
+ </html>

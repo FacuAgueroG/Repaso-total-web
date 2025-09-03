@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+
+
+    function PrimeraFuncion()
+    {
+        console.log("Esto deveria salir como segundo texto");
+    }
+
+    function SegundaFuncion()
+    {
+        return "Soy el macho, este es el tercer texto";   //OJO, CUALQUIER LINEA DESPUES DEL RETURN NO SE LEE!      
+    }
+
+    function TercerFuncion()
+    {
+        return "soy el cuarto texto";        
+    }
+
+    function CuartaFuncion(Quetextodevolver)
+    {
+        if(Quetextodevolver == "QuintoTexto") return "Soy el quinto texto";
+        else return "Soy el millonesimo texto";
+    }
+
+    function QuintaFuncion(valorDeEntrada = false)
+    {
+        if(valorDeEntrada == false) return "Soy el sexto texto";
+        else return "Soy el millonesimo texto";         
+    }
+
+    console.log("El orden es respetado? desto deveria salir primero") //OJO, CUALQUIER LINEA DESPUES DEL RETURN NO SE LEE!     
+    PrimeraFuncion();
+
+    console.log(SegundaFuncion());
+
+    let guardadoDelCuartoTexto;
+
+    guardadoDelCuartoTexto = TercerFuncion();
+
+    console.log(guardadoDelCuartoTexto);
+
+    console.log(CuartaFuncion("QuintoTexto")); //Imprimo el quinto texto, enviando un dato
+
+    //funciones con defaults
+
+    console.log(QuintaFuncion());
+
+
+    function parametrosPorDefecto(nombre = "Desconocido", edad =0)
+    {
+        console.log(`Mi nombre es ${nombre} y mi edad es ${edad}`)
+    }
+
+    parametrosPorDefecto();
+
+
+ </script>
+ </body>
+
+ </html>

@@ -1,0 +1,20 @@
+las variables se declaran como "var"
+puedo utilizar cualquier tipo de dato para guardar dentro de ellas
+
+ahora, a diferecia de otros lenguajes cuando uno utiliza var por mas que sea dentro de un ambito, como una funcion, o un if, o while etc, esta variable es de ambito global dentro del codigo, si yo quiero que sea una variable de ambito bloque necesito utilizar variables de tipo let! donde la variable solo va a ser utilizada dentro de esa funcion, if, while, etc (dentro de ese ambito bloque)
+
+En resumen, NO UTILIZAR VAR, ES UNA MALA PRACTICA
+
+Si yo creara dos variables, una de tipo var y otra de tipo let
+
+var hola = "blablabla";
+let hello = "blebleble";
+
+cuando yo quiera mostrarlas las 2 con un console.log(hola);
+y un console.log(hello); 
+ las 2 se mostrarian en pantalla
+
+ahora, si yo utilizo
+
+debug.log(window) y muestro todos los objetos que contenga la pantalla jamas encontraria la variable del let. porque el es una variable "local" y no global.
+

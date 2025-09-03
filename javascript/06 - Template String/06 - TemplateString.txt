@@ -1,0 +1,29 @@
+Se enseña como concaternar texto string 
+
+_______________
+
+ahora, que pasa si quiero imprimir una lista
+ y quiero que esta se reprodusca en una de mis variables, para luego mostrarlas
+con un console log. 
+
+tengo un problema que se resuelve de una forma muy sencilla
+
+crear una lista con muchos "enter", no es posible con una variable de este tipo
+
+let A = "A
+b
+c
+d";
+
+para que pueda ingresarse el enter y dividir mi string es necesario utilizar "`" que se saca con alt+96
+
+=> 
+
+let B = `A
+B
+C
+D
+E`;
+
+de esta manera si seria reproducibre este codigo de forma correcta
+

@@ -1,0 +1,12 @@
+los booleanos se pueden trabajar como se trabajan en c# 
+aunque hay algo nuevo, hay valores que tienden a verdadero o falso dentro del if
+
+ej
+
+si pongo una cadena de texto vacia y pregunto si esta es verdadero o falso, esta tiende a falso
+si pongo algun caracter esta tiende a verdadero
+
+si pongo un numero cualquiera menos el 0 tiende a verdadero, si es = a 0 tiende a falso
+
+
+esto se puede encontrar en MDN buscando falsy y truthy

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba2 </title> 
+ </head>
+
+ <body>
+ <h1>El programa se labura en consola</h1>
+ <script>
+     //MALA PRACTICA EL USO DE VAR! 
+     //En JS las var se usan para ambito global, entonces... si yo pongo un var dentro de una funcion
+     //mi variable no va a ser de ambito "local", va a ser global, por mas que esten mis {}, let cubre
+     //ese problema
+     //EN CONSOLA SE VE COMO CAMBIA LO CONTENIDO POR LA VARIABLE CUANDO ENTRA AL BLQOUE
+     var musica = "Rock";
+     console.log("variable musica antes del bloque", musica);
+     {
+        var musica = "pop" //al ser var rompe el scope y se vuelve global
+        console.log("variable musica dentro del bloque", musica);         
+     }
+     console.log("variable musica despues del bloque", musica);
+ </script>
+ </body>
+
+ </html>
