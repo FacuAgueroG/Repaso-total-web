@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+        <title> Fundamentos JS</title>
+    </head>
+
+    <body>
+        <h1>Fundamentos JS</h1>
+        <script>
+
+            const Facundo = 
+            {
+                Apellido: "Aguero", //A las variables dentro de un objeto se le llama atributo
+                Nombre: "Facundo",
+
+                //a las funciones dentro de un objeto se le llama metodo
+                ImprimeNombreYApellido: function() //Funcion del objeto Facundo
+                {
+                    console.log(`Hola me llamo ${this.Nombre} ${this.Apellido} y soy re facha`);
+
+                    //console.log(`Hola me llamo ${Facundo.Nombre} ${FacundO.Apellido} y soy re facha`);
+                    //esto ultimo causaria un error al llamarse a si mismo! 
+                }
+            }
+
+            console.log(Facundo.Apellido, Facundo.Nombre);
+
+            Facundo.ImprimeNombreYApellido();
+
+            console.log(Object.keys(Facundo)); //Keys imprime los nombres de los atributos y metodos
+            console.log(Object.values(Facundo)); //Imprime el valor de los atributos
+            
+            //Manda "Nombre" y devuelve un true o false en caso de que exista o no ese atributo
+            console.log(Facundo.hasOwnProperty("Nombre")); 
+        </script>
+
+    </body>
+</html>

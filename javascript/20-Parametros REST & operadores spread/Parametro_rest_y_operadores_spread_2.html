@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+    let arreglo1 = [0,1,2,3,4];
+    let arreglo2 = [5,6,7,8,9];
+
+    console.log(arreglo1);
+    console.log(arreglo2);
+
+    //esta linea lo que me genera es un arrey de arreys
+    
+    let arreglo3 = [arreglo1,arreglo2];
+    console.log(arreglo3[0]); 
+
+    /*si yo quisiera mostrar un solo array con todo el contenido de los 
+    anteriores arrays: 
+    */
+
+    let arreglo4 = [...arreglo1,...arreglo2];
+
+    console.log(arreglo4);
+
+ </script>
+ </body>
+
+ </html>

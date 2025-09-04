@@ -1,0 +1,17 @@
+Tanto como el while como el dowhile
+en JS cada vez estan siendo menos utilizadas
+
+
+_____________
+
+Ademas de los bucles que ya conozco
+
+se agregan a estos for in y for of
+
+el primero recorre un objeto y sus 
+propiedades
+
+forof es para recorrer datos dentro
+de un arreglo
+
+

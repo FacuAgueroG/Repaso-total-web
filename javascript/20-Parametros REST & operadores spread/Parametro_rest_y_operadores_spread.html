@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+function sumar (a,b,...c)
+{
+    let resultado = a+b;
+
+    c.forEach(function(n)
+    {
+        resultado = resultado+n;
+    });
+
+    return resultado;
+}
+
+console.log(sumar(3,4)); //puede devolver la suma de a+b;
+console.log(sumar(5,8,10)); //Asi como puede devolver sumandole C
+
+/*C no es un parametro definido, no es una cantidad de parametros, sino que
+"...NOMBRE_DEL_PARAMETRO_INFINITO" es una cantidad infinita de parametros posibles
+a agregar, los cuales se recorren por dentro de la funcion con un foreach
+*/
+
+console.log(sumar(1,2,3,4,5,6,7));//todos los que necesite! 
+
+ </script>
+ </body>
+
+ </html>

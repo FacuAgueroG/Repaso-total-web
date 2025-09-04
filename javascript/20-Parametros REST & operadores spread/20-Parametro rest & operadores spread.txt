@@ -1,0 +1,20 @@
+Los parametros rest
+son una forma virtual
+de agregar parametros 
+a una funcion o una variable
+
+Ejemplo, tengo una funcion
+y no se cuantos parametros
+le voy a agregar, utilizo
+un parametro rest
+
+__________________
+
+
+un operator spread se utiliza en arrays
+de tal forma que en un mismo array se 
+pueden acoplar todos los valores de otros
+arrays
+
+
+

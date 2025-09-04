@@ -1,0 +1,9 @@
+Condicionales
+
+if, else, if else,
+
+operadores ternarios
+
+let A = (condicion) ? true : false;
+
+operadores switch case

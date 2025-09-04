@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+    let A =
+    {
+        nombre : "carlitos",
+        apellido: "aguero",
+        edad: 35
+    }
+
+    //propiedad es una variable que creo para laburar con mis variables primitivas
+    //dentro del objeto, con este for recorro todas las propiedades de este.
+    for (const propiedad in A) {
+        console.log(`Key ${propiedad}: Value ${A[propiedad]}`);
+    }
+
+    numeros = [0,10,20,30,40,50,60,70,80,90];
+
+    //con este puedo recorrer cualquier objeto iterable
+    for(const elemento of numeros)
+    {
+        console.log(elemento);
+    }
+
+    
+
+ </script>
+ </body>
+
+ </html> 

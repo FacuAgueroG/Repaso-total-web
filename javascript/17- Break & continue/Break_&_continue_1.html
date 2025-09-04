@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width-device-width,
+        initial-scale = 1.0">
+        <title> Prueba </title> 
+    </head>
+
+    <body>
+      <h1>Fundamentos de programacion JS</h1>
+        <script>
+            //recorre por completo! 
+            let numeros = [10,20,30,40];
+
+            for(i=0; i < numeros.length; i++)
+            {
+                console.log(numeros[i]);
+            }
+
+            console.log(" "); //espacio en blanco para delimitar
+            
+            console.log("Ahora probamos el break!!");
+
+            //recorre hasta que el 30 lo decanta en un break! 
+
+            for(i=0; i < numeros.length; i++)
+            {
+                if(numeros[i]===30) 
+                {
+                    console.log("No muestra el 30, se detiene");
+                    break;//no llega a mostrar 30 en consola
+                }
+                
+                console.log(numeros[i]);
+            }
+
+            console.log(" "); //espacio en blanco para delimitar
+
+            console.log("Ahora probamos con continue!");
+
+            for (let i = 0; i < numeros.length; i++) 
+            {
+                if(numeros[i]===20)
+                {
+                    console.log("Saltea el 20, sigue");
+                     continue; //Saltea el 20
+                }
+                
+                console.log(numeros[i]);   
+            }
+
+
+        </script>
+    </body>
+
+ </html> 

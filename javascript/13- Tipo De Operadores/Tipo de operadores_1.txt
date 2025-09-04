@@ -1,0 +1,17 @@
+entre todos los operadores que conozco
+aparece uno que ya existe en c#
+es 
+
+i = 1;
+console.log(i++); // 1
+console.log(i++) // 1  guarda para despues
+console.log(i) // 2 
+
+esto no guarda el valor
+
+pero que pasa si pongo al reves?
+
+console.log(++i); // 2
+console.log(i); // 2 si guarda el valor y lo muestra
+
+

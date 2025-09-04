@@ -1,0 +1,15 @@
+try catch finally! 
+
+El try catch finally 
+
+nos sirve para poder capturar 
+errores y corregirlos de una manera
+u otra dependiendo de que tipo de error sea
+
+ahora bien, estos errores tambien se pueden
+ejecutar desde nuestro lado, gracias a
+nuestra propia implementacion de codigo
+
+estos errores son los THROW que tambien
+tiene c#
+

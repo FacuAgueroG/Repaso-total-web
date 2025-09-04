@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+initial-scale = 1.0">
+<title> Prueba </title> 
+</head>
+
+<body>
+<h1>Fundamentos de programacion JS</h1>
+<script>
+
+    let PrimerArreglo = [1,2,3];
+
+    let Variable1 = PrimerArreglo[0],
+        Variable2 = PrimerArreglo[1],
+        Variable3 = PrimerArreglo[2];
+
+        console.log(Variable1,Variable2,Variable3); //SIN DESTRUCTURACION! 
+
+    //UTILIZANDO DESTRUCTURACION
+    //destructuracion con array
+    let [V_Uno,V_Dos,V_Tres] = PrimerArreglo; 
+
+    console.log(V_Uno, V_Dos,V_Tres);
+
+
+
+    let persona =
+    {
+        nombre: "Facundo",
+        apellido: "Aguero",
+        edad: 22
+    }
+    //destructuracion con objeto
+    let {nombre,apellido,edad} = persona;
+
+    console.log(`El nombre es ${nombre} ${apellido} y la edad es ${edad}`);
+
+</script>
+</body>
+
+</html> 

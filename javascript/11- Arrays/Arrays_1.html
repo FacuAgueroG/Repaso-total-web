@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+        <title> Fundamentos JS</title>
+    </head>
+
+    <body>
+        <h1>Fundamentos JS</h1>
+        <script>
+            let PrimerArreglo = [];
+            console.log(PrimerArreglo);
+
+            let SegundoArreglo = ["Hola",1, true, ["A","B","C"]];
+            console.log(SegundoArreglo);
+            console.log("El largo del segundo arreglo es: " + SegundoArreglo.length);
+
+            //Contando a partir de 0!
+            console.log(SegundoArreglo[2]);
+
+
+            //TAMBIEN SE PUEDE CARGAR ELEMENTOS CON 
+
+            let TercerElemento = Array.of("A",7,8);
+            console.log(TercerElemento);
+
+            //COMPLETAR EL ARRAY! 
+            let CuartoElemento = Array(15).fill(4);
+            console.log(CuartoElemento);
+
+            let QuintoElemento = ["Rojo","Verde","Azul"];
+            console.log("Nuevo array: " + QuintoElemento);
+
+            //Agrego elemento al array(el ultimo)
+            QuintoElemento.push("Negro");
+            console.log("Elemento agregado al ultimo array: "+ QuintoElemento);
+
+            //Quito elemento al array(el ultimo)
+            QuintoElemento.pop();
+            console.log("Elemento eliminado del ultimo array: " + QuintoElemento);
+
+        </script>
+
+    </body>
+</html>

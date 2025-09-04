@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+    //if else ifelse 
+
+    let hora = 3;
+
+    if(hora >= 0 && hora <= 6) console.log("Hora de mimir");
+    else if(hora > 6 && hora < 12) console.log("Buenos dias");
+    else if(hora >= 12 && hora < 20) console.log("Buenas tardes"); 
+    else if(hora >= 20 && hora < 24) console.log("Buenas noches");
+    else if(hora == 24) console.log("Esta hora no existe marrano");
+
+
+    //Operador ternario 
+    let edad = 18;
+
+    let EresMayorDeEsdad = (edad >= 18) 
+    ? "Eres mayor de edad"
+    : "Eres menor de edad";
+
+    console.log(EresMayorDeEsdad);
+
+
+    // Switch case 
+
+    let dia = 5;
+
+    switch (dia)
+    {
+        case 0:
+            console.log("domingo");
+            break;
+        case 2:    
+            console.log("martes");
+        default : console.log("Sos re marico");
+            break;
+
+    }
+
+ </script>
+ </body>
+
+ </html> 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+initial-scale = 1.0">
+<title> Prueba </title> 
+</head>
+
+<body>
+<h1>Fundamentos de programacion JS</h1>
+<script>
+
+let nombre= "Facundo",
+    edad = 35;
+
+let FAgueroGarcia =
+{
+    nombre: nombre,
+    edad: edad,
+
+    saludo: function()
+    {
+        console.log(`hola, mi nombre es ${nombre} y mi edad es ${edad}`);
+    }
+}
+
+FAgueroGarcia.saludo();
+
+
+//Ahora esto se puede hacer de la siguiente manera
+
+let FacundoAgueroGarcia =
+{/*Agregarlos de esta manera permite un poco mas de agiliadad
+ esto se permite si el nombre del atributo que queremos agregar al igual que el
+dato es el mismo que el de una variable por fuera del objeto*/
+    nombre,
+    edad,   
+
+    //para el caso de las funciones (metodos) simplemente saco el :function
+
+    saludo() 
+    {
+        console.log("Hola mi nombre es: "+ nombre);
+    } 
+}
+
+console.log("Nombre: "+FacundoAgueroGarcia.nombre+ "\nEdad: " + FacundoAgueroGarcia.edad);
+ 
+
+    
+
+</script>
+</body>
+
+</html> 

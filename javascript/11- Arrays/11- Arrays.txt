@@ -1,0 +1,30 @@
+Hay programadores que deciden poner
+sus arreglos con la palabra const
+como habiamos visto hace un tiempo
+
+es posible que dentro de un arreglo
+se cambien datos pero se mantenga
+un mismo tipo de dato por dentro
+
+de esta manera se mostraran como 
+"CONSTANTES" para el programador
+
+otro tipo de programadores utilizan
+"let"
+
+______________
+
+Hay varias formas de cargar valores
+dentro de un array
+
+________________
+
+Se trabaja de la misma manera que
+se trabajan los arreglos dentro
+de c#
+
+______________________
+
+Primera vista al foreach para recorrer
+los arrays
+

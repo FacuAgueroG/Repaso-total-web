@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+        <title> Fundamentos JS</title>
+    </head>
+
+    <body>
+        <h1>Fundamentos JS</h1>
+        <script>
+            let PrimerArray = ["Rojo","Verde","Azul"];
+            
+            console.log("Asi se ve recorrido por un console.log " +  PrimerArray);
+
+            console.log("Como se muestra a continuacion, esta recorrido por un foreach");
+
+            PrimerArray.forEach(function(A)
+            {
+                console.log(`<li>${A}</li>`);
+            });
+
+            //Ahora si estos necesitan un ID unica
+
+            PrimerArray.forEach(function(A,index)
+            {
+                console.log(`<li id="${index}">${A}</li`);
+            });
+
+        </script>
+
+    </body>
+</html>

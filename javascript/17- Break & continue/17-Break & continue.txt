@@ -1,0 +1,15 @@
+El break; funciona igual que
+en c#
+
+al toparnos con un break; dentro
+de un bucle este se rompe
+por completo y saltea
+todo lo que venga a continuacion
+
+ahora si nos topamos con un continue
+este vuelve a comenzar el bucle, pero
+saltea todo lo que venga a continuacion
+en el ciclo en el que se encontraba
+
+el ejemplo muestra como funciona
+el continue claramente! 

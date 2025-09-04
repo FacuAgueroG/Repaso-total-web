@@ -1,0 +1,24 @@
+Al igual que las variables primitivas puedo
+declarar objetos con un simple let
+
+una vez creado, podemos agregarle valores
+funciones y lo que necesite
+para que estas funcionen correctamente
+no necesitan ; lo que necesitan entre cada
+una de ella es una simple ","
+
+luego las podremos llamar como a cualquier
+objetos
+
+_________________
+
+
+utilizo this
+
+dentro de este script funciona de forma
+tal que hace referencia al mismo objeto en el
+que se encuentra
+
+ya que dentro de un objeto no puedo hacer
+referencia a los atributos que este mismo
+tiene

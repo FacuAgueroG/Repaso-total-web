@@ -1,0 +1,11 @@
+Con la destructuracion
+
+de forma sistematica
+se agregan los valores 
+en cada uno de los espacios
+del array! 
+
+esto tambien funciona con 
+los objetos a los que 
+quiero asignarle metodos
+y variables! 
