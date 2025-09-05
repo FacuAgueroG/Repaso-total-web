@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+
+    <script>
+        // creacion de funcion constructora
+        //a esta funcion se le pueden crear varios objetos
+        function Animal(nombre,genero)
+        {
+            this.nombre = nombre;
+            this.genero = genero;
+
+            this.sonar = function()
+            {
+                console.log("hago sonidos de " + this.nombre);
+            }
+        }
+
+        //creo objetos
+        const perro = new Animal("Perro","macho");
+
+        const vaca = new Animal("Vaca","Hembra");
+
+        perro.sonar();
+
+
+        // Laburar de esta menera puede generar problemas ya que por mas que no 
+        // utilice mis metodos dentro del objeto estos igual se van a incluir, 
+        // ocupando espacio en memoria, solucion en la parte 3 de la clase
+
+    </script>
+
+</body>
+</html>

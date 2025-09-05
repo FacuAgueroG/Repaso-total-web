@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        console.log(Date());
+
+        let fecha = new Date();
+
+        //dia del mes
+        console.log(fecha.getDate());
+        //dia de la semana=> Dom= 0, Lun = 1, etc
+        console.log(fecha.getDay());
+        //mes => Dic = 0, Ene=1, etc
+        console.log(fecha.getMonth());
+        //año
+        console.log(fecha.getFullYear());
+        //hora
+        console.log(fecha.getHours());
+        //minutos
+        console.log(fecha.getMinutes());
+        //segundos
+        console.log(fecha.getSeconds());
+        //milisecundos
+        console.log(fecha.getMilliseconds());
+
+        //fecha con todos los datos
+        console.log(fecha.toString());
+
+        //fecha del dia, mes, fecha, año
+        console.log(fecha.toDateString());
+
+        //fecha local sin el uso horario mundial
+        console.log(fecha.toLocaleString());
+
+        //dia mes año local
+        console.log(fecha.toLocaleDateString());
+        
+        //hora local
+        console.log(fecha.toLocaleTimeString());
+
+        //diferencia horaria con el meridiano de greenwich en minutos
+        console.log(fecha.getTimezoneOffset());
+
+        //Algo muy importante entre las fechas es el formato timeStamp
+        // que se creo para saber la hora exacta en 1970 a partir de ahi
+        // se utiliza un contador de segundos, en programacion se lo adopto
+        // como un formato que al traducirlo nos da año, mes, dia, hora,
+        // minutos, segundos, milisegundos
+
+        console.log(Date.now());
+
+    </script>
+</body>
+</html>

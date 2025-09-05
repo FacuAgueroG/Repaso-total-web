@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>JS</H1>
+    <script>
+        /*Corto circuito con OR - Cuando el valor de la izquierda en la
+        expresion siempre pueda validar a true, es el valor que se cargara
+        por defecto*/
+
+        function saludar(nombre)
+        {
+            // como el valor de la izquierda no se valida... entonces salto al
+            // derecho
+            nombre = nombre || "Desconocido";
+            console.log(`Hola ${nombre}`);
+        }
+
+        saludar();
+
+        //todo esto se aplica al truthy y falsy
+
+        console.log("A" || "B");    //Truthy    //aplico izquierda
+        console.log(false || "B");  //Falsy      // aplico derecha
+        console.log([] || "B");        //thuthy    //aplico izquierda
+        console.log(0 || "B");      //Falsy     //aplico derecha
+
+        /*Corto circuito con AND - cualdo el valor de la izquierda en
+        la expresion siempre pueda validar a false, es el valor que se 
+        cargara por defecto*/
+
+        console.log(" "); //espacio vacio para separar
+
+        console.log("A" && "B");    //ambos true, aplico el segundo x true
+        console.log(false && "B");  //el primero false, aplico el primero x false
+        console.log([] &&"B");      //ambos true, aplico el segundo x true
+        console.log(0 && "B");      //el primero false, aplico el primero x false
+
+
+
+    </script>
+</body>
+</html>

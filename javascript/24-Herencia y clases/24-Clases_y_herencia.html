@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+
+        //Creacion de clases y herencia... esto funciona igual que las pseudo
+        // clases llamadas funciones en las clases anteriores, pero, al ser esto
+        // una especie de simplificacion de lo anterior ya no se necesita
+        // utilizar los prototipos de forma explicita, aca con tirar la palabra
+        // class JS va a hacer todo el trabajo por nosotros
+
+        //las clases no reciben parametros
+        class Animal
+        {
+            //para recibir parametros usan un constructor
+            constructor(nombre,genero)
+            {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            sonar()
+            {
+                console.log("hago sonidos");
+            }
+
+            saludar()
+            {
+                console.log(`hola me llamo ${this.nombre}`);
+            }
+        }
+
+        const mimi = new Animal("mimi","hembra");
+        const scooby = new Animal("scooby","macho");
+
+        mimi.saludar();
+        
+        //creo otra clase y hago herencia de clases
+        class Perro extends Animal
+        {
+            constructor(nombre, genero, tamanio)
+            {
+            //esto trae nombre y genero de la clase ganada por herencia
+            super(nombre, genero); 
+            this.tamanio = tamanio;
+            }
+            //sobreescribo este metodo
+            sonar()
+            {
+                console.log("soy un perro y mi sonido es un ladrido")
+            }
+
+            ladrar()
+            {
+                console.log("guau guau");
+            }
+
+        }
+
+            const mimi2 = new Animal("mimi", "hembra"),
+                  scooby2 = new Perro("scooby", "macho", "gigan");
+        
+        scooby2.saludar();
+        scooby2.sonar();
+        scooby2.ladrar();
+
+
+    </script>
+
+</body>
+
+</html>

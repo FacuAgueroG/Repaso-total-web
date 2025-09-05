@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        //En js no es posible usar cosas como private o public
+
+        class Perro
+        {
+            constructor()
+            {   
+                this.raza= null;
+            }
+
+            //pero si hay cosas como por ejemplo los static
+            static Definicion()
+            {
+                console.log("Los perros son mamiferos de la familia de los caninos. Los perros son el mejor amigo del hombre.");
+            }
+
+            //algo que si existe es el uso de get y set
+            //pero a difrencia de otros lenguajes, al invocarlos tengo que 
+            // estos son tratados como si fueran propiedades primitivas
+            //osea... si quiero definirlos uso un = y no envio un valor
+            // a travez de el como si fuera un metodo...
+            get getRaza()
+            {
+                return this.raza;
+            }
+
+            set setRaza(raza)
+            {
+                this.raza = raza;
+            }
+        }
+
+        
+
+        //Sin definir un objeto, pude llamar a la definicion solo usando
+        // la clase
+        Perro.Definicion();
+
+        nani = new Perro();
+        nani.setRaza = "Sin raza";  //lo uso como un atributo
+        console.log(nani.getRaza);  //lo uso como un atributo
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

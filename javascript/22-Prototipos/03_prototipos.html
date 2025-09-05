@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+
+    <script>
+        function Animal(nombre,genero)
+        {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+        //esto esta prototipado, de esta manera cuando llamo a esta funcion
+        //que proviene de animal, se agrega circunstancialmente.
+        Animal.prototype.saludar = function()
+        {
+            console.log("hago sonidos de " + this.nombre);
+        }
+
+        const perro = new Animal("gallina","hembra");
+        perro.saludar();
+
+    </script>
+</body>
+</html>

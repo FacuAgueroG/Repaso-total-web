@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        //laburo con la consola para mostrar distintos efectos sobre ella
+        // que me pueden ayudar a trabajar mas facilmente
+        
+        
+        //limpio la consola, ahora no tiene ningun sentido xQ acaba de empezar 
+        // el programa
+        console.clear();
+
+        console.log("Este es un console.log");
+        console.warn("Este es un console.warning");
+        console.error("Este es un console.error");
+        console.info("Esto es un console.info");
+
+        let nombre = "Facundo",
+            apellido = "Agüero",
+            edad = 23;
+
+        console.log(`Hola mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`);
+
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.dir(document);
+
+        //esto es desplegable
+        console.groupCollapsed("Los juegos de GingerDog ");
+        console.log("Downpour");
+        console.log("Rouge forest");
+        console.log("City of lights");
+        console.log("The last valkyrie");
+        console.groupEnd();
+
+        console.table(Object.entries(console).sort());
+
+        const numeros = [1,2,3,4,5],
+              vocales = ["a","e","i","o","u"];
+
+        console.table(numeros);
+        console.table(vocales);
+
+        const PERRO = 
+        {
+            nombre: "falha",
+            raza: "Boxer",
+            color: "Blanco, cafe y negro"
+        }
+
+        console.table (PERRO);
+
+        //cuanto tiempo tardan en ejecutarse las instrucciones entre estos console.log?
+        //abro el timer
+        console.time("Cuando timepo tarda mi codigo");
+        const arreglo = Array(1000000);
+        for (let i = 0; i < arreglo.length; i++) {
+            arreglo[i] = i;
+        }
+        //cierro el timer
+        console.timeEnd("Cuando timepo tarda mi codigo");
+
+
+        //contador de cuantas veces se paso por un punto especifico del programa
+
+        for (let index = 0; index <= 99; index++) {
+            console.count("Codigo for");
+        }
+
+
+        //pruebas en consola
+        let a = 3,
+            b = 2,
+            pruebaAB = "Se espera que X siempre sea menor que Y";
+
+            //esto no sale por consola ya que la condicion se cumple y no da error
+            console.assert(b < a, {b,a, pruebaAB})
+            //esto sale por consoal ya que la condicion no se cumple y da error
+            console.assert(a < b, {a, b , pruebaAB});
+    </script>
+</body>
+</html>

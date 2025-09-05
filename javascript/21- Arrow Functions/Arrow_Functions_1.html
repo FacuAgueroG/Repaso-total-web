@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+ <script>
+
+    //en caso de que no resiva UN SOLO dato, no es necesario poner los parentesis
+    //let saludar = nombre => console.log("hola " + nombre); 
+    let saludar = (nombre) => console.log("Hola "+ nombre);
+
+    saludar("Batman");
+
+    let sumar = (a,b) => a+b;
+
+
+    
+    console.log(sumar(1,1));
+
+    let array = [3,4,8,6];
+
+
+    //En JS el foreach es un metodo de un array. 
+
+    /*invooc array, con el metodo forreach, con el valor y la posicion
+    */
+    array.forEach((valor,posicion) => console.log(`${valor} 
+    esta en la posicion ${posicion}`));
+
+   
+
+
+ </script>
+ </body>
+
+ </html>

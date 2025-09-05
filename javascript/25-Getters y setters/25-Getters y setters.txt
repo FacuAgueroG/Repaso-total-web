@@ -1,0 +1,4 @@
+Dentro de JS no existen las caracteristicas de public o private para las clases, eso es porque se utiliza azucar sintactica para trabajar sobre esta.
+
+Sin envargo existen algunas otras cosas como los metodos estaticos
+

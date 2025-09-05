@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        function Mascota(nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        Mascota.prototype.saludar = function()
+        {
+            console.log("mi nombre es " + this.nombre);
+        }
+
+        Mascota.prototype.hagoCosas = function()
+        {
+            console.log("hago cosas de mascotas, como... comer y cagar, pero doy mucho amor");
+        }
+
+        ///////////////////HERENCIA/////////////////////////////////
+        function Perro(nombre,raza)
+        {
+            this.super = Mascota; //hago la herencia de la funcion constructora
+            this.super(nombre);
+            this.raza = raza;
+        }
+        //instancia de mascota
+        Perro.prototype = new Mascota();
+
+        Perro.prototype.ladrar = function()
+        {
+            console.log("guau guau");
+        }
+
+        //sobreescribo una funcion heredada
+        Perro.prototype.hagoCosas = function()
+        {
+            console.log("hago cosas de perros");
+        }
+
+
+        const carlota = new Perro("carlota","Perro raza perro");
+        carlota.saludar();//sale disparado de mascota
+        carlota.ladrar();//sale desparado de perro
+         //sale disparada de perro, sobreescribe la funcion de Mascota
+        carlota.hagoCosas();
+    </script>
+</body>
+</html>

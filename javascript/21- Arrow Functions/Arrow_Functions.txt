@@ -1,0 +1,59 @@
+Arrow Functions
+
+es una implementacion que sirve
+para mejorar la forma de escribir
+el codigo en JS
+
+mejora la sintaxis de JS
+
+______________________
+
+Como primera caracteristica muestra
+una nueva forma de escribir funciones
+anonimas expresadas
+
+______________________
+
+para comprender bien el tema es
+necesario tener en cuenta los temas
+de la clase de funciones
+
+ahora, uno de los conceptos mas importantes
+es el de las funciones en variables
+o propias de una funciones
+EJ:
+
+si una funcion se escribe de esta manera
+
+function saludar() 
+{
+    console.log("hola");    
+}
+
+saludar();
+
+//esta funcion puede ser llamada
+desde cualquier punto del programa
+
+
+en cambio una funcion en una variables
+
+let saludar() =
+{
+    console.log("hola");
+}
+
+saludar(); //esto funciona perfectamente
+
+//ahora si yo llamo a esta funcion
+antes de que se cree junto con su 
+variable, esta no funcionaria correctamente
+
+__________________________________
+
+
+las arrow functions tienen la posibilidad
+de capturar el contexto en el que estan ubicadas
+
+
+

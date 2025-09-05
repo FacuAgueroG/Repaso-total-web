@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width-device-width,
+ initial-scale = 1.0">
+ <title> Prueba </title> 
+ </head>
+
+ <body>
+ <h1>Fundamentos de programacion JS</h1>
+    <script>
+
+        /*this, dentro de una funcion, muestra el contexto en el que se encuentra
+        al momento de ejecutarse, en este caso en un "window", una ventana. */
+        function This_Function()
+        {
+            console.log(this);
+        }
+
+        This_Function();
+
+
+        /*ahora si yo ejecuto this dentro de un objeto, este imprime todo lo que contiene
+        el objeto*/
+
+        let This_Objeto =
+        {
+            nombre: "Facundo",
+            This_EnMetodo: function()
+            {
+                console.log(this);
+            }
+        }
+
+        This_Objeto.This_EnMetodo();
+
+        //Ahora, que pasa si utilizo una arrow function para el ultimo metodo?
+
+        let This_Objeto_Arrow= 
+        {
+            nombre: "Facundo",
+            This_EnMetodo_Arrow: () => { console.log(this); }             
+        }
+
+        This_Objeto_Arrow.This_EnMetodo_Arrow();
+
+        /*De esta manera queda demostrado que, las arrow functions, muestran el contexto en
+        el que se encuentran ubicadas, en este caso el contexto del objeto WINDOWS!*/
+
+    </script>
+ </body>
+
+ </html>

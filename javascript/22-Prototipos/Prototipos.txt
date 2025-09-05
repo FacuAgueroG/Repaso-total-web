@@ -1,0 +1,2 @@
+Dentro de js lo que pasa cuando laburamos con clases y objetos es que por detras js traduce nuestra clase a una funcion prototipal
+
