@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        12-Programa una funcion que determine si un numero es primo (aquel que solo es divisible por si mismo y 1) o no. Ej: miFuncion(7) devolvera true
+        13-Programa una funcion determine si un numero es par o impar. Ej: miFuncion(29) devolvera impar
+        14-Programa una funcion para convertir grados celsius a farenheit y viceversa. Ej: miFuncion(0, "C") devolvera 32°F
+        */
+
+        //Ejercicio 12 - ESTO ESTA MAL! SI YO INGRESO 25 ME DA PRIMO Y NO ES ASI. TENGO QUE COMPROBAR COMO SI FUERA LO INVERSO A UN FACTORIAL PERO CON DIVISIONES
+        // function esPrimo(numero){
+        //     if(numero%4 == 0 || numero%6 == 0 || numero%8 == 0 || numero%9 == 0) return false;
+        //     return true;
+        // }
+        // console.log(esPrimo(25));
+
+        //RESUELTO POR JON
+        // const numeroPrimo = (numero = undefined) =>{
+        //     if(numero === undefined) return console.warn("No ingresaste un numero");
+        //     if(typeof numero!== "number") return console.error(`El valor ${numero} ingresado, no es un numero`);
+        //     if(numero===0) return console.error("El numero no puede ser 0");
+        //     if(numero === 1) return console.error("El numero no puede ser 1");
+        //     if(Math.sign(numero) === -1) return console.error("El numero no puede ser negativo");
+
+        //     let divisible = false;
+        //     for(let i=2;i<numero;i++){
+        //         if(numero% i === 0){
+        //             divisible = true;
+        //             break;
+        //         }
+        //     }
+        //     return (divisible)
+        //     ? console.log(`El numero ${numero} no es primo`)
+        //     : console.log(`El numero ${numero} es primo`);
+        // }
+        // numeroPrimo(450);
+        
+
+        //Ejercicio 13
+        // function esPar(numero){
+        //     if(numero%2 == 0) return true;
+        //     return false;
+        // }
+        // console.log(esPar(8));
+
+        //RESUELTO POR JON
+        // const numeroParImpar=(numero = undefined)=>{
+        //     if(numero === undefined) return console.warn("No ingresaste un numero");
+        //     if(typeof numero!== "number") return console.error(`El valor ${numero} ingresado, no es un numero`);
+
+        //     return ((numero%2)===0)
+        //     ? console.info(`El numero ${numero} es par`)
+        //     : console.info(`El numero ${numero} es impar`);
+        // }
+
+        //Ejercicio 14
+        // function convertirTemperaturaA(temperatura, unidad){
+        //     if(unidad.toLowerCase() == "c") return (temperatura - 32) * 5/9; //farenheint a celsius
+        //     return (temperatura * 9/5) + 32; //celsius a farenheint
+        // }
+        // console.log(convertirTemperaturaA(20,"c")+ "°");
+
+        //RESUELTO POR JON
+        const convertirGrados=(grados=undefined, unidad=undefined)=>{
+            if(grados===undefined) return console.warn("No ingresaste grados a convertir");
+            if(typeof grados!== "number") return console.error(`El valor ${grados} ingresado no es un numero`);
+            if(unidad === undefined) return console.warn("No ingresaste el tipo de grado a convertir");
+            if(typeof unidad !== "string") return console.error(`El valor ${grados} ingresado no es una cadena de texto`);
+            if(unidad.toLowerCase() !== "c" && unidad.toLowerCase()!=="f") return console.error(`No ingresaste una unidad valida de conversion, solo es valido c o f`);
+
+            if(unidad.toLowerCase() === "c") return console.info(`${grados} = ${Math.round((grados -32) * 5/9)}°C`);
+            if(unidad.toLowerCase()==="f") return console.info(`${grados} = ${Math.round((grados * (9/5)) + 32)}°F`);
+        }
+
+        convertirGrados(30, "f");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*
+        18- Programa una funcion que dada una cadena de texto cuenta la cantidad de vocales y consonantes y las devuelva.
+        19-Programa una funcion que valide que un texto sea un nombre valido. Ej: miFuncion("facundo agüero") devera devolver verdadero
+        20- Programa una funcion que valide que un texto sea un email valido. Ej:miFuncion ("facundoAguerog@gmail.com") devolvera verdadero
+       */ 
+
+       //Ejercicio 18 - RESUELTO POR CHAT GPT
+       //El problema de este ejercicio es que requiere del uso de expresiones regulares
+       //Esta es la razon por la que no iba a poder resolverlo, formas alternativas,
+       //pero no serian tan performantes como esta
+        // function contarVocalesYConsonantes(texto) {
+        //     let vocales = 0;
+        //     let consonantes = 0;
+        //     // Convertimos a minúsculas para simplificar la comparación
+        //     let minuscula = texto.toLowerCase();
+
+        //     for (let letra of minuscula) {
+        //         if (/[a-záéíóúüñ]/.test(letra)) { // Solo letras (incluye tildes y ñ)
+        //             if ("aeiouáéíóúü".includes(letra)) {
+        //                 vocales++;
+        //             } else {
+        //                 consonantes++;
+        //             }
+        //         }
+        //     }
+        //     return console.log(`vocales: ${vocales} y consonantes: ${consonantes}`)
+        // }
+        // contarVocalesYConsonantes("¡Hola, cómo estás?");
+
+        //RESUELTO POR JON
+        // const contarLetras=(cadena ="")=>{
+        //     if(!cadena) return console.warn("No ingresaste una cadena de texto");
+        //     if(typeof cadena !== "string") return console.error(`El valor ${cadena} Ingresado, no es una cadena de texto`);
+
+        //     cadena=cadena.toLowerCase();
+        //     let vocales = 0;
+        //     let consonantes = 0;
+
+        //     for(let letra of cadena){
+        //         if(/[aeiouúáéíóü]/.test(letra)) vocales++;
+        //         if(/[bcdfghjklmnñpqrstvwxyz]/.test(letra)) consonantes++;   
+        //     }
+        //     return console.info(`La cadena de texto tiene ${consonantes} consonantes y ${vocales} vocales`);
+        // }
+        // contarLetras("Que onda como estas JEJEJJEJE");
+
+        //Ejercicio 19 - RESUELTO POR JON
+        // const validarNombre =(nombre ="")=>{
+        //     if(!nombre) return consle.warn("No ingresaste un nombre");
+        //     if(typeof nombre !== "string") return console.error(`El valor ${nombre} ingresado, no es una cadena de texto`);
+
+        //     //^ no puede haber nada antes de la expresion a validar
+        //     //$ no puede haber nada despues de la expresion a validar
+        //     //la ñ debe agregarse a parte,lo mismo que las vocales con tilde o dieresis
+        //     // \s para que evalue como valido los espacios en blanco
+        //     // g para evaluar todos los caracteres
+        //     let expReg = /^[A-Za-zñÑÁáéÉíÍóÓúÚÜü\s]+$/g.test(nombre);
+        //     return(expReg)
+        //     ? console.info(`"${nombre}", es un nombre valido`)
+        //     : console.warn(`"${nombre}", no es un nombre valido`);
+        // }
+
+        // validarNombre("Facundo Nahuel Agüero García");
+
+        //Ejercicio 20 - RESUELTO POR JON
+        const validarEmail=(email="")=>{
+            if(!email) return console.warn("No ingresaste un email");
+
+            if(typeof email !== "string") return console.error(`El valor ${email} ingresado, No es una cadena de texto`);
+            let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+            return (expReg)
+            ? console.info(`"${email}, es un email valido`)
+            : console.warn(`${email}, NO es un email valido`);
+        }
+        validarEmail("facuaguerog@gmail.com");
+
+
+    </script>
+</body>
+</html>

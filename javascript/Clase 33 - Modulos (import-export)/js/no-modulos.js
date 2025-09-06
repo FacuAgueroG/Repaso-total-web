@@ -1,0 +1,1 @@
+console.log("Mi navegador no soporta modulos ECMA-SCRIPT. Aqui se trabajaria lo que no se soporta en ciertos navegadores");

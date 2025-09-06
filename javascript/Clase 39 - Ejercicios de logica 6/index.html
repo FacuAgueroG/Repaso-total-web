@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /////////////////////////////////////////A RECORDAR///////////////////////////////////
+
+        // let numero = 10;
+        // console.log(numero.toString(16)); //ESTO PASA DE BASE 10 A CUALQUIER BASE
+
+        // console.log(parseInt(11,2)); //ESTO PASA DE BASE SELECCIONADA A BASE 10
+
+
+        /*
+        15-Programa una funcion que para convertir numeros de base binaria a decimal y viceversa. Ej: miFuncion(100,2) devolvera 4 a base 10 [lo voy a hacer al reves, 100,2 significa 100d a b]
+        16-Programa una funcion que devuelva el monto final despues de aplicar un descuento a una cantidad dada. Ej: miFuncion (1000,20) devolvera 800
+        17-Programa una funcion que dada una fecha valida determine cueantos años han pasado hasta el dia de hoy. miFuncion(newDate(1998,4,23)) devolvera 35 años (en 2020)
+        */
+
+        //Ejercicio 15
+        // function convertirA(numero, base){
+        //     if(typeof numero!=="number") return "Debe ingresar un numero";
+        //     if(numero === undefined) return "Debe definir un valor a convertir";
+        //     if(base.toLowerCase() !== "b" && base.toLowerCase() !=="d") return "Debe definir una unidad de conversion valida";
+        //     if(typeof base !== "string") return "El valor debe ser alfabetico, los valores posibles son: c o d";
+        //     if(base.toLowerCase() === "b"){
+        //         let divisible = true;
+        //         let resto = 0;
+        //         let numeroBinarioString = [];
+        //         let index = 0;
+        //         if(numero==0) return 0
+        //         while(divisible == true){
+        //             if(numero%2==0 || numero%2==1 && numero!=1) {
+
+        //                resto = numero%2;
+        //                numeroBinarioString[index] = resto.toString();
+
+        //                numero = Math.floor(numero/2);
+        //                index++;
+        //             }else{
+        //                 numeroBinarioString[index] = numero.toString();
+        //                 divisible=false;
+        //             }
+        //         }
+        //         return numeroBinarioString.reverse().join('');
+        //     }
+        //     if(base.toLowerCase()==="d"){
+        //         let potencia = 1;
+        //         let vectorDelNumero = numero.toString().split('');
+        //         let valorDecimal = 0;
+        //         for(i=0;i<numero.toString().length;i++){
+        //             valorDecimal += parseInt(vectorDelNumero[i]) * potencia;
+        //             potencia *= 2;
+        //         }
+        //         return valorDecimal;
+        //     }
+        // }
+        // console.log(convertirA(0,"d"));
+
+        //RESOLUCION JON
+        // const convertirBinarioDecimal=(numero= undefined, base=undefined)=>{
+        //     if(numero===undefined) return console.warn("No ingresaste el numero a convertir");
+        //     if(typeof numero !== "number") return console.error(`El valor ${numero} ingresado, no es un numero`);
+        //     if(base === undefined) return console.warn("no ingresaste el numero a convertir");
+        //     if(typeof base !== "number") return console.error(`El valor ${base} ingresado, no es un numero`);
+
+        //     if(base === 2){
+        //         //con parseInt puedo pasar numeros de cualquier base a decimal. pongo numero actual + base actual y lo pasa a base 10
+        //         return console.info(`${numero} base ${base} = ${parseInt(numero,base)} base 10`); 
+        //     }else if (base === 10){
+        //         //con toString puedo pasar un numero de base decimal a cualquier base
+        //         return console.info(`${numero} base ${base} = ${(numero.toString(2))} base 2`); 
+        //     }else{
+        //         return console.error(`El tipo de base a convertir no es valido`);
+        //     }
+        // }
+        // convertirBinarioDecimal(11,2);
+
+        //Ejercicio 16
+        // const aplicaDescuento=(precio, descuento)=>{
+        //     if(descuento>100) {
+        //         console.log(`Con el descuento aplicado el valor a pagar es $0`)
+        //     }else{
+        //         console.log(`Con el descuento aplicado el valor a pagar es ${precio - (precio * (descuento/100))}`);
+        //     }
+        // };        
+        // aplicaDescuento(1000,20);
+
+        //RESOLUCION JON
+        // const aplicarDescuento =(monto=undefined, descuento=0)=>{
+        //     if(monto===undefined) return console.warn(`No ingresaste el monto`);
+        //     if(typeof monto !== "number") return console.error(`El monto debe ser un numero`);
+        //     if(monto ===0) return console.error(`El monto no puede ser 0`);
+        //     if(Math.sign(monto)===-1) return console.error("El monto no puede ser negativo");
+        //     if(typeof descuento !== "number") return console.error(`El valor del descuento ${descuento} no es un numero`);
+        //     if(Math.sign(descuento) === -1) return console.error("El descuento no puede ser negativo");
+        //     return console.info(`${monto} - ${descuento}% = $${monto-((monto*descuento/100))}`);
+        // }
+
+
+        //EJERCICIO 17 - RESUELTO POR JON (YO NO LO RESOLVI)
+        const calcularAnios=(fecha = undefined)=>{
+            if(fecha===undefined) return console.warn(`Debe ingresar una fecha`);
+            //fecha no es una instancia de date => instancia => objeto creado a partir de la clase Date
+            if(!(fecha instanceof Date)) return console.error("El valor que ingresaste no es una fecha valida");
+
+            //getTime me da el timeStamp tiempo que ocurrio en segundos desde el 1 de enero desde 1970
+            let hoyMenosFecha = new Date().getTime() - fecha.getTime();
+            let aniosEnMs= 1000 * 60 * 60 * 24 * 365;
+            let aniosHumanos = Math.floor(hoyMenosFecha/ aniosEnMs);
+
+            return (Math.sign(aniosHumanos) ===-1) 
+            ? console.info(`Faltan ${Math.abs(aniosEnMs)} años para el ${fecha.getFullYear()}`)
+            : (Math.sign(aniosHumanos) === 1)
+                ? console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
+                : console.info(`Estamos en el año actual ${fecha.getFullYear()}`);
+        }
+
+        calcularAnios(new Date(1998,4,15));
+
+        //RESUELTO POR CHAT GPT
+    //     function tiempoDesdeNacimiento(dia, mes, anio) {
+    //     // Recordá: en JS los meses van de 0 (enero) a 11 (diciembre)
+    //     let nacimiento = new Date(anio, mes - 1, dia, 0, 0, 0);
+    //     let ahora = new Date();
+
+    //     // Calculamos la diferencia total en milisegundos
+    //     let diff = ahora - nacimiento;
+
+    //     // Cálculo progresivo
+    //     let anos = ahora.getFullYear() - nacimiento.getFullYear();
+    //     let meses = ahora.getMonth() - nacimiento.getMonth();
+    //     let dias = ahora.getDate() - nacimiento.getDate();
+    //     let horas = ahora.getHours() - nacimiento.getHours();
+    //     let minutos = ahora.getMinutes() - nacimiento.getMinutes();
+    //     let segundos = ahora.getSeconds() - nacimiento.getSeconds();
+
+    //     // Ajustes para negativos (por ejemplo, si hoy es antes del día/mes de cumpleaños)
+    //     if (segundos < 0) {
+    //         segundos += 60;
+    //         minutos--;
+    //     }
+    //     if (minutos < 0) {
+    //         minutos += 60;
+    //         horas--;
+    //     }
+    //     if (horas < 0) {
+    //         horas += 24;
+    //         dias--;
+    //     }
+    //     if (dias < 0) {
+    //         // Sacar días del mes anterior
+    //         let mesAnterior = new Date(ahora.getFullYear(), ahora.getMonth(), 0);
+    //         dias += mesAnterior.getDate();
+    //         meses--;
+    //     }
+    //     if (meses < 0) {
+    //         meses += 12;
+    //         anos--;
+    //     }
+
+    //     return {
+    //         años: anos,
+    //         meses: meses,
+    //         dias: dias,
+    //         horas: horas,
+    //         minutos: minutos,
+    //         segundos: segundos
+    //     };
+    // }
+
+    // // Ejemplo de uso:
+    // let resultado = tiempoDesdeNacimiento(14, 2, 1998); // 14 de febrero de 1998
+    // console.log(
+    //     `Han pasado ${resultado.años} años, ${resultado.meses} meses, ` +
+    //     `${resultado.dias} días, ${resultado.horas} horas, ` +
+    //     `${resultado.minutos} minutos y ${resultado.segundos} segundos desde que naciste.`
+    // );
+
+        
+
+
+
+    </script>
+</body>
+</html>

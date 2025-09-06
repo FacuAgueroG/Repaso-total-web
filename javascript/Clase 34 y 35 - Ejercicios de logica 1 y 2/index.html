@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1-Programa una funcion que cuente el numero de caracteres de una cadena de texto.
+            Ej: miFuncion("Hola mundo" devolvera 10
+        2-Programa una funcion que te devuelve el texto recortado segun el numero de caracteres indicados. 
+            Ej:miFuncion("hola mundo",4) devolvera hola
+        3-Programa una funcion que dado un string te devuelva un array de textos separados por cierto caracter.
+            Ej: miFuncion("Hola que tal", " ") devolvera["hola","que","tal"]
+        4-Programa una funcion que repita un texto X veces. [SUPONGO QUE LO TIENE QUE GUARDAR DENTRO DEL STRING]
+            Ej: miFuncion("Hola mundo",3) devolvera "Hola mundo" "Hola mundo" "Hola mundo"
+        */
+
+        //EJERCICIO 1
+        // console.log(cuentaCaracteres("Hola"));
+        // function cuentaCaracteres(cadena){
+        //     if(typeof cadena != "string"){
+        //         return "no es un string, es: " + typeof cadena
+        //     }
+        //     return cadena.length;
+        // }
+
+        //RESUELTO POR JON
+        // const contarCaracteres=(cadena = "")=>(!cadena) ? console.warn("No ingresaste ninguna cadena") : console.log(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+        // contarCaracteres("Que onda perrito");
+
+        //EJERCICIO 2
+        // console.log(textoRecortado("Hola como estas?", 4));
+        // function textoRecortado(stringRecortable, maximoDeCaracteres){
+
+        //     if(typeof stringRecortable != "string"){
+        //         return "El primer valor ingresado debe ser un string, lo ingresado es " + typeof stringRecortable;
+        //     }
+        //     if(typeof maximoDeCaracteres != "number"){
+        //         return "El segundo valor ingresado debe ser un numero, lo ingresado es " + typeof maximoDeCaracteres;
+        //     }
+        //     if(stringRecortable === ""){
+        //         return ("Enviaste una cadena de texto vacia");
+        //     }
+        //     return stringRecortable.slice(0, maximoDeCaracteres);
+        // }
+
+        //RESULETO POR JON
+        // const rectortarTexto = (cadena = "", longitud = undefined)=> 
+        // (!cadena) //cadena != "string"
+        //     ? console.warn("No ingresaste una cadena de texto") 
+        //     : (longitud=== undefined)
+        //         ? console.warn("No ingresaste la logitud para recortar el texto")
+        //         : console.info(cadena.slice(0, longitud));
+        // rectortarTexto("Que onda perrito", 3);
+
+        //EJERCICIO 3
+        // console.log(generaArrayDesdeString("Hola como estas todo bien"));
+        // function generaArrayDesdeString(stringARecortar){
+        //     return stringARecortar.split(" ");
+        // }
+
+        //RESUELTO POR JON
+
+        // const cadenaAAReglo = (cadena ="", separador=undefined) =>
+        // (!cadena)
+        //     ? console.warn("No ingresaste una cadena de texto")
+        //     : (separador === undefined)
+        //         ? console.warn("No ingresaste el caracter separador")
+        //         : console.info(cadena.split(separador));
+        // cadenaAAReglo("Que onda perrito como estas todo bien? JEJEJEJ", " ");
+
+        //EJERCICIO 4 //En el mio guardo todo en un string, el de jon solo imprime en pantalla.
+        // console.log(copiaTexto("Hola", 4));
+        // function copiaTexto(texto, cantidadDeVeces){
+        //     textoCopia = texto;
+        //     for(i=0;i<cantidadDeVeces-1;i++){
+        //         textoCopia += " " + texto; 
+        //     }
+        //     return textoCopia
+        // }
+
+        //RESUELTO POR JON
+        // const repetirTexto = (texto = "", veces = undefined) =>{
+        //     if(!texto) return console.warn("No ingresaste un texto");
+        //     if(veces === undefined) return console.warn ("No definiste la cantidad de veces que tiene que repetirse el texto");
+        //     if(veces === 0) return console.error("El numero ingresado debe ser mayor a 0");
+        //     if(Math.sign(veces) === -1) return console.error("El numero no puede ser negativo");
+        //     for(let i=0; i<veces;i++){
+        //         console.info(`${texto},${i+1}`);
+        //     }   
+        // }
+        // repetirTexto("Que onda", 3);
+
+
+
+    </script>
+</body>
+</html>

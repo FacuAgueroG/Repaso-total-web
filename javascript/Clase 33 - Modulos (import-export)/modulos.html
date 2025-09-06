@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modulos en javascript</h1>
+
+    <!--Al agregar module puedo cargar los modulos, de otra manera no-->
+    <script src="./js/modulos.js" type="module"></script>
+    <!--nomodule = Esto es para que no se carguen los 2 archivos, solo se carga el segundo en caso de que no se soporte ECMASCRIPT
+    (La primera parte no se carga y la segunda si) En el caso de que si se soporte, no carga el segundo-->
+    <script src="./js/no-modulos.js" nomodule=""></script>
+</body>
+</html>

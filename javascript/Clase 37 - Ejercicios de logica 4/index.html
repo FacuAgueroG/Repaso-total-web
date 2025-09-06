@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        9-Programa una funcion que obtenga un numero aleatorio entre 501 y 600
+        10- Programa una funcion que reciba un numero y evalue si es capicua o no (que se lee igual en un sentido que en otro) Ej: miFuncion (2002) devolvera true
+        11- Programa una funcion que calcule el factorial de un numero (el factorial de un entero positivo n, se define como el producto de todos los numeros
+        enteros positivos desde 1 hasta n) Ej: miFuncion(5) devolvera 120
+        */
+
+
+        //Ejercicio 9
+        //max - min + 1 [Es el rango, en este caso 99+1=100 para incluir al 501]
+        //al darme un numero random por Math.random entre 0 y 1 necesito redondear
+        // //Ej: 0.09451193824976734 * 100= 9.451193824976734, round = 9 + 501 [la base] = 510
+        // const numeroAleatorio=()=> console.log(Math.round(Math.random()* (600 - 501 +1)+501));
+        // numeroAleatorio();
+
+        //RESUELTO POR JON
+        // //Se suele utilizar Math.foor (jon uso Math.round) ya que al redondear hay menos probabilidad de que toque 501 y 600
+        // const aleatorio = () => console.info(Math.floor((Math.random() * 100) + 501)); //jon marco que es 500, pero el minimo es 501.
+        // aleatorio();
+
+        //Ejercicio 10
+        // function capicua(numero){
+        //     let nuemeroInvertido =numero.toString().split('').reverse().join('')
+        //     if(numero === parseInt(nuemeroInvertido))
+        //     return true;
+        //     return false;
+        // }
+        // console.log(capicua(2003));
+        
+        //RESUELTO POR JON 
+        //A diferencia de mi codigo este valida incluso numeros decimales
+        // const capicua=(numero=0)=>{
+        //     if(!numero) return console.warn("No ingresaste un numero");
+        //     if(typeof numero !== "number") return console.error(`El valor ${numero} ingresado, no es un numero `);
+        //     numero = numero.toString();
+        //     let alReves = numero.split("").reverse().join("");
+        //     return (numero === alReves)
+        //     ? console.info(`Si es capicua, numero original ${numero}, numero al reves ${alReves}`)
+        //     : console.info(`No es capicua, el numero original ${numero}, numero al reves ${alReves}`);
+        // }
+        // capicua(2002);
+
+        //Ejercicio 11
+        // function factorial(numero){
+        //     let factorial = 1;
+        //     for(i=0;i<numero;i++){
+        //         factorial *= i+1;
+        //     }
+        //     return factorial;
+        // }
+        // console.log(factorial(7));
+
+        //RESUELTO POR JON
+        // const factorial = (numero = undefined) =>{
+        //     if(numero === undefined) return console.warn("No ingresaste un numero");
+        //     if(typeof numero!="number") return console.error(`El valor ${numero} ingresado, no es un numero`);
+        //     if(numero===0) return console.error("El numero no puede ser 0");
+        //     if(Math.sign(numero)===-1) return console.error("El numero no puede ser negativo");
+
+        //     let factorial = 1;
+        //     for(let i=numero;i>1;i--){
+        //         factorial *=i;
+        //     }
+        //     return console.info(`El factorial de ${numero} es ${factorial}`);
+        // }
+        // factorial(7);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Funciones anonimas autoregulables</h1>
+    <script>
+        //Son funciones que se ejecutan al momento de crease.
+        //Estan hechas para funcionar apenas se ejecuta la app
+        //Es el caso de jquery por ejemplo
+        //Permiten pasar parametros dentro del cuerpo de nuestra funcion.
+
+        (function (){
+            console.log("Mi primer funcion auto ejecutable");
+        })(); //Este ultimo () es necesario para ejecutarla
+
+        (function(d,w,c){ //Recibo parametros
+            console.log("Mi segunda FAE");
+            console.log(d);
+            console.log(w);
+            c.log("Este es mi console.log");
+        })(document, window, console);//Le paso los parametros
+
+        //HAY OTRAS FORMAS DE ESCRIBIRLAS
+        //Crockford
+        ((function (){
+            console.log("Version Crockford");
+        })());
+
+        //Unaria
+        +function(){
+            console.log("Version unaria");
+        }();
+
+        //Facebook
+        !function(){
+            console.log("Version facebook");
+        }();
+
+        -function(c){
+            c.log("Version Agüero");
+        }(console);
+        
+    </script>
+</body>
+</html>

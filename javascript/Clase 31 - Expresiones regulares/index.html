@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Expresiones regulares</h1>
+    <script>
+        /*
+        Expresiones regulares
+        Son una secuencia de caracteres que forma un patron de busqueda, principalmente utilizada para la busqueda de 
+        patrones de cadena de caracteres.
+        No son exclusivas de javascript (sirven para validaciones sobre todo Ej: En un correo solo se acepta letras, numeros, @, . y nada mas)
+
+        developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+        */
+
+        let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam totam, cumque impedit vitae itaque cum dolore corrupti fuga soluta dolorem, facere culpa quo, architecto aut pariatur tempora rem tenetur molestias?"
+        //g significa global, esto hace que busque todas las que se encuentre no solo la primera.
+        //i me dice que ignone mayusculas y minusculas
+        //Hay dos formatos para esto y son los siguientes
+        let expReg = new RegExp("lorem", "ig"); 
+        let expReg2 = /lorem/ig;
+
+        console.log(expReg.test(cadena));//Esto me da un true o false
+        console.log(expReg.exec(cadena));//Me da un arreglo.
+
+        //\d para busqueda de numeros
+        let expReg3 = /\d/g; 
+        console.log(expReg3.test(cadena));
+
+        //busqueda en un rango 
+        let expReg4 = /[0-9]/g;
+        console.log(expReg4.test(cadena));
+
+        //Necesito que se encuentre de una a 3 veces la palabra lorem
+        //tambien puedo poner un numero fijo como /lorem{1}/
+        //tambien puedo poner un minimo, minimo 1, no hay maximo /lorem{1,}/
+        let expReg5= /lorem{1,3}/ig;
+        console.log(expReg5.test(cadena));
+
+        //HAY MUCHOS MAS EJEMPLOS, PERO NO CREO QUE TENGA SENTIDO APRENDERSELO DE MEMORIA. 
+        //ENTRAR A EL LINK Y VER COMO SE FORMULAN LAS EXPRESIONES REGULARES. LUEGO VALIDAR Y YA
+    </script>
+</body>
+</html>

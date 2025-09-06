@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        5-Programa una funcion que invierta las palabras de una cadena de texto. Ej: miFuncion("Hola mundo") devolvera "odnuM aloH"
+        6-Programa una funcion para contar el numero de veces que se repite una palabra en un texto largo. Ej: miFuncion ("Hola mundo adios mundo", "mundo") devolvera 2
+        7- Programa una funcion que valide si una palabra o frase dada, es un palindromo (que se lee igual en un sentido que en el otro) Ej: miFuncion("Salas") devolvera true
+        8- Programa una funcion que elimine cierto patron de caracteres de un texto dado. Ej: miFuncion("xyz1, xyz2, xyz3, xyz5", "xyz") devolvera 1,2,3,4,5
+        */
+
+        //Ejercicio 5
+        // console.log(inviertirTexto("Hola mundo"));
+        // function inviertirTexto(texto){
+        //     return texto.split('').reverse().join('');
+        // }
+
+        //RESUELTO POR JON
+        // const invertirCadena = (cadena = "") =>
+        // (!cadena)
+        // ? console.warn("No ingresaste una cadena")
+        // : console.info(cadena.split("").reverse().join(""));
+        // invertirCadena("Hola mundo");
+
+        //Ejercicio 6
+        // console.log(encuentraPalabra("Hola mundo adios mundo", "mundo"));
+        // function encuentraPalabra(texto, palabra){
+        //     textoRecortado = texto.split(" ")
+        //     if(texto.includes(palabra)){
+        //         let counter = 0;
+        //         for(i=0;i<textoRecortado.length;i++){
+        //             if(textoRecortado[i] == palabra){
+        //                 counter++;
+        //             }
+        //         }
+        //         return "La palabra se encuentra " + counter + " veces";
+        //     }
+        //     else{
+        //         return "La palabra no esta en este texto";
+        //     }
+        // }
+
+        //RESUELTO POR JON
+        // const textoEnCadena=(cadena ="", texto="")=>{
+        //     if(!cadena) return console.warn("No ingreasaste el texto largo");
+        //     if(!texto) return console.warn("No ingreasaste la palabra a evaluar");
+        //     let i = 0;
+        //     let contador = 0;
+        //     while(i!== -1){
+        //         //Esto devuelve la posicion en donde arranca el texto que quiero buscar 
+        //         //(encuentra la palabra entera y da el indice desde donde empieza, si no encuentra da -1)
+        //         i= cadena.indexOf(texto, i); 
+        //         console.log(i);
+        //         if(i!== -1){
+        //             i++;
+        //             contador++;
+        //         }
+        //     }
+        //     return console.info(`La palabra ${texto} se repite ${contador} veces`);
+        // }
+        // textoEnCadena("Que onda onda perruqui", "onda");
+
+        //Ejercicio 7
+        // console.log(esPalindromo("Oso"));
+        // function esPalindromo(texto){
+        //     let palabraInvertida = texto.split('').reverse().join('');
+        //     if(palabraInvertida.toLowerCase() === texto.toLowerCase())
+        //     return "Es un palindromo";
+        //     return "No es un palindromo"
+        // }
+
+        //RESUELTO POR JON
+        // const palindromo =(palabra ="")=>{
+        //     if(!palabra) return console.warn("No ingresaste una palabra o frase");
+        //     palabra= palabra.toLowerCase();
+        //     let alReves = palabra.split("").reverse().join("");
+
+        //     return(palabra===alReves)
+        //     ? console.info(`Si es un palindromo, palabra original ${palabra}, palabra al reves ${alReves}`)
+        //     : console.info(`No es un palindromo, palabra original ${palabra}, palabra al reves ${alReves}`);
+        // }
+        // palindromo("Siris");
+
+        //Ejercicio 8
+        // console.log(eliminaPalabra("xyz1 xyz2 xyz3 xyz4 xyz5", "xyz"));
+        // function eliminaPalabra(texto, patron){
+        //     //Lo separo cada vez que encuentro el patron, y ya que el separador no se guarda, lo vuelvo a unir
+        //     //No hace falta agregar un espacio en join ya que el texto lo tiene
+        //     return texto.split(patron).join(''); 
+        // }
+
+        //RESULETO POR JON
+        // const eliminarCaracteres =(texto ="", patron="")=>
+        // (!texto)
+        // ? console.warn(`no ingresaste texto`)
+        // : (!patron)
+        //     ? console.warn("No ingresaste un patron a buscar")
+        //     : console.info(texto.replace(new RegExp(patron, "ig"), "")); //g para recorrer todo y no deterse con el primer resultado y para no hacer caso a mayus y minus
+        // eliminarCaracteres("Hola que onda", "ond");
+        
+
+    </script>
+</body>
+</html>
