@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Set - Es una estructura similar a un array pero no permite datos repetidos
+        const set = new Set([1,1,2,2,3,4,5,true,true,false, false, "hola", "hola",{},{}]); //Elimina repetidos, excepto {}
+        console.log(set);
+        console.log(set.size);
+
+        const set2 = new Set();
+        set2.add(1);
+        set2.add(2);
+        set2.add(3);
+        set2.add(4);
+        set2.add(true);
+        set2.add(false);
+        set2.add(true);
+
+        console.log(set2);
+        console.log(set2.size);
+
+        console.log("recorriendo set");
+        for(item of set){
+            console.log(item);
+        }
+
+        console.log("recorriendo set2");
+        set2.forEach(item=>console.log(item));
+
+        //console.log(set[0]); //Esto no es un arreglo, no se puede buscar de esta manera
+        let arr= Array.from(set) //Lo transformo en un array (hago una copia)
+        console.log(arr);
+        console.log(arr[0]); //Aca podria ver el valor 0
+
+        //delete - eliminar un valor especifico
+        set.delete("hola");
+        console.log(set);
+
+        //has - devuelve true o false si tiene o no tiene un valor
+        console.log(set.has("true")); 
+
+        //clear - elimina todos los datos de un set
+        set2.clear();
+        console.log(set2);
+    
+    </script>
+</body>
+</html>

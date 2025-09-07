@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Symbols es un nuevo tipo de dato que se metio desde ECS6
+        //Su valor se mantiene privado y para uso interno. Se suelen agregar como caracteristicas de objetos y se mantienen privadas
+        //Permiten crear identificadores unicos (de referencia)
+        //Se suelen utilizar para evitar colisiones entre propiedades (para no sobreescribir)
+
+        // let id = Symbol();
+        // let id2 = Symbol();
+        // console.log(id===id2); //Ver como al igualarlos no da true, ya que un Symbol tiene una id unica guardada dentro de el.
+
+        let id = Symbol("id"); //No usamos new Symbol() NO SE PUEDE USAR
+        let id2= Symbol("id2");
+
+        console.log(id===id2);
+        console.log(id, id2);
+        console.log(typeof id, typeof id2); //Ver que son datos primitivos
+
+        //La buena practica dice que se creen como constantes
+        const NOMBRE = Symbol("nombre"); //la etiqueta es solo para que el programador sepa con que esta trabajando
+
+        const persona = {
+            [NOMBRE] : "Aanudor Feguo C." //Los corchetes son para mantener el original por mas que intente sobreescribirlo
+        };
+
+        console.log(persona); //yo puedo ver NAME pero se muestra como un "Symbol"
+
+        persona.NOMBRE = "Facundo Agüero García"; //Esto no reemplaza al original
+        console.log(persona); //Esto va a mostrar el nuevo nombre pero tambien va a mostrar Symbol = "Facundo"
+        console.log(persona.NOMBRE); //El "modificado" (no puede modificar al Symbol)
+        console.log(persona[NOMBRE]); //El original 
+
+        //Puedo agregar funciones o valores primitivos nuevos de esta manera.
+        const SALUDAR = Symbol("saludar()"); //Es una etiqueta de nombre, nada mas
+        persona[SALUDAR]= function(){
+            console.log("Hola");
+        }
+        console.log(persona);
+
+        //Si quiero llamar al metodo que cree hay que tener en cuenta que hace falta los [] por Symbol y () por ser funcion
+        persona[SALUDAR]();
+
+        //ver que se muestran de forma privada, no los lista el nombre que se guarda en [NOMBRE], solo muestra
+        //El nombre que guarde con persona.nombre (el modificable)
+        for(let propiedad in persona){
+            console.log(propiedad);
+            console.log(persona[propiedad]); 
+        }
+
+        console.log(Object.getOwnPropertySymbols(persona)); //Esto muestra los simbolos (no muestra sus valores)
+
+
+
+    </script>
+</body>
+</html>

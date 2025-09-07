@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Con este codigo intento demostrar como funciona una funcion asincrona.
+
+        //Esto recibe un valor y una funcion llamada "callback". Esa funcion esta incrustada en la llamada a esta funcion,
+        //y solo se va a ejecutar una vez que esta funcion termine. 
+        function cuadradoCallback(value,callback){
+            setTimeout(()=>{
+                //llamo a "callback" esto es una especie de return donde devuelvo un parametro llamando a una funcion.
+                //al llamarla le envio los dos parametros que solicita, el valor original y el cuadrado del numero.
+                callback(value,value*value); 
+            }, 0 | Math.random() * 100); //El tiempo en el que se llama es 0 o un random de entre 0 a 100 milisegundos (hace de cuenta que se tarda tiempo en ralizar la tarea)
+        }
+
+        //No solo llamo a la funcion si no que cuando esta toque la linea de callback hace un "return" llamando a la funcion que le envio
+        //en el segundo parametro. Esto recibe dos parametros, value original y result resultado del cuadrado del numero enviado
+        cuadradoCallback(0, (value,result)=>{
+            console.log("Inicia callback");
+            console.log(`Callback: ${value}, ${result}`);
+        });
+    </script>
+</body>
+</html>

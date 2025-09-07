@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Antes de explicar como funciona el modelado de javascript es importante entender algunos conceptos:
+
+            ·Procesamiento single thread y multi thread:  
+                Los threads son las unidades basicas de procesamiento y ejecusion realizados por la maquina. 
+                No se pueden realizar operaciones largas en red sin que se bloquee el hilo principal. Imagina que se solicitan datos a una API
+                Mientras que esto se solicita el hilo principal del codigo queda bloqueado hasta que esto cargue. La pagina no responde
+                Aca es donde entra la sincronia. Permite solicitar sin que se bloquee el hilo principal. Javascript trabaja de forma sincrona y no
+                bloqueante. 
+                https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK8uN5sGk8V6KhPxK8GSc1aZkIHtJnNHYAXKsgVIlhKYkc1Qz21L2bo_faroXt7NFkdMGaVPLDdFZffRo1zMxKj4Rw7xbIaBrj-trfzzy2rbaN_6RPcv5-6g1f5FvaH0HTBQHll9S02bcM/s1600/EventLoop.png
+
+                ¿Qué es el event loop?
+                El event loop (“bucle de eventos”) es el mecanismo de JavaScript que permite ejecutar código, 
+                esperar tareas, manejar eventos (como clicks o respuestas de red) y que todo funcione sin que 
+                el programa se “congele”.
+
+                ¿Cómo funciona?
+                Imaginá que JavaScript está en una cocina con:
+                Una lista de tareas principales (la receta que va siguiendo, línea por línea).
+                Una “cola” de cosas para hacer después (como esperar que hierva el agua, que suene el timer del microondas, etc).
+                Cuando el código encuentra algo que tarda (por ejemplo, leer un archivo, esperar un click o consultar a un servidor), no se queda esperando:
+                Sigue ejecutando el resto del código.
+                Cuando la tarea “lenta” está lista, la agrega a la cola.
+                El event loop es el “chef” que:
+                Toma las tareas de la cola cuando la cocina está libre, y las ejecuta una a la vez, en el orden que llegaron.
+
+            Operaciones de CPU y operaciones de I / O: 
+                En un procesamiento en el codigo de una aplicacion podemos tener operaciones de este tipo. Las operaciones que se consideran de CPU
+                son aquellas que pasan el mayor tiempo consumiendo los procesos de nuestra CPU. Muchas veces pasan tiempo esperando el recurso que han solicitado
+                y por recurso llamese "Un retorno de un proceso que se mando a hacer hace un tiempo", "Cuando se solicitaron datos a una API", etc.
+                JS realiza operaciones de entrada y salida
+
+            Operaciones concurrentes y paralelas:
+                Concurrencia: Cuando dos o mas tareas progresan simultaneamente. Progresan un poco cada una hasta terminar (no significa que hayan empezado
+                o que vayan a terminar, al mismo tiempo ->Se ejecutan al unisono - No hace falta que sean sincronas o asincronas ni que sean single
+                o multi thread)
+                Paralelismo: Cuando dos o mas tareas se ejecutan al mismo tiempo. 
+
+            Operaciones Bloqueantes y no bloqueantes:
+                Se refiere a la fase de espera para ejecutar una porcion de codigo. Una operacion bloqueeante hace que en la fase de espera de la 
+                ejecusion de un codigo bloquea el control del codigo hasta que no haya terminado con este.
+                En cambio la no bloqueante permite que se realice mas codigo mientras esta trabaja.
+
+            Operaciones sincronas y asincronas:
+                Se refiera a cuando tendra lugar la respuesta. 
+                Sincrono: La respuesta sucede en el tiempo inmediato (se espera el resultado y continua el codigo)
+                Asincrono: Se ejecuta pero no se sabe cuando vuelve la respuesta (suelta el control y se lo regresa al hilo principal)
+        */
+
+        //Codigo sincrono bloqueante
+        //Cada una de estas funciones bloquea el hilo de trabajo, hasta que no terminen no puede seguir trabajando la PC
+        (()=>{
+            console.log("Codigo sincrono");
+            console.log("Inicio");
+
+            function dos(){
+                console.log("dos");
+            }
+
+            function uno(){
+                console.log("uno");
+                dos(); //No termina uno() hasta que termine dos()
+                console.log("tres");
+            }
+
+            uno();
+            console.log("fin");
+        })();
+
+        //Codigo asincrono no bloqueante
+        (()=>{
+            console.log("Codigo asincrono");
+            console.log("Inicio");
+
+            function dos(){
+                setTimeout(function(){
+                    console.log("Dos");
+                },1000); //Esto va a hacer que se lance un segundo despues. 
+            }
+
+            function uno(){
+                setTimeout(function(){
+                    console.log("Uno");
+                },0);
+                dos();
+                console.log("tres"); //Se va a imprimir antes el "tres" que el "dos" que esta en dos()
+            }
+            uno();
+            console.log("Fin");
+        })();
+
+
+    </script>
+</body>
+</html>

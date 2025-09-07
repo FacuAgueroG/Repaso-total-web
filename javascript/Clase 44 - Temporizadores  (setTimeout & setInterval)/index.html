@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asincronia en javascript</h1>
+    <script>
+        //Se pueden ejecutar acciones asincronas en javascript. Esto es mediante temporizadores
+        //setTimeout()
+        console.log("Inicio");
+        setTimeout(() => {
+           console.log("Ejecutando un setTimeOut, esto se ejecuta una sola vez");
+        }, 5000); //Se ejecuta 3 segundos despues
+
+        //Se ejecuta indefinidamente cada cierto tiempo
+        setInterval(() => {
+            console.log("Esto se ejecuta indefinidamente cada cierto intervalo de tiempo")
+        }, 3000); //Se ejecuta cada 3 segundos
+
+        //Da la hora cada un segundo
+        // setInterval(() => {
+        //     console.log(new Date().toLocaleDateString());
+        // }, 1000);
+
+        //Prueba para clearTimeout
+        let temporizador = setTimeout(()=>{
+            console.log(new Date().toLocaleTimeString());
+        }, 3000  );
+
+        //Esto cancela un timeOut solo si esta dentro de una variable. Lo cancela apenas se topa con esta funcion
+        //Por esa razon el temporizador nunca llega a ejecutarse. 
+        clearTimeout(temporizador); //temporizador nunca se muestra en pantalla, es cancelado antes de salir
+        console.log("Despues del clear"); 
+
+
+        //Prueba para clearInterval
+        let temporizadorInvervalos = setInterval(() => {
+            console.log("Esto se ejecuta indefinidamente cada cierto intervalo de tiempo")
+        }, 3000); //Se ejecuta cada 3 segundos//En este caso se ejecuta la primera vez y despues el clear interval lo cancela
+
+        clearInterval(temporizadorInvervalos);//cancela el interval indefinidamente
+
+        
+
+
+    </script>
+</body>
+</html>

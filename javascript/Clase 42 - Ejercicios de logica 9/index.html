@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        24-Programa una funcion que dado un arreglo de numeros devuelva un objeto con dos arreglos, el primero tendra los numeros ordenados en forma
+        ascendente y el segundo de forma descendente. Ej: miFuncion([7,8,9,7,6]) devolvera {asc: [,5,6,7,7,8]}, desc: [8,7,7,6,5]
+        25-Programa una funcion que dado un arreglo de elementos, elimine los duplicados Ej: miFuncion("x", 10, "x", 2, "10",10, true, true) devolvera ["x", 10,2,"10",true]
+        26-programa una funcion que dado un arreglo de numeros obtenga el promedio. Ej: promedio ([9,8,7,6,5,4,3,2,1] devolvera 4.5)
+        */
+
+        //Ejercicio 24 - RESUELTO POR JON Y COMENTARIOS DE YOUTUBE
+        // function ordenarAscDes(ArrayAOrdenar){
+        //     if(ArrayAOrdenar===undefined) return console.warn("No ingresaste un arreglo de numeros");
+        //     if(!(ArrayAOrdenar instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+        //     if(arr.length===0) return console.error("El arreglo esta vacio");
+        //     for(let num of ArrayAOrdenar){
+        //         if(typeof num !=="number") return console.error(`El valor ${num} ingresado, no es un numero`);
+        //     }
+
+        //     //Primero mapeo todo el array, sort, sort no esta listo para ordenar numeros, debe recibir parametros para encontrar la forma de hacerlo.
+        //     //ArrayAOrdenar.map(el => el) crea una copia superficial del array (ASI NO TRABAJO SOBRE EL ORIGINAL)
+        //     /*
+        //         El método .sort() ordena los elementos del array.
+        //         Por defecto, sort() convierte los elementos a string y los ordena alfabéticamente (por ejemplo, 10 iría antes que 2 porque "10" < "2" como string).
+        //         Para números, hay que pasarle una función de comparación: (a, b) => a - b.
+
+        //         ¿Cómo funciona la función de comparación?
+        //         sort llama repetidamente a la función con dos elementos del array, a y b:
+
+        //         Si la función devuelve un número negativo, a se coloca antes que b.
+        //         Si devuelve 0, no se cambia el orden.
+        //         Si devuelve un número positivo, a se coloca después que b.
+
+        //         En el caso de (a, b) => a - b:
+        //         Si a es menor que b, el resultado es negativo → a va antes.
+        //         Si a es mayor que b, el resultado es positivo → a va después.
+        //         Si son iguales, es 0 → no se cambia el orden.
+        //     */
+        //     return {ArrayAscendente: ArrayAOrdenar.map(el=>el).sort((a,b)=>a-b), ArrayDescendente: ArrayAOrdenar.map(el=>el).sort((a,b)=>a-b).reverse()}
+        // }
+
+        // console.log(ordenarAscDes([3,2,1,3,8,4,3,1,10]));
+
+
+        //Ejercicio 25 - POR JON
+        // function eliminarCopias(arrayAObservar){
+        //     if(arrayAObservar===undefined) return console.warn("No ingresaste un arreglo de numeros");
+        //     if(!(arrayAObservar instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+        //     if(arrayAObservar.length===0) return console.error("El arreglo esta vacio");
+        //     if(arrayAObservar ===1) return console.warn("El arreglo debe tener al menos 2 elementos");
+        //     //value = valor a evaluar, index = posicion, self = al mismo array (el original - recordar que filter crea una copia)
+        //     //indexOf() me permite buscar elementos. Comparo valor contra la posicion evaluada
+        //     return{sinDuplicados: arrayAObservar.filter((value,index,self)=>self.indexOf(value) === index)}
+        //     //EXISTE ALGO NUEVO QUE LO PUEDE HACER MUCHO MAS SENCILLO Y ES LO SIGUIENTE
+        //     // return {sinDuplicados: [...new Set(arrayAObservar)]} //El tipo de dato Set no permite duplicaciones
+        // }
+        // console.log(eliminarCopias(["x",true, true, false, "x","c",223231,11,11]));
+
+
+
+
+        //Ejercicio 26
+        // function calcularPromedio(arregloDeNotas){
+        //     let sumaTotal = 0;
+        //     arregloDeNotas.forEach(element => {
+        //         sumaTotal += element;
+        //     });
+        //     return sumaTotal/arregloDeNotas.length;
+        // }
+        // console.log(calcularPromedio([1,2,3,4,5,6,7,8,9]));
+
+        //RESUELTO POR JON
+        const promedio=(arr=undefined)=>{
+            if(arr===undefined) return console.warn("No ingresaste un arreglo de numeros");
+            if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+            if(arr.length === 0) return console.error("El arreglo esta vacio");
+            for(let num of arr){
+                if(typeof num !== "number") return console.error("El valor " + num + " Ingresado, no es un numero");
+            }
+
+            //El método .reduce() en JavaScript sirve para recorrer un array y “reducirlo” a un solo valor, aplicando una función acumuladora sobre todos sus elementos.
+            //reduce genera un nuevo arreglo. 
+            //reduce recibe un metodo como lo hace foreach,
+            //total acumulador, num numero actual, index del array, el mismo array
+            return console.info(arr.reduce((total,num,index,arr)=>{
+                total+=num;
+                //validacion. Se termina si llego al borde de la longitud del arreglo menos 1
+                if(index===arr.length-1){
+                    //con join los uno en una cadena de texto separado por un +
+                    return `El promedio de ${arr.join(" + ")} es ${total/arr.length}`
+                }else{
+                    return total;
+                }
+            }))
+        }
+        promedio([7,7,10]);
+
+    </script>
+</body>
+</html>

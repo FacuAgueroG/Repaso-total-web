@@ -1,0 +1,245 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            27-Programa una clase llamada Pelicula.
+
+            La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, 
+            titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+            Todos los datos del objeto son obligatorios.
+                Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes números.
+                Valida que el título no rebase los 100 caracteres.
+                Valida que el director no rebase los 50 caracteres.
+                Valida que el año de estreno sea un número entero de 4 dígitos.
+                Valida que el país o paises sea introducidos en forma de arreglo.
+                Valida que los géneros sean introducidos en forma de arreglo.
+                Valida que los géneros introducidos esten dentro de los géneros aceptados*.
+            Crea un método estático que devuelva los géneros aceptados*.
+            Valida que la calificación sea un número entre 0 y 10 pudiendo ser decimal de una posición.
+
+            Crea un método que devuelva toda la ficha técnica de la película.
+            Apartir de un arreglo con la información de 3 películas genera 3 instancias de la clase de forma automatizada e imprime la ficha técnica de cada película.
+            
+            Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary,
+                               Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News,
+                               Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+        */
+
+        //Ejercicio 27
+        // class Pelicula{
+        //     constructor(id,titulo,director,anioEstreno,paisOrigen,generos,calificacion){
+        //         if(id.length!=9) throw new Error("El id debe tener al menos 9 caracteres");
+        //         if(!(/^[A-Za-zñÑÁáÉéÍíÓóÚúÜü]{2}\d+$/.test(id))) throw new Error("Los primeros 2 caracteres del id deben ser letras");
+
+        //         if(titulo.length > 100) throw new Error("El titulo debe tener menos de 100 caracteres");
+
+        //         if(director > 50) throw new Error("El director no debe tener mas de 50 caracteres");
+
+        //         if(anioEstreno.length > 4) throw new Error("El año de estreno tiene menos de 4 digitos");
+
+        //         if(!(paisOrigen instanceof Array)) throw new Error("El pais de origen debe ser un array")
+
+        //         let generosValidos = ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary",
+        //                        "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News",
+        //                        "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"]
+        //         if(!(generos instanceof Array)) throw new Error("Los generos deben ser un array");
+        //         let generosValidados = generos.every(valor => generosValidos.includes(valor));
+        //         if(!generosValidados) throw new Error("Al menos uno de tus generos no es valido");
+
+        //         this.id=id,
+        //         this.titulo=titulo,
+        //         this.director=director,
+        //         this.anioEstreno=anioEstreno,
+        //         this.paisOrigen=paisOrigen,
+        //         this.generos=generos,
+        //         this.calificacion=calificacion
+        //     }
+
+        //     generosAceptados(){
+        //         return generosValidados;
+        //     }
+
+        //     fichaTecnica(){
+        //         return `
+        //         Ficha tecnica
+        //         Id: ${this.id}
+        //         titlo: ${this.titulo}
+        //         Director: ${this.director}
+        //         Año de estreno: ${this.anioEstreno}
+        //         Pais/es de origen: ${this.paisOrigen}
+        //         Genero/s: ${this.generos}
+        //         Calificaion: ${this.calificacion}`;
+        //     }
+        // }
+        // const origen = new Pelicula("as1234556", "origen", "Christopher Nolan", 2222, ["Estados unidos"], ["Action", "Adventure", "Sci-Fi"]);
+        // console.log(origen.fichaTecnica());
+        
+       //EJERCICIO RESUELTO POR JON
+        // class Pelicula{
+        //     constructor({id,titulo,director, estreno, pais, generos,  calificacion}){
+        //         this.id=id,
+        //         this.titulo=titulo,
+        //         this.director=director,
+        //         this.estreno=estreno,
+        //         this.pais=pais,
+        //         this.generos=generos,
+        //         this.calificacion=calificacion;
+
+        //         this.validarIMDB(id);
+        //         this.validarTitulo(titulo);
+        //         this.validarDirector(director);
+        //         this.validarEstreno(estreno);
+        //         this.validarPais(pais);
+        //         this.validarGeneros(generos);
+        //         this.validarCalificacion(calificacion);
+        //     }
+
+        //     static get listaGeneros(){
+        //         return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary",
+        //                 "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News",
+        //                 "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+        //     }
+
+        //     static generosAceptados(){
+        //         return console.info(`Los generos aceptados son ${Pelicula.listaGeneros.join(", ")}`);
+        //     }
+
+        //     validarCadena(propiedad,valor){
+        //         if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+        //         if(typeof valor !== "string") return console.error(`${propiedad} "${valor} ingresado, NO es una cadena`);
+        //         return true;
+        //     }
+
+        //     validarLongitudCadena(propiedad,valor,longitud){
+        //         if(valor.length>longitud) return console.error(`${propiedad} "${valor}" excede el numero de caracteres permitidos (${longitud}).`);
+        //         return true;
+        //     }
+
+        //     validarNumero(propiedad,valor){
+        //         if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+        //         if(typeof valor !== "number") return console.error(`${propiedad} "${valor}" ingresado, NO es un numero`);
+        //         return true;
+        //     }
+
+        //     validarArreglo(propiedad,valor){
+        //         if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+        //         if(!(valor instanceof Array)) return console.error(`${propiedad} "${valor}" ingresado, NO es un arreglo`);
+        //         if(valor.length===0) return console.error(`${propiedad} "${valor}" no tiene datos`);
+        //         for(let cadena of valor){
+        //             if(typeof cadena !== "string") return console.warn(`El valor ${cadena} ingresado, NO es una cadena de texto`);
+        //         }
+        //         return true;
+        //     }
+
+        //     validarIMDB(id){
+        //         if(this.validarCadena("IMBD id", id)){
+        //             if(!(/^([a-z]){2}([0-9]){7}/.test(id))){
+        //                 return console.error(`IMDB id "${id}" no es valido, debe tener 9 caracteres, los 2 primeros letras minusculas, los 7 restantes numeros`)
+        //             }
+        //         }
+        //     }
+
+        //     validarTitulo(titulo){
+        //         if(this.validarCadena("Titulo", titulo))
+        //         this.validarLongitudCadena("Titulo",titulo, 100);
+        //     }
+
+        //     validarDirector(director){
+        //         if(this.validarCadena("Director", director))
+        //         this.validarLongitudCadena("Director",director, 50);
+        //     }
+
+        //     validarEstreno(estreno){
+        //         if(this.validarNumero("Año de estreno", estreno)){
+        //             if(!(/^([0-9]){4}$/.test(estreno))){
+        //                 return console.error(`Año de estreno "${estreno}" no es valido, debe ser un numero de 4 digitos`);
+        //             }
+        //         }
+        //     }
+
+        //     validarPais(pais){
+        //         this.validarArreglo("Pais", pais);
+        //     }
+
+        //     validarGeneros(generos){
+        //         if(this.validarArreglo("Generos", generos)){
+        //             for(let genero of generos){
+        //                 //ojo no hace falta utilizar this ya que es un get
+        //                 // console.log(genero, Pelicula.listaGeneros.includes(genero));
+        //                 if(!Pelicula.listaGeneros.includes(genero)){
+        //                     console.error(`Genero/s incorrecto/s "${generos.join(",")}"`);
+        //                     Pelicula.generosAceptados();
+        //                 }
+        //             }
+        //         } 
+        //     }
+
+        //     validarCalificacion(calificacion){
+        //         if(this.validarNumero("Calificacion", calificacion))
+        //          return(calificacion <0 || calificacion > 10) 
+        //         ? console.error(`La calificacion tiene que estar entre un rango entre 0 y 10`)
+        //         : this.calificacion = calificacion.toFixed(1);
+
+        //     }
+
+        //     fichaTecnica(){
+        //         console.info(`Ficha tecnica:\nTitulo: "${this.titulo}"\nDirector:"${this.director}"\nAño:"${this.estreno}"\nPais:"${this.pais.join("-")}"\nGeneros:"${this.generos.join(", ")}"\nCalificacion:"${this.calificacion}"\nIMDB Id "${this.id}"`);
+        //     }
+        // }
+
+        // //Pelicula.generosAceptados(); ->Al ser un getter se permite obtener incluso sin haber creado un objeto
+
+        // //Aca debe recibir un objeto
+        // const peli = new Pelicula({
+        //     id:"as1231231",
+        //     titulo: "kashdkashdkasdhkashd",
+        //     director: "asdhsadh",
+        //     estreno: 2013,
+        //     pais: ["Argentina", "Italia"],
+        //     generos: ["Sport", "Comedy"],
+        //     calificacion: 1
+        // });
+
+        // peli.fichaTecnica();
+
+        // const misPelis = [
+        // {
+        //     id:"as1231232",
+        //     titulo: "kashdkashdkasdhkashd",
+        //     director: "asdhsadh",
+        //     estreno: 2013,
+        //     pais: ["Argentina", "Italia"],
+        //     generos: ["Sport", "Comedy"],
+        //     calificacion: 1
+        // },
+        // {
+        //     id:"as1231233",
+        //     titulo: "kashdkashdkasdhkashd",
+        //     director: "asdhsadh",
+        //     estreno: 2013,
+        //     pais: ["Argentina", "Italia"],
+        //     generos: ["Sport", "Comedy"],
+        //     calificacion: 1
+        // },
+        // {
+        //     id:"as1231234",
+        //     titulo: "kashdkashdkasdhkashd",
+        //     director: "asdhsadh",
+        //     estreno: 2013,
+        //     pais: ["Argentina", "Italia"],
+        //     generos: ["Sport", "Comedy"],
+        //     calificacion: 1
+        // }
+        // ];
+
+        // misPelis.forEach(el=> new Pelicula(el).fichaTecnica());
+
+    </script>
+</body>
+</html>

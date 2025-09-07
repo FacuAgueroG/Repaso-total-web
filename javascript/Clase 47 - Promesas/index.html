@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Uno de los problemas mas grandes que tienen las callbacks es la anidacion que se puede crear en ellas. Haciendo que se 
+        //cree una especie de piramide enorme que dificulte su lectura. Para solucionar estos problemas nacen las promesas.
+
+        //Las promesas trabajan con el resolve y reject. Una promesa es como un "if else". Si los parametros se cumplen se 
+        //realizara lo que esta dentro de resolve, ahora si esto no se cumple se trabajara sobre lo que esta detro de reject.
+
+        //LAS PROMESAS SON NECESARIAS CUANDO HAY VARIOS PROCESOS ASINCRONOS EN CONJUNTO
+        function cuadradoPromise(value){
+            //Esto cae en el catch
+            if(typeof value !== "number") return  Promise.reject(`Error el valor ${value} no es un numero`);
+
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{ 
+                    resolve({ //Esto se puede resolver, y devuelve un objeto
+                        value: value,
+                        result: value* value
+                    });
+                },0 | Math.random() *1000); //Esto sigue simulando que tarda mas tiempo del debido xQ es una peticion
+            });
+        }
+
+
+        //Hay dos metodos para trabajar la asincronica. El metodo then (se ejecuta una vez se ejecuta la funcion inicial, podemos tener
+        //tantos metodos then como nosotros necesitemos) al final de todos va a estar catch() que es el que capta el error resultante del reject.
+        cuadradoPromise(0) //Esto es lo que envio por primera vez al llamarla. luego cae en un then al volver
+            //then recibe el objeto que se crea dentro del resolve 
+            //los parentesis para el obj solo son necesitarios si se devuelven mas de un parametro, pero lo dejo igual
+            .then((obj)=>{
+                console.log(`Inicio del promise`);
+                console.log(`Promise: ${obj.value}, ${obj.result}`);
+                return cuadradoPromise(1); //El resultado de esto se volcara dentro del proximo then()
+            })
+            .then((obj)=>{
+                console.log(`Inicio del promise`);
+                console.log(`Promise: ${obj.value}, ${obj.result}`);
+                return cuadradoPromise(2); //El resultado de esto se volcara dentro del proximo then()
+            })
+            .then((obj)=>{
+                console.log(`Inicio del promise`);
+                console.log(`Promise: ${obj.value}, ${obj.result}`);
+                return cuadradoPromise(3); //El resultado de esto se volcara dentro del proximo then()
+            })
+            .then((obj)=>{
+                console.log(`Inicio del promise`);
+                console.log(`Promise: ${obj.value}, ${obj.result}`);
+                return cuadradoPromise(0); //El resultado de esto se volcara dentro del proximo then()
+            })
+            .then((obj)=>{
+                console.log(`Inicio del promise`);
+                console.log(`Promise: ${obj.value}, ${obj.result}`);
+                console.log("Fin de la promesa");
+            })
+            //Aca capto el error si asi lo decidiera dentro de una de los then. x Ejemplo, el usuario no me pasa un numero
+            //Que pasaria si no lo tengo? tira mi error + un error no personalizado, uno creado en tiempo de ejecusion por el compilador (navegador)
+            //Probar de poner un error a proposito en alguno de los ultimas llamadas 
+            .catch(err => console.error(err)) 
+            
+
+    </script>
+</body>
+</html>
