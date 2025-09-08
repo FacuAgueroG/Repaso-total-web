@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solo necesito un * al lado de function para que Js detecte que esto es un generador
+        function* iterable(){
+            //Esto es como un return pero deja un puntero aca, cuando la funcion vuelve a ejecutarse retoma desde aca. 
+            //Una vez que se haya terminado todos los yields se termina la funcion. 
+            //Esto permite trabajar de forma "asincrona"
+            yield "hola";
+            console.log("hola en la consola");
+            yield "hola 2";
+            console.log("Seguimos con mas instrucciones de nuestro codigo");
+            yield "Hola 3";
+            yield "Hola 4";
+        }
+
+        let iterador = iterable();
+        //LEER ESTO - EXPLICA COMO SE DA CADA ACTIVACION DEL ITERADOR.
+        //LUEGO SE COMENTO YA QUE OTRA MANERA DE HACERLO ES CON UN FOR OF
+        // console.log(iterador.next()); //Me devuelve "hola"
+        // console.log(iterador.next()); //Va hasta el segundo "hola 2", pero pasa por console.log("hola en la consola") y vuelve.
+        // console.log(iterador.next());
+        // console.log(iterador.next()); //Termina
+        // console.log(iterador.next()); //da un "undefined" y en done: true
+
+        for(let y of iterador){
+            console.log(y);
+        }
+
+        const arr = [...iterable()]; //Puedo hacerle un spread a una funcion iterable (guarda los valores de yield)
+        console.log(arr); 
+
+        console.log(""); //Separador
+
+        function cuadrado(valor){
+            setTimeout(()=>{
+                console.log({valor, resultado: valor*valor})
+            }, Math.random()*1000);
+            return {valor, resultado: valor* valor}
+        }
+
+        function* generador(){
+            console.log("Inicia generador");
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            yield cuadrado(3);
+            yield cuadrado(4);
+            yield cuadrado(5);
+            console.log("Termina generador");
+        }
+
+        //Esto hace que el generador vaya lanzandose sobre cada yield
+        let gen = generador();
+        for(let y of gen){
+            console.log(y);
+        }
+
+    </script>
+</body>
+</html>

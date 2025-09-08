@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solo pueden almacenar referencias debiles. Las llaves son de tipo objetos
+        //Le permite al recolector de basura de JS que cuando alguno de esos objetos
+        //con ref debil se hayan limpiado dentro de la logica de nuestra programacion
+        //las termina limpiando (haciendo una mejora de memoria para la app)
+
+        //Pero para que esto funcione, hay que tener en consideracion que los weak set y maps
+        //tienen algunas carencias como por ejemplo
+        //No se puede iterar, no se puede utilizar el metodo clear(), y tampoco se puede verificar su tamaño
+        
+        //Esto ya no se puede con el WeakSet, hay que pasarle valores con el metodo add. 
+        //const nw = new WeakSet(1,2,3,4,5, true, false, false, {}, {}, "hola", "hola"); //da error
+
+        /////////////////////////////////////////////Weak Set//////////////////////////////////////////////////
+        const ws = new WeakSet();
+        let valor1 = {"valor1":1};
+        let valor2 = {"valor2":2};
+        let valor3 = {"valor3":3};
+        ws.add(valor1); //No se pueden agregar valores primitivos, solo objetos como este
+        ws.add(valor2);
+        ws.add(valor3);
+        console.log(ws);
+
+        //has - para detectar si tiene o no un objeto (devuelve true o false)
+        console.log(ws.has(valor1));  //true
+
+        //delete - eliminar un objeto
+        ws.delete(valor1); 
+        console.log(ws.has(valor1)); //false
+        ws.add(valor1);
+
+        //Si esto fuera nulo, el weakSet va a pasar un clear un rato despues.
+        setInterval(()=>console.log(ws),1000);
+        setTimeout(()=>{
+            valor1=null;
+            valor2=null;
+            valor3=null;
+        },5000);
+
+        /////////////////////////////////////////////Weak Map//////////////////////////////////////////////////
+        //Esta forma de inicializacion ya no funciona con WeakMap
+        // const wm = new WeakMap([
+        //     ["nombre", "facundo"],
+        //     ["edad", 7],
+        //     ["humano", "homosapiens"],
+        //     [null, "nulo"]
+        // ]);
+
+        const wm = new WeakMap();
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+        wm.set(llave3, 3);
+        console.log(wm);
+
+        //no se puede ver el tamaño, ni iterarlo
+
+        //has - ver si hay un valor
+        console.log(wm.has(llave1));
+
+        //get - obtener el valor de x
+        console.log(wm.get(llave1));
+
+        //delete - elimina una key y value
+        wn.delete(llave2);
+        console.log(wm);
+
+        wm.set(llave2,2);
+        console.log(wm);
+
+        //Al igual que el WeakSet una vez que estan en null el cleaner lo limpia 
+        setInterval(()=>console.log(wm),1000);
+
+        setTimeout(() => {
+            llave1 = null;
+            llave2 = null;
+            llave3 = null;
+        }, 5000);
+
+    </script>
+</body>
+</html>

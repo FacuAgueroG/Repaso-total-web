@@ -1,0 +1,11 @@
+{
+    "cadena":"facundo",
+    "numero": "27",
+    "booleano": "false",
+    "arreglo": ["dormir", "jugar", "cagar"],
+    "object": {
+        "email": "facuaguerog@gmail.com",
+        "twitter": "@facundoaguerog"
+    },
+    "nulo": null
+}

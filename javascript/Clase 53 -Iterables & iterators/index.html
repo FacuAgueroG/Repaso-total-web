@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuevos tipos de datos en javascript</h1>
+    <script>
+        const iterable = [1,2,3,4,5]; //Esto es iterable
+
+        //accedemos al iterable y con el iterador vamos apuntando a lo siguiente dentro del array
+        const iterador = iterable[Symbol.iterator](); //Los () van por fuera
+
+        
+        console.log(iterable);
+        console.log(iterador);
+        //Con esto podemos iterarlos uno a uno y nos va a mostrar su valor y nos dice si quedan mas para iterar
+        // console.log(iterador.next()); //done:false
+        // console.log(iterador.next()); //done:false
+        // console.log(iterador.next()); //done:false
+        // console.log(iterador.next()); //done:false
+        // console.log(iterador.next()); //done:false
+        // console.log(iterador.next()); //done:true ya que no puede iterar mas, no hay mas valores mas alla de este.
+
+        //en vez de hacerlo a mano lo podemos hacer con un ciclo
+
+        let next = iterador.next();
+
+        while(!next.done){
+            console.log(next.value);
+            next = iterador.next();
+        }
+
+        console.log("   ");
+        //Se podria hacer con otros tipos de datos como un Set o un string
+        const IterableSet = new Set([1,2,3,3,3,4,5,6]); //No guarda los valores repetidos
+        const iteradorSet = IterableSet[Symbol.iterator]();
+        let nextSet = iteradorSet.next();
+        while(!nextSet.done){
+            console.log(nextSet.value);
+            nextSet = iteradorSet.next();
+        }
+
+        console.log("   ");
+
+        //Con string
+        const iterableString = "Hola todo bien?";
+        const iteradorString = iterableString[Symbol.iterator]();
+        let nextString = iteradorString.next();
+        while(!nextString.done){
+            console.log(nextString.value);
+            nextString = iteradorString.next();
+        }
+
+        //con map
+        console.log("   ");
+
+        const iterableMap = new Map([
+            ["nombre", "facundo"],
+            ["edad", 27]
+        ]);
+
+        const iteradorMap = iterableMap[Symbol.iterator]();
+        let nextMap = iteradorMap.next();
+        while(!nextMap.done){
+            console.log(nextMap.value);
+            nextMap = iteradorMap.next();
+        }
+    </script>
+</body>
+</html>

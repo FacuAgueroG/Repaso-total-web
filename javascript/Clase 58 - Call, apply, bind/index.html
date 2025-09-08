@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THIS</h1>
+    <script>
+        console.log(this); //Esto es window
+        this.lugar = "Contexto global";
+
+        function saludar(saludo,aQuien){
+                        console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+
+        saludar();
+
+        const obj = {
+            lugar: "Contexto objeto"
+        }
+
+        //al utilizar call le pregunto a la funcion a utilizar, Q contexto quiere utilizar?
+        //si en vez de pasar obj paso null es contexto global. lo mismo ocurre si le mando un this (si estoy en contexto global como ahora)
+        saludar.call(obj, "adios", "aguero"); //al llamar obj le doy ese scoope a la funcion. por lo tanto imprime "contexto objeto".
+        //la unica diferencia entre uno y otro es como se le pasan los parametros, puedo utilizar el que quiera
+        saludar.apply(obj,["adios", "mircha"]); //con esto paso parametros
+
+
+
+        const persona = {
+            nombre: "facundo",
+            saludar: function(){
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        persona.saludar();
+
+
+        this.nombre = "window";
+        const otraPersona ={
+            
+            //no tiene un nombre y no puede utilizarlo ya que dentro de su contexto nunca se creo
+            //saludar: persona.saludar //utilizo la funcion de la primera
+
+            //de esta manera cuando se ejecute saludar tendra un contexto y tendra un "nombre" que es el que esta en persona
+            //vinculo con el bind y le paso un contexto
+            saludar: persona.saludar.bind(persona) 
+            //si le pasara el contexto de this, cuando quiera utilizar nombre saldria "window"
+            //saludar: persona.saludar.bind(this) //ver que esta justo arriba de la funcion declarado
+        }
+        otraPersona.saludar(); 
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Esto termine crear objetos de forma dinamica (evitando crearlos a mano)
+        const objUsuarios = {
+            //aca deberia crear ids dinamicamente por ej (con esto cree un valor aleatorio para un id) (el numero de id - pero no tienen un valor adentro)
+            [`id_${Math.round(Math.random() *100+5)}`]:"Valor aleatorio"
+        }
+
+        const usuarios = ["facundo", "nahuel", "marcelo", "micaela", "roberto"];
+        //dentro del objeto creo propiedades de forma dinamica
+        //extraigo los 
+        usuarios.forEach((usuario,index)=>{
+            objUsuarios[`id_${index}`]=usuario
+        });
+
+        console.log(objUsuarios);
+        
+    </script>
+</body>
+</html>

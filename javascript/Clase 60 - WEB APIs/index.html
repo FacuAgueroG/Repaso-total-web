@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Una API (Application Programming Interface) es como un menú en un restaurante:
+    
+    Te muestra qué cosas podés pedir (funciones, datos, servicios).
+    Te dice cómo pedirlas (reglas y formato).
+    No te muestra cómo se cocinan por dentro, solo te da el resultado.
+    En programación, una API es un conjunto de funciones y reglas que
+    permiten que un programa se comunique con otro, o con un servicio, sin que tengas que saber cómo está hecho internamente.
+    Ejemplo: la API de Google Maps te deja usar mapas en tu web sin programar todo el mapa desde cero.
+    -->
+    <!--El dom es como los navegadores representan el codigo html para trrabajar con js-->
+    <h1>WEB APIs</h1>
+    <h2>DOM: Document objet model</h2>
+    <!--DOM (Document Object Model)
+        Es la representación en forma de árbol de todo el contenido HTML de la página.
+        Cada etiqueta (<div>, <p>, <img>, etc.) es un nodo en ese árbol.
+        JavaScript puede leerlo y modificarlo: cambiar texto, agregar elementos, borrar cosas, etc. -->
+    <h2>BOM: Browser object model</h2> 
+    <!-- BOM (Browser Object Model)
+        Es lo que te da acceso a todo lo que rodea a la página dentro del navegador.
+        Incluye cosas como:
+            window → la ventana del navegador
+            navigator → información del navegador/usuario
+            screen → información de la pantalla
+            location → URL actual y navegación
+            history → historial del navegador -->
+    <h2>CSSOM: CSS Object model</h2> <!--modificacion de estilos utilizando el navegador-->
+    <!-- CSSOM (CSS Object Model)
+        Es la representación en árbol de todos los estilos CSS aplicados a la página.
+        Permite que JavaScript lea y cambie estilos de forma dinámica.
+        Funciona parecido al DOM, pero para CSS. -->
+    <h2>Web APIs</h2>
+    <!-- Web APIs
+        Son funcionalidades extra que el navegador pone a tu disposición, fuera del núcleo de JavaScript.
+        Ejemplos:
+            Fetch API → para hacer peticiones HTTP.
+            Geolocation API → obtener ubicación del usuario.
+            Canvas API → dibujar gráficos.
+            Web Storage API → guardar datos en el navegador (localStorage / sessionStorage).
+            DOM API → manipular elementos HTML (de hecho, el DOM es una Web API). -->
+    <ul>
+        <li>Eventos</li>
+        <li>Forms</li>
+        <li>AJAX - Fetch</li>
+        <li>History</li>
+        <li>Web storage</li>
+        <li>Geolocation</li>
+        <li>Drag & Drop</li>
+        <li>Index DB</li>
+        <li>Canvas</li>
+        <li>MatchMedia</li>
+        <li>etc...</li>
+    </ul>
+    <script>
+        //Api del navegador - speak
+        // let texto = "Hola, soy el mas capo, no te asustes imbecil, es una funcion ejecutandose"
+        // const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
+        // hablar(texto);
+    </script>
+</body>
+</html>

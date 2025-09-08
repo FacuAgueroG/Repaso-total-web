@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this trabaja sobre el ambito en el que me encuentro
+        //Por ejemplo
+        console.log(this); //es window en este caso ya que estoy trabajando en el ambiente del navegador
+        this.nombre = "Contexto global"; //Esto agregaria una caracteristica a la window
+        console.log(this); //JUSTO ABAJO DE TODAS LAS PROPIEDADES aparece "nombre" con su value "contexto global"
+
+        function imprimir(){
+            console.log(this.nombre);
+        }
+        imprimir(); 
+
+        const obj = {
+            nombre: "Contexto objeto",
+
+            imprimir: function(){
+            console.log(this.nombre);
+            }   
+        }
+        obj.imprimir(); //Esto en vez de mostrarnos window, nos muestra desde el scoope del objeto
+
+        const obj2 = {
+            nombre: "contexto objeto 2",
+            imprimir //gracias al shorthand puedo tomar la funcion del contexto global imprmir() sin vincularlas
+            //al hacer esto es como si hiciera esto, una copia de la funcion aca adentro, y por lo tanto this imprime "contexto global 2"
+            // imprimir: function(){
+            // console.log(this.nombre);
+            // }   
+        }
+        //YA QUE LA FUNCION esta siendo reproducida desde un objeto, this hace referencia al objeto. Hace una especie de hoisting en donde apunta 
+        //la funcion hacia adentro del objeto con el this
+        obj2.imprimir(); 
+
+        
+        const obj3 = {
+            nombre: "Contexto objeto",
+
+            //las arrow functions NO FUNCIONAN dentro de los objetos. ESTAS UTILIZAN CONTEXTO GLOBAL
+            imprimir: ()=>{
+            console.log(this.nombre); //esto imprime "contexto global"
+            }   
+        }
+        obj3.imprimir();  
+
+        function Persona(nombre){
+            this.nombre = nombre;
+            // return console.log(this.nombre); //esto devuelve el nombre que le enviaron
+        
+            //Pero si hago esto, estoy creando un nuevo scoope, y el this no tendria ni idea de donde sacar el valor nombre
+            //utiliza el nombre global devolviendo en el console.log "contexto global"
+            // return function(){
+            //     console.log(this.nombre);
+            // }
+
+            //pero si la hago anonima vuelve a devolver "facundo". 
+            return() => console.log(this.nombre);
+        }
+
+        //entonces. es importante entender lo siguiente
+        //IMPLICITAS
+        //SI SE USA ARROW FUNCTION USO CONTEXTO GLOBAL
+        //SI SE USA UNA FUNCTION IMPLICITA DA CONTEXTO GLOBAL.
+        //COMPLETAS
+        //SI SE USA UNA FUNCTION DA CONTEXTO DEL SCOOPE
+        //SI SE USA ARROW FUNCTION ANONIMA USA CONTEXTO DEL SCOOPE
+
+        let jon = new Persona("Facundo");
+        jon();
+
+        
+    </script>
+</body>
+</html>

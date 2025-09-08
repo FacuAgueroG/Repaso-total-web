@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Javascript object notation.   
+        //Es un formato ligero de intercambio de datos. Se convirtio en un standar
+        //Gracias a que es un standar multiples applicaciones como por ejemplo una de una tienda y una de un banco
+        //pueden comunicarse entre si enviandose datos a traves de json. pueden estar programadas con nodejs y la otra con python
+        //pero json comunica las dos partes. 
+        //acepta muchos tipos de datos como obj, arrays, nulls, strings, etc. Cualquier lenguaje comprende json 
+
+        //Esto es un objeto javascript, ver el archivo json y su notacion
+        const json ={
+            cadena:"facundo",
+            numero: 27,
+            booleano: false,
+            arreglo: ["dormir", "jugar", "cagar"],
+            object: {
+                email: "facuaguerog@gmail.com",
+                twitter: "@facundoaguerog"
+            },
+            nulo: null
+        }
+
+        console.log(json);
+
+
+        //JSON solo tiene dos metodos. parse() y stringify()
+        //parse= analiza una notacion json y la transforma a un tipo de dato que javascript valide. un objeto un arreglo un boolean, etc.
+        console.log(JSON);
+        //ver que si yo hago esto console.log("{}") //js lo interpreta como texto
+        console.log(JSON.parse("{}")); //pero esto con JSON es interpretado como un objeto
+        console.log(JSON.parse("null"));
+        //esto no lo entiende ya que no es un tipo de dato de js
+        //console.log(JSON.parse("hola mundo"));
+
+        //stringify transforma un dato valido para js en texto que comprende json
+        console.log(JSON.stringify({})); 
+        console.log(JSON.stringify(true)); 
+        console.log(JSON.stringify(json)); //este es el objeto que cree hace un toque ver como lo modifica en la consola
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Map(objeto) - Sirve para asociar conjuntos de valores asociados a un objeto.
+        //Es como una coleccion de datos (un diccionario - no lo es)
+        let mapa = new Map();
+
+        //set - key y values
+        mapa.set("nombre","Jon");
+        mapa.set("apellido", "Mircha");
+        mapa.set("edad",35);
+        console.log(mapa);
+
+        //size - loingitud
+        console.log(mapa.size);
+
+        //has - tiene o no tiene = true, false
+        console.log(mapa.has("correo"));
+        console.log(mapa.has("nombre"));
+
+        //get - valor dentro de una key
+        console.log(mapa.get("nombre"));
+
+        //set - se puede cambiar el valor actual
+        mapa.set("nombre", "Facundo Aguero");
+        console.log(mapa.get("nombre"));  
+
+        //iteracion con for of
+        for(let[key,value] of mapa){
+            console.log(`Llave: ${key}, value: ${value}`);
+        }
+
+        //KEYS - las keys a diferencia de cualquier variable prmitiva en donde su nombre es un string, aca puede ser cualquier cosa
+        //Se permite guardar datos raros como estos
+        mapa.set(19,"diecinueve"); //Una variable con un nombre numerico que guarda strings
+        map.set(false, "falso"); //un booleano que guarda booleanos
+        map.set({},{}); //un objeto que guarda un objeto 
+        console.log(mapa);
+
+        //No hace falta que cargue los datos con un set, puedo inicializarlo desde su creacion.
+        const mapa2 = new Map([
+            ["nombre", "nani"],
+            ["edad", 11],
+            ["animal", "perro"],
+            [null, "nulo"]
+        ]);
+        console.log(mapa2);
+
+        //tambien puedo copiar las llaves o valores sobres arrays
+        const llavesMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+    </script>
+
+</body>
+</html>

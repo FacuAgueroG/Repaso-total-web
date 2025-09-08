@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Proxies - Es un mecanismo que permite crear un objeto basado en un objeto literal inicial 
+        //Aca en vez de seguir classes como modelo a seguir utilizamos un objeto literal
+        //Ademas con su handler (y es lo mas importante) podemos crear validaciones.
+
+        const persona = {
+            nombre: "",
+            apellido: "",
+            edad: 0
+        }
+
+        //creo un handler
+        const manejador = {
+            //Set hace las validaciones que yo necesite para que no modifique la estructura original del objeto en el que se esta basando
+            set(obj, prop, valor){
+                //Con esta validacion me fijo si me dieron una caracteristica que no tiene el objeto original
+                //indexOf() busca coincidencia en lo que esta dentro de () -1 es NO, 1 es SI
+                //en el caso de que haya puesto facundo.twitter="@facundoaguerog"; esta propiedad no existe y me da -1
+                if(Object.keys(obj).indexOf(prop)===-1){
+                    return console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+                }
+
+                //Si lo que se introduce en nombre o apellido no concuerda con la exp reg se lanza un error
+                if((prop === "nombre" || prop==="apellido") && !(/^[A-Za-zÑñÁáÉéíÍóÓúÚüÜ\s]+$/g.test(valor))){
+                    return console.error(`La propieda "${prop} solo acepta letras y espacios en blanco"`);
+                }
+
+                //Con esto no estoy administrando nada, tal vez podria hacer algunas validaciones extra, pero por ahora solo mando el dato para cuando 
+                //se lo quiera setear
+                obj[prop] =valor; 
+            }
+        }
+
+        //esto deja de ser un objeto modelado en base a persona si no que es un proxi, no es un objeto original
+        const facundo = new Proxy(persona,manejador);
+        console.log(facundo);
+
+        facundo.nombre="Facundo"; //Seteo el proxi. ver que como esto termina utilizando un set(), no hace falta ni que lo mencione
+        facundo.apellido ="Agüero";
+        facundo.edad= 27;
+        console.log(facundo);
+
+        //Con esto yo lo puedo agregar una nueva caracteristica a PERSONA (MODIFICO PERSONA, ALGO QUE VA MAS ALLA DEL OBJETO,
+        //entonces si no quisiera que pase esto (en los objetos comunes tambien puede pasar) puedo manejarlo con el handler y decirle "no podes hacer x accion")
+        facundo.twitter="@facundoaguero"; //el set lo evita.
+        console.log(persona);
+    </script>
+</body>
+</html>
