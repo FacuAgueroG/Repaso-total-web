@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --yellow-color: #F7D71E;
+            --dark-color:  #222;
+        }
+
+        .card figcaption{
+            padding: 1rem;
+        }
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+        .opacity-80{
+            opacity: 0.8;
+        }
+        .sepia{
+            filter: sepia(1);
+        }
+
+        .cards{
+            border: thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+            
+        }
+    </style>
+</head>
+<body>
+    <h3>Manejo del DOM</h3>
+    <p id="que-es">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Asperiores aliquam ipsa quos nam, similique praesentium, 
+        amet modi fugiat optio sapiente sequi error molestiae aut 
+        obcaecati dolores repudiandae a eveniet quia!
+    </p>
+    <nav id="menu">
+        <ul>
+            <li><a href="#">seccion 1</a></li>
+            <li><a href="#">seccion 2</a></li>
+            <li><a href="#">seccion 3</a></li>
+            <li><a href="#">seccion 4</a></li>
+            <li><a href="#">seccion 5</a></li>
+        </ul>
+    </nav>
+    <input type="text" name="nombre" placeholder="Nombre">
+    <a class="link-DOM" href="index.html" style="background-color: #F7DF1E; color: #222;" data-id="1" data-description="Document ObjectModel">DOM</a> 
+    <section class="cards">
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Tech">
+            <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Animals">
+            <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="people">
+            <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="arch">
+            <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Nature">
+            <figcaption>Tech</figcaption>
+        </figure>
+    </section>
+        <template id="template-card">
+        <figure class="card">
+            <img>
+            <figcaption>
+
+            </figcaption>
+        </figure>
+
+    </template>
+
+
+    <script src="./dom.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Doom introduccion.
+        //Si quisiera mapear los elementos html lo hago de la siguiente manera
+        console.log(document.head); //por ejemplo
+        console.log(document.body);
+        console.log(document.documentElement);//en el caso de html hay una manera particular
+
+        //el tipo de documento  (ahora es ECMS6 y solo devuelve !DOCTYPE html)
+        console.log(document.doctype);
+
+        console.log(document.links); //links relativos, absolutos, etc.
+        console.log(document.images); //todas las imagenes
+        console.log(document.forms); //todos los formularios de la pestaña actual
+        console.log(document.styleSheets); //hojas de estilo vinculadas
+        console.log(document.scripts);
+
+        //Escritura sobre el documento
+        //Mala practica
+        document.write(`<h1>DOM</h1>`);
+    </script>
+</body>
+</html>
