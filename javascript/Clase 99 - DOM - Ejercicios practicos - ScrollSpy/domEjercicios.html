@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" data-dark> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios del DOM</title>
+    <!--Hoja de estilos cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <link rel="stylesheet" href="./css/dom-ejercicios.css">
+</head>
+<!--Voy a agregarle algo de grid al body  2filas x 2 columnas (asi pongo el aside)--> 
+<body data-dark> 
+    <header class="header">
+        <h1>Ejercicios del DOM</h1>
+    </header>        
+    <button class="panel-btn hamburger hamburger--vortex" type="button">
+        <span class="hamburger-box"> 
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+    <aside class="panel">
+        <nav class="menu" data-darker>
+            <!--Tuve que eliminar los links completos ./domEjercicios.html porque requeria que la href fuera exactamente igual
+            al id (el id no tiene el # pero igual machean)-->
+            <a href="#seccion1" data-scroll-spy>Reloj digital y alarma sonora</a>
+            <a href="#seccion2" data-scroll-spy>Eventos del teclado</a>
+            <a href="#seccion3" data-scroll-spy>Cuenta regresiva</a>
+            <a href="#seccion4" data-scroll-spy>Resposive design con JS</a>
+            <a href="#seccion5" data-scroll-spy>Responsive tester</a>
+            <a href="#seccion6" data-scroll-spy>Deteccion de dispositivo</a>
+            <a href="#seccion7" data-scroll-spy>Deteccion de la conexion</a>
+            <a href="#seccion8" data-scroll-spy>Deteccion de la camara web</a>
+            <a href="#seccion9" data-scroll-spy>Geolocalizacion</a>
+            <a href="#seccion10" data-scroll-spy>Filtro de busqueda</a>
+            <a href="#seccion11" data-scroll-spy>Sorteo digital</a>
+            <a href="#seccion12" data-scroll-spy>Responsive slider</a>
+            <a href="#seccion13" data-scroll-spy>seccion 13</a>
+        </nav>
+    </aside>
+    <main >
+        <section id="seccion1" class="section" data-scroll-spy>
+            <h2 data-dark="">Reloj digital y alarma sonora</h2>
+            <div id="reloj"></div>
+            <div>
+                <button id="activar-reloj">Iniciar reloj</button>
+                <button id="desactivar-reloj">Detener reloj</button>
+                <button id="activar-alarma">Iniciar alarma</button>
+                <button id="desactivar-alarma">Detener alarma</button>
+            </div>
+        </section>
+        <section id="seccion2" class="section" data-scroll-spy>
+            <h2>Eventos del teclado</h2>
+            <article class="stage" data-darker> 
+                <div class="ball"></div>
+            </article>
+        </section>
+        <section id="seccion3" class="section" data-scroll-spy>
+            <h2>Cuenta regresiva</h2>
+            <h4 style="color: grey;"><small>(Hecho en 2025, esto solo funciona para mi cumpleaños 2026, despues se rompe, si tengo tiempo lo modifico)</small></h4>
+            <div id="countdown"></div>
+        </section>
+        <section id="seccion4" class="section" data-scroll-spy>
+            <h2>Responsive design con JS</h2>
+            <div id="youtube"></div>
+            <div id="gmaps"></div>
+        </section>
+        <section id="seccion5" class="section" data-scroll-spy>
+            <h2>Resposive tester</h2>
+            <form id="responsive-tester">
+                <input  name="direccion" type="url" placeholder="URL" required>
+                <br>
+                <input name="ancho" type="text" placeholder="Ingrese el ancho..." required>
+                <br>
+                <input name="alto" type="text" placeholder="Ingrese el alto..." required>
+                <br>
+                <input name="probar" type="submit" value="Probar">
+                <br>
+                <input name="cerrar" type="button" value="Cerrar">
+            </form>
+        </section>
+        <section id="seccion6" class="section" data-scroll-spy>
+            <h2>Deteccion de dispositivo</h2>
+            <div id="user-device"></div>
+        </section>
+        <section id="seccion7" class="section" data-scroll-spy>
+            <h2>Deteccion de la conexion</h2>
+            <p>Para usar esto hay que desconectar internet.</p>
+            <p>Se puede simular: console>application>serve workers : Offline = true</p>
+        </section>
+        <section id="seccion8" class="section" data-scroll-spy>
+            <h2>Deteccion de la camara web</h2>
+            <video src="" id="webcam" controls></video>
+        </section>
+        <section id="seccion9" class="section" data-scroll-spy>
+            <h2>Geolocalizacion</h2>
+            <div id="geolocation"></div>
+        </section>
+        <section id="seccion10" class="section" data-scroll-spy>
+            <h2>Filtro de busqueda</h2>
+            <input type="search" placeholder="Buscar..." class="card-filter">
+            <article class="cards">
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Nature</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Any</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Pedo</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Random</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Sweet</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://picsum.photos/200/200" alt="random image">
+                    <figcaption>Sugar</figcaption>
+                </figure>
+            </article>
+        </section>
+        <section id="seccion11" class="section" data-scroll-spy>
+            <h2>Sorteo digital</h2>
+            <ul class="players">
+                <li class="player">Javascript</li>
+                <li class="player">PHP</li>
+                <li class="player">JAVA</li>
+                <li class="player">C</li>
+                <li class="player">Python</li>
+                <li class="player">Ruby</li>
+                <li class="player">Go</li>
+                <li class="player">Rust</li>
+                <li class="player">Pearl</li>
+                <li class="player">Visual basic</li>
+            </ul>
+            <button id="winner-btn">Obtener ganador</button>
+        </section>
+        <section id="seccion12" class="section" data-scroll-spy>
+            <h2>Responsive slider</h2>
+            <div class="slider">
+                <div class="slider-slides">
+                    <div class="slider-slide active">
+                        <img src="./assets/img400x400-1.jpg" alt="">
+                    </div>
+                    <div class="slider-slide ">
+                        <h4>Diapositiva 2</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio mollitia atque,
+                            nesciunt temporibus nostrum natus? Asperiores vel sunt veniam iusto a, tenetur 
+                            illum, similique eaque deserunt, quo quas laborum?
+                        </p>
+                    </div>
+                    <div class="slider-slide">
+                        <h4>Diapositiva 3</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio mollitia atque,
+                            nesciunt temporibus nostrum natus? Asperiores vel sunt veniam iusto a, tenetur 
+                            illum, similique eaque deserunt, quo quas laborum?
+                        </p>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="./assets/img400x400-2.png" alt="">
+                    </div>
+                </div>
+                <div class="slider-btns">
+                    <a class="prev" href="#">&laquo;</a>
+                    <a class="next" href="#">&raquo;</a>
+                </div>
+            </div>
+        </section>
+        <section id="seccion13" class="section" data-scroll-spy>
+            <h2>seccion13</h2>
+        </section>                        
+    </main>
+
+    <button class="scroll-top-btn hidden">&#11014;</button>
+    <button class="dark-theme-btn">🌚</button>
+    <script src="./index_dom.js" type="module"></script>
+</body>
+</html>
