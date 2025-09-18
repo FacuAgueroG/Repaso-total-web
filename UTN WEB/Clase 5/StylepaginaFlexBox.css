@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.skyblue{
+    background-color: skyblue;
+}
+
+.tomato{
+    background-color: tomato;
+}
+
+.goldenrod{
+    background-color: goldenrod;
+}
+
+.darkorchid{
+    background-color: darkorchid;
+}
+
+.teal{
+    background-color: teal;
+}
+
+.darkgrey{
+    background-color: darkgray;
+}
+
+body{
+    margin: 1em 1em 0 1em;
+    max-width: 100vw;
+    border: thin solid;
+}
+
+.margin{
+    margin: 0.5rem; 
+}
+
+.top-container{
+    display: flex;
+    justify-content: space-around;
+    height: 14vh;
+    
+}
+
+.topL{
+    display: flex;
+    align-items: center;
+    width: 64%;
+    height: 90%;
+}
+
+.topL span{
+    font-size: 4rem;
+    margin-left: 2rem;
+    text-shadow: 2px 1px 4px darkseagreen;
+}
+
+.topR{
+    display: flex;
+    width: 36%;
+    height: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.topR span{
+    background-color: white;
+    height: 15%;
+    width: 20%;
+    text-align: center;
+}
+
+.center-container{
+    display: flex;
+    height: 44vh;
+}
+
+.big-box{
+    height: 98%;
+    width: 41%;
+}
+
+.double-container{
+    display: flex;   
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98%;
+    width: 59%;
+}
+
+.twin-box{
+    height: 50%;
+}
+
+.bottom-container{
+    display: flex;
+    height: 24vh;
+}
+
+.bottomLR{
+    width: 28%;
+    height: 98%;
+    align-self: center;
+}
+
+.bottom-middle{
+    align-self: center;
+    width: 42%;
+    height: 98%;
+}
+
+footer{
+    height: 15vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer li{
+    display: inline-block;
+    margin: 0.4rem;
+    padding: 0.2rem;
+    background-color: darksalmon;
+}
+
+
+@media only screen and (max-width: 539px){
+    .top-container{
+        flex-direction: column;
+        height: 25vh;
+    }
+
+    .topR{
+        height: 60%;
+        width: 98%;
+        align-self: center;
+        flex-direction: column;
+    }
+
+    .topR span{
+        width: 55px;
+        margin: 0.5rem;
+        height: 25%;
+    }
+
+    .topL{
+        align-self: center;
+        justify-content: center;
+        height: 60%;
+        width: 98%; 
+    }
+
+    .center-container,
+    .bottom-container{
+        flex-direction:column;
+    }
+
+    .big-box{
+        height: 49%;
+    }
+
+    .double-container{
+        align-self: center;
+        height: 49%;
+        width: 100%;
+    }
+
+    .topL, 
+    .topR,
+    .big-box,
+    .bottom-container div,
+    .twin-box{
+        width: 98%;
+        align-self: center;
+    }
+
+    footer{
+        margin-bottom: 0.6rem;
+    }
+}

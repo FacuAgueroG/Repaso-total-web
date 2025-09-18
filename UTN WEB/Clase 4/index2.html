@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            border: solid 1px black;
+            padding: 5px;
+            display: inline-block;
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100px;
+            height: 110px;
+            overflow: visible; /*hidden scroll scroll-x scroll-y  auto*/
+        }
+
+        li{
+            height: 50px;
+            background-color: tomato;
+            display: inline-block;
+        }
+
+        .display-none{
+            display: none;
+        }
+
+        .visibility-hiddenn{
+            visibility: hidden;
+        }
+
+        .border-thin-solid{
+            border: thin solid;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        CSS IS <strong>AWESOME</strong>
+    </div>
+
+    <ul>
+        <li class="display-none">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</li> <!--Esto no se muestra en pantalla y no se guarda su espacio-->
+    </ul>
+
+    <ul class="border-thin-solid">
+        <p>visibility hidden</p>
+        <li class="visibility-hiddenn">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</li> <!--Esto no se muestra en pantalla y se guarda su espacio-->
+    </ul>
+
+    <ul>
+        <li>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</li>
+    </ul>
+</body>
+</html>

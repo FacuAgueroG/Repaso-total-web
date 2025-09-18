@@ -1,0 +1,59 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+.caja1{
+    width: 200px;
+    height: 420px;
+    background-color: bisque;
+}
+
+.caja2{
+    width: 200px;
+    height: 420px;
+    background-color: rgb(88, 31, 192);
+}
+
+.caja3{
+    width: 400px;
+    height: 420px;
+    background-color: rgb(214, 85, 34);
+}
+
+.caja4{
+    width: 200px;
+    height: 210px;
+    background-color: rgb(197, 27, 64);
+}
+
+.caja5{
+    width: 200px;
+    height: 210px;
+    background-color: rgb(28, 133, 202);
+}
+
+.container{
+    height: 600px;
+    border: thin solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-container{
+    height: 600px;
+    border: thin solid;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+

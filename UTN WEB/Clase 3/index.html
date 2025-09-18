@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0; padding: 0; scroll-behavior: smooth;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; background-color: black; color: white; font-weight: bold;" id="inicio-pagina">
+        <div style="font-size: 2rem;">Mi pagina</div>
+        <ul style="font-size:1rem; display: flex;">
+            <li style="margin-right: 1rem; list-style: none;"><a style="color: inherit; text-decoration: none;" href="./index.html">Home</a></li>
+            <li style="margin-right: 1rem; list-style: none;"><a style="color: inherit; text-decoration: none;" href="./tablas.html">Tablas</a></li>
+            <li style="margin-right: 1rem; list-style: none;"><a style="color: inherit; text-decoration: none;" href="./index.html#final-pagina">Enlase interno</a></li>
+            <li style="margin-right: 1rem; list-style: none;"><a style="color: inherit; text-decoration: none;" href="https://www.youtube.com" target="_blank">Enlase externo</a></li>
+        </ul>
+    </nav>
+
+    <h1>Formularios</h1>
+    <form action="">
+        <label for="nombre"> Nombre</label>
+        <input type="text" placeholder="Escriba su nombre aqui..." name="nombre" id="nombre" required/>
+        <br />
+        <label for="apellido"> Apellido    </label>
+        <input type="text" placeholder="Escriba su apellido aqui..." name="apellido" id="apellido" required/>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Escriba su email aqui..." required>
+        <br>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Escriba su contraseña aqui..." required>
+
+        <h3>Input checkbox</h3>
+        <label>Deportes</label>
+        
+        <input type="checkbox" name="Intereses" value="Deportes" />
+
+        <label>Programacion</label>
+        <input type="checkbox" name="Intereses" value="Programacion" />
+
+        <label> Salto con rocha desde la punta del everest </label>
+        <input type="checkbox" name="Intereses" value="Salto con rocha desde la punta del everest" />
+
+        <label>Politica</label>
+        <input type="checkbox" name="Intereses" value="Politica" />
+
+        <h3>Input radio button</h3>
+        <label for="rojo">Rojo</label>
+        <input type="radio" id="rojo" value="rojo" name="colores">
+
+        <label for="verde">Verde</label>
+        <input type="radio" id="verde" value="verde" name="colores">
+
+        <label for="azul">Azul</label>
+        <input type="radio" id="azul" value="azul" name="colores">
+
+        <h3>Input de tipo de color</h3>
+        <label for="color-picker">Seleccione un color</label>
+        <input type="color" name="" id="color-picker">
+
+        <br>
+        <br>
+        <h3>Input de fechas</h3>
+        <label for="fecha">Seleccione su fecha de nacimiento</label>
+        <input type="date" name="" id="fecha">
+
+        <br>
+        <br>
+        <label for="precio">Range</label>
+        <input type="range" id="precio" min="0" max="12" step="2" value="6">
+
+        <br><br>
+        <label for="condiciones">Acepto bases y condiciones</label>
+        <input type="checkbox" id="condiciones" name="condiciones" required>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restablecer">
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div style="display: flex; justify-content: center;" id="final-pagina">Este es el final de la pagina<a href="./index.html#inicio-pagina">  Inicio de la pagina</a></div>
+    <br><br><br><br><br><br><br>
+  </body>
+</html>

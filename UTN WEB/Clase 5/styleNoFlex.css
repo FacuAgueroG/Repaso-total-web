@@ -1,0 +1,60 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit;
+}
+
+nav{
+    background-color: rgb(118,163, 118,0.7);
+    height: 150px;
+    padding: 0.5rem;
+}
+
+nav ul{
+    float: right;
+    margin-top: 2.5rem;
+}
+
+nav img{
+    max-height: 150px;
+    padding-bottom: 1rem;
+    width: auto;
+}
+
+nav ul li{
+    background-color: rgb(47,90,53);
+    display: inline-block;
+
+    border-radius: 0.3rem;
+    width: 8rem;
+
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav ul li a{
+    display: inline-block;
+    width: inherit;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+nav ul li:hover{
+    transform: scale(1.1);
+    box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0,0 , 0, 0.774);
+}
+
+nav ul li:active{
+    transform: scale(1);
+    background-color: rgb(47,90,36,0.6);
+    box-shadow: none;
+}
+
+li{
+    list-style: none;
+}

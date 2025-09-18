@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        html{
+            box-sizing: border-box;
+        }
+
+        *, *::after, *::before{
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            padding: 1rem;
+            text-align: center;
+            color: blueviolet;
+            font-style: italic;
+        }
+
+        .div-class{
+            padding: 1rem;
+            font-size: x-large;
+        }
+
+        #div-id{
+            padding: 2rem; /*Podria utilizar important si quisiera quedarme con esto a la fuerza*/
+            background-color: burlywood;
+        }
+
+        .gradient{
+            margin: 10px 20px; /*arriba y a los lados*/
+            padding: 10px; /*a todos los lados*/
+            background: #3c98bd;
+            background: linear-gradient(90deg,rgba(60, 152, 189, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+        }
+
+        body{
+            background: #3F5EFB;
+            background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="div-id" class="div-class" style="padding: 10rem;"> <!--Por ultimo sumo estilos en linea-->
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Aperiam, dolorum laudantium? Nulla provident minus perferendis, 
+            accusantium cumque optio vitae cum blanditiis assumenda nihil 
+            facere, fugit doloremque porro consectetur iste fuga.
+        </p>
+    </div>
+
+        <div class="gradient"> <!--Por ultimo sumo estilos en linea-->
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Aperiam, dolorum laudantium? Nulla provident minus perferendis, 
+            accusantium cumque optio vitae cum blanditiis assumenda nihil 
+            facere, fugit doloremque porro consectetur iste fuga.
+        </p>
+    </div>
+</body>
+</html>
