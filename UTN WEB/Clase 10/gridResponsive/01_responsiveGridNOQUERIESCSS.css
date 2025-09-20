@@ -1,0 +1,41 @@
+html{
+    font-family: "Cairo", sans-serif;
+}
+
+h2{
+    font-size: xx-large;
+    text-align: center;
+}
+
+h3{
+    font-size: x-large;
+}
+
+p{
+    max-width: 38ch;
+}
+
+/*Definicion de contenedor responsive sin media queries*/
+
+.container{
+    display: grid;
+    /*Auto-fill rellena el espacio con tantas cards como quepan. Mientras que el minimo que puede ocupar una de estas es de 360px*/
+    /*Auto-fit ensancha el contenido para que quepa ocupe todo lo posible en pantalla*/
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /*Primer numero el min, segundo el max*/
+    gap: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border: thin solid;
+    border-radius: 5px;
+    padding: 0.5rem 2rem; /*Arriba y abajo 0.5 y izq y der 2*/
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+}
+
+img{
+    border-radius: 5px;
+}

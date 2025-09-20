@@ -1,0 +1,97 @@
+*, *::before, *::after{
+    margin:0;
+}
+
+body{
+    background-color: grey;
+}
+
+.grid-container{
+    height: 100vh;
+    border: thin solid;
+    margin: 1em 2em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 2fr 2fr 2fr 2fr 100px ;
+
+    grid-template-areas:
+    "navbar navbar navbar navbar"
+    "main main main aside"
+    "main main main aside"
+    "article1 article2 article3 aside"
+    "gallery gallery gallery gallery"
+    "footer footer footer footer"; 
+
+    row-gap: 1em;
+    column-gap:0.5em;
+}
+
+.navbar{
+    grid-area: navbar;
+    background-color: greenyellow;
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: main;
+    background-color: lightcoral;
+}
+
+.main article{
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: lightgoldenrodyellow;
+}
+
+.article1{
+    grid-area: article1;
+    background-color: lightgreen;
+}
+
+.article2{
+    grid-area: article2;
+    background-color: lightskyblue;
+}
+
+.article3{
+    grid-area: article3;
+    background-color: lightgrey;
+}
+
+.gallery{
+    grid-area: gallery;
+    background-color: hotpink;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: khaki;
+}
+
+@media screen and (max-width: 560px){
+    .grid-container{
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 4fr 2fr 2fr 2fr 2fr 2fr 100px ;
+
+    grid-template-areas:
+    "navbar"
+    "main"
+    "article1"
+    "article2"
+    "article3"
+    "aside"
+    "gallery"
+    "footer"; 
+
+    row-gap: 1em;
+    column-gap:0.5em;
+}
+}
